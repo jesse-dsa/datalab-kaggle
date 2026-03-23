@@ -1,0 +1,2088 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description"
+    content="Jessé Silva — portfólio consultivo em arquitetura analítica, engenharia de dados e inteligência operacional para comércio digital." />
+  <meta name="theme-color" content="#071018" />
+  <title>Jessé Silva • Arquitetura analítica, dados e inteligência para comércio digital</title>
+  <style>
+    :root {
+      --bg: #071018;
+      --bg-soft: #0c1622;
+      --panel: rgba(15, 24, 38, .82);
+      --panel-2: rgba(18, 29, 45, .88);
+      --card: #111b29;
+      --line: rgba(255, 255, 255, .08);
+      --line-strong: rgba(108, 227, 208, .26);
+      --text: #eef5fb;
+      --muted: #aab7c8;
+      --muted-2: #ced7e3;
+      --accent: #6ce3d0;
+      --accent-2: #78a7ff;
+      --accent-3: #f39d64;
+      --shadow: 0 24px 80px rgba(0, 0, 0, .34);
+      --radius-xl: 32px;
+      --radius-lg: 24px;
+      --radius-md: 18px;
+      --radius-sm: 14px;
+      --container: 1200px;
+      --nav-h: 78px;
+      --sans: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    }
+
+    * {
+      box-sizing: border-box
+    }
+
+    html {
+      scroll-behavior: smooth
+    }
+
+    body {
+      margin: 0;
+      color: var(--text);
+      font-family: var(--sans);
+      line-height: 1.65;
+      letter-spacing: .01em;
+      min-height: 100vh;
+      background:
+        radial-gradient(circle at 8% 8%, rgba(108, 227, 208, .10), transparent 0 24%),
+        radial-gradient(circle at 94% 14%, rgba(120, 167, 255, .09), transparent 0 22%),
+        radial-gradient(circle at 85% 86%, rgba(243, 157, 100, .08), transparent 0 20%),
+        linear-gradient(180deg, #060c13 0%, #071018 100%);
+      overflow-x: hidden;
+    }
+
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      background-image:
+        linear-gradient(rgba(255, 255, 255, .018) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255, 255, 255, .018) 1px, transparent 1px);
+      background-size: 78px 78px;
+      mask-image: radial-gradient(circle at center, black 26%, transparent 84%);
+      opacity: .26;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none
+    }
+
+    img,
+    svg {
+      display: block;
+      max-width: 100%
+    }
+
+    .container {
+      width: min(calc(100% - 2rem), var(--container));
+      margin: 0 auto
+    }
+
+    .section {
+      position: relative;
+      padding: 1.4rem 0
+    }
+
+    .section:first-of-type {
+      padding-top: calc(var(--nav-h) + 2rem)
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: .7rem;
+      font-size: .83rem;
+      letter-spacing: .17em;
+      text-transform: uppercase;
+      color: var(--muted-2);
+      margin-bottom: 1rem;
+    }
+
+    .eyebrow::before {
+      content: "";
+      width: 38px;
+      height: 1px;
+      background: linear-gradient(90deg, var(--accent), transparent);
+    }
+
+    .section-title {
+      margin: 0 0 1rem;
+      font-size: clamp(2rem, 4vw, 3.35rem);
+      line-height: 1.03;
+      letter-spacing: -.055em;
+      font-weight: 800;
+      max-width: 14ch;
+    }
+
+    .section-copy {
+      margin: 0;
+      max-width: 780px;
+      color: var(--muted);
+      font-size: 1.06rem;
+    }
+
+    .site-header {
+      position: fixed;
+      inset: 0 0 auto 0;
+      z-index: 60;
+      transition: background .22s ease, border-color .22s ease, box-shadow .22s ease;
+    }
+
+    .site-header.scrolled {
+      background: rgba(7, 16, 24, .76);
+      backdrop-filter: blur(18px);
+      border-bottom: 1px solid rgba(255, 255, 255, .05);
+      box-shadow: 0 10px 30px rgba(0, 0, 0, .22);
+    }
+
+    .nav {
+      min-height: var(--nav-h);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+    }
+
+    .brand {
+      display: inline-flex;
+      align-items: center;
+      gap: .8rem;
+      min-width: 0
+    }
+
+    .brand-mark {
+      width: 46px;
+      height: 46px;
+      border-radius: 15px;
+      display: grid;
+      place-items: center;
+      font-weight: 800;
+      letter-spacing: -.08em;
+      background: linear-gradient(145deg, rgba(108, 227, 208, .18), rgba(120, 167, 255, .10));
+      border: 1px solid rgba(108, 227, 208, .18);
+      box-shadow: inset 0 1px 0 rgba(255, 255, 255, .08);
+    }
+
+    .brand-title {
+      margin: 0;
+      font-size: 1rem;
+      font-weight: 700;
+      letter-spacing: -.03em;
+      white-space: nowrap
+    }
+
+    .nav-links {
+      display: none;
+      align-items: center;
+      gap: 1.2rem;
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
+
+    .nav-links a {
+      color: var(--muted-2);
+      font-size: .95rem;
+      transition: color .16s ease;
+    }
+
+    .nav-links a:hover,
+    .nav-links a:focus-visible {
+      color: var(--text)
+    }
+
+    .nav-actions {
+      display: flex;
+      align-items: center;
+      gap: .75rem
+    }
+
+    .button,
+    .button-secondary,
+    .nav-cta {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: .55rem;
+      padding: .98rem 1.18rem;
+      border-radius: 999px;
+      font-weight: 650;
+      transition: transform .18s ease, border-color .18s ease, box-shadow .18s ease, background .18s ease;
+    }
+
+    .button,
+    .nav-cta {
+      background: linear-gradient(135deg, rgba(108, 227, 208, .18), rgba(120, 167, 255, .12));
+      border: 1px solid rgba(108, 227, 208, .22);
+      box-shadow: inset 0 1px 0 rgba(255, 255, 255, .06);
+    }
+
+    .button-secondary {
+      background: rgba(255, 255, 255, .03);
+      border: 1px solid rgba(255, 255, 255, .08);
+      color: var(--muted-2);
+    }
+
+    .button:hover,
+    .button-secondary:hover,
+    .nav-cta:hover,
+    .button:focus-visible,
+    .button-secondary:focus-visible,
+    .nav-cta:focus-visible {
+      transform: translateY(-2px);
+      border-color: rgba(108, 227, 208, .34);
+      box-shadow: 0 14px 30px rgba(0, 0, 0, .22);
+    }
+
+    .menu-toggle {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 44px;
+      height: 44px;
+      border-radius: 14px;
+      border: 1px solid rgba(255, 255, 255, .08);
+      background: rgba(255, 255, 255, .03);
+      color: var(--text);
+      cursor: pointer;
+    }
+
+    .mobile-panel {
+      display: none;
+      padding: 0 0 1rem
+    }
+
+    .mobile-panel.open {
+      display: block
+    }
+
+    .mobile-menu {
+      background: rgba(12, 22, 34, .94);
+      backdrop-filter: blur(18px);
+      border: 1px solid rgba(255, 255, 255, .06);
+      border-radius: 22px;
+      padding: 1rem;
+      box-shadow: var(--shadow);
+    }
+
+    .mobile-menu a {
+      display: block;
+      padding: .8rem .2rem;
+      color: var(--muted-2);
+      border-bottom: 1px solid rgba(255, 255, 255, .05)
+    }
+
+    .mobile-menu a:last-child {
+      border-bottom: none
+    }
+
+    .hero-grid {
+      display: grid;
+      gap: 1.6rem;
+      align-items: stretch
+    }
+
+
+    .hero-title {
+      margin: 0;
+      max-width: 15.5ch;
+      font-size: clamp(3rem, 8vw, 4.15rem);
+      line-height: .95;
+      letter-spacing: -.075em;
+      font-weight: 850;
+    }
+
+    .hero-title .accent {
+      color: var(--accent)
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: .85rem;
+      margin-top: 1.8rem
+    }
+
+    .hero-proof {
+      display: grid;
+      gap: .9rem;
+      margin-top: 1.8rem;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .proof-mini {
+      padding: 1rem;
+      border-radius: 18px;
+      background: rgba(255, 255, 255, .03);
+      border: 1px solid rgba(255, 255, 255, .06);
+    }
+
+    .proof-mini strong {
+      display: block;
+      font-size: 1.12rem;
+      font-weight: 780;
+      letter-spacing: -.03em;
+      margin-bottom: .18rem;
+    }
+
+    .proof-mini span {
+      color: var(--muted);
+      font-size: .94rem
+    }
+
+    .hero-panel {
+      position: relative;
+      overflow: hidden;
+      border-radius: var(--radius-xl);
+      border: 1px solid rgba(255, 255, 255, .08);
+      background: linear-gradient(180deg, rgba(255, 255, 255, .05), rgba(255, 255, 255, .02)), rgba(14, 24, 37, .9);
+      padding: 1.35rem;
+      box-shadow: var(--shadow);
+    }
+
+    .hero-panel::before {
+      content: "";
+      position: absolute;
+      left: -52px;
+      top: -54px;
+      width: 220px;
+      height: 220px;
+      background: radial-gradient(circle, rgba(108, 227, 208, .22), transparent 68%);
+      pointer-events: none;
+    }
+
+    .hero-panel::after {
+      content: "";
+      position: absolute;
+      right: -60px;
+      bottom: -60px;
+      width: 230px;
+      height: 230px;
+      background: radial-gradient(circle, rgba(120, 167, 255, .17), transparent 68%);
+      pointer-events: none;
+    }
+
+    .panel-heading {
+      position: relative;
+      z-index: 1;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+      margin-bottom: 1rem;
+    }
+
+    .panel-heading h2 {
+      margin: 0;
+      font-size: 1.08rem;
+      font-weight: 760;
+      letter-spacing: -.03em
+    }
+
+    .signal {
+      display: inline-flex;
+      align-items: center;
+      gap: .52rem;
+      font-size: .86rem;
+      color: var(--muted-2)
+    }
+
+    .signal::before {
+      content: "";
+      width: 8px;
+      height: 8px;
+      border-radius: 999px;
+      background: var(--accent);
+      box-shadow: 0 0 0 6px rgba(108, 227, 208, .12);
+    }
+
+    .panel-list {
+      position: relative;
+      z-index: 1;
+      display: grid;
+      gap: .95rem
+    }
+
+    .panel-item {
+      padding: 1rem;
+      border-radius: 18px;
+      background: rgba(255, 255, 255, .035);
+      border: 1px solid rgba(255, 255, 255, .06);
+    }
+
+    .panel-item small {
+      display: block;
+      margin-bottom: .42rem;
+      color: var(--muted);
+      text-transform: uppercase;
+      letter-spacing: .12em;
+      font-size: .73rem;
+    }
+
+    .panel-item strong {
+      display: block;
+      margin-bottom: .35rem;
+      font-size: 1.06rem;
+      font-weight: 760;
+      letter-spacing: -.03em;
+    }
+
+    .panel-item p {
+      margin: 0;
+      color: var(--muted-2);
+      font-size: .96rem
+    }
+
+    .grid-4,
+    .grid-3,
+    .grid-2,
+    .case-grid,
+    .contact-grid,
+    .method-grid,
+    .stack-layout,
+    .logo-grid,
+    .cert-grid {
+      display: grid;
+      gap: 1rem;
+    }
+
+    .card,
+    .case-card,
+    .timeline-card,
+    .stack-card,
+    .logo-card,
+    .cert-card,
+    .contact-card,
+    .method-card {
+      position: relative;
+      overflow: hidden;
+      border-radius: var(--radius-lg);
+      border: 1px solid rgba(255, 255, 255, .07);
+      background: var(--panel);
+      backdrop-filter: blur(16px);
+      box-shadow: var(--shadow);
+    }
+
+    .card::before,
+    .case-card::before,
+    .timeline-card::before,
+    .stack-card::before,
+    .logo-card::before,
+    .cert-card::before,
+    .contact-card::before,
+    .method-card::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(180deg, rgba(255, 255, 255, .04), transparent 34%);
+      pointer-events: none;
+    }
+
+    .card,
+    .stack-card,
+    .logo-card,
+    .cert-card,
+    .contact-card,
+    .method-card {
+      padding: 1.35rem
+    }
+
+    .value-card strong {
+      display: block;
+      margin-bottom: .55rem;
+      font-size: 1.95rem;
+      font-weight: 820;
+      letter-spacing: -.06em;
+    }
+
+    .value-card span {
+      display: block;
+      color: var(--muted-2);
+      font-size: .98rem
+    }
+
+    .headline-row {
+      display: grid;
+      gap: 1rem;
+      align-items: start;
+    }
+
+    .split-layout {
+      display: grid;
+      gap: 1rem
+    }
+
+    .about-main,
+    .about-side {
+      padding: 1.45rem;
+      border-radius: var(--radius-lg);
+      border: 1px solid rgba(255, 255, 255, .07);
+      background: var(--panel);
+      box-shadow: var(--shadow);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .about-main::before,
+    .about-side::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(180deg, rgba(255, 255, 255, .04), transparent 34%);
+      pointer-events: none;
+    }
+
+    .about-main>*,
+    .about-side>* {
+      position: relative;
+      z-index: 1
+    }
+
+    .about-main p,
+    .about-side p {
+      margin: 0;
+      color: var(--muted)
+    }
+
+    .about-main p+p,
+    .about-side p+p {
+      margin-top: 1rem
+    }
+
+    .stat-line {
+      display: flex;
+      align-items: center;
+      gap: .8rem;
+      padding: .92rem 1rem;
+      border-radius: 16px;
+      margin-top: .9rem;
+      background: rgba(255, 255, 255, .03);
+      border: 1px solid rgba(255, 255, 255, .06);
+      color: var(--muted-2);
+    }
+
+    .stat-dot {
+      width: 10px;
+      height: 10px;
+      border-radius: 999px;
+      background: var(--accent);
+      box-shadow: 0 0 0 6px rgba(108, 227, 208, .10);
+      flex: none;
+    }
+
+    .problem-card h3,
+    .stack-card h3,
+    .logo-card h3,
+    .cert-card h3,
+    .contact-card h3,
+    .method-card h3,
+    .timeline-card h3,
+    .case-title {
+      margin: 0 0 .65rem;
+      font-size: 1.18rem;
+      font-weight: 760;
+      letter-spacing: -.03em;
+    }
+
+    .problem-card p,
+    .stack-card p,
+    .logo-card p,
+    .cert-card p,
+    .contact-card p,
+    .method-card p,
+    .timeline-card p {
+      margin: 0;
+      color: var(--muted);
+    }
+
+    .problem-card {
+      padding: 1.35rem
+    }
+
+    .problem-index,
+    .case-mark {
+      width: 42px;
+      height: 42px;
+      display: grid;
+      place-items: center;
+      border-radius: 14px;
+      margin-bottom: 1rem;
+      font-size: .9rem;
+      font-weight: 800;
+      letter-spacing: -.03em;
+      background: rgba(108, 227, 208, .10);
+      border: 1px solid rgba(108, 227, 208, .16);
+    }
+
+    .tag-group {
+      display: flex;
+      flex-wrap: wrap;
+      gap: .68rem;
+      margin-top: 1.2rem
+    }
+
+    .tag {
+      display: inline-flex;
+      align-items: center;
+      gap: .52rem;
+      padding: .62rem .88rem;
+      border-radius: 999px;
+      font-size: .9rem;
+      background: rgba(255, 255, 255, .04);
+      border: 1px solid rgba(255, 255, 255, .08);
+      color: var(--muted-2);
+      white-space: nowrap;
+    }
+
+    .tag::before {
+      content: "";
+      width: 7px;
+      height: 7px;
+      border-radius: 999px;
+      background: var(--accent);
+    }
+
+    .logo-card {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      min-height: 100px;
+      transition: transform .18s ease, border-color .18s ease, box-shadow .18s ease;
+    }
+
+    .logo-card:hover {
+      transform: translateY(-4px);
+      border-color: rgba(108, 227, 208, .22);
+      box-shadow: 0 20px 42px rgba(0, 0, 0, .24)
+    }
+
+    .logo-badge {
+      width: 60px;
+      height: 60px;
+      border-radius: 18px;
+      flex: none;
+      display: grid;
+      place-items: center;
+      background: linear-gradient(145deg, rgba(255, 255, 255, .05), rgba(255, 255, 255, .02));
+      border: 1px solid rgba(255, 255, 255, .08);
+    }
+
+    .logo-badge svg {
+      width: 34px;
+      height: 34px
+    }
+
+    .logo-meta strong {
+      display: block;
+      font-size: 1rem;
+      font-weight: 760;
+      letter-spacing: -.03em;
+      margin-bottom: .18rem;
+    }
+
+    .logo-meta span {
+      color: var(--muted);
+      font-size: .92rem
+    }
+
+    .stack-card ul {
+      margin: 1rem 0 0;
+      padding-left: 1rem;
+      color: var(--muted-2);
+      display: grid;
+      gap: .45rem;
+    }
+
+    .stack-card li::marker {
+      color: var(--accent)
+    }
+
+    .case-card {
+      padding: 1.35rem;
+      transition: transform .18s ease, border-color .18s ease, box-shadow .18s ease;
+    }
+
+    .case-card:hover {
+      transform: translateY(-4px);
+      border-color: rgba(108, 227, 208, .22);
+      box-shadow: 0 24px 48px rgba(0, 0, 0, .28)
+    }
+
+    .case-head {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      gap: 1rem;
+      margin-bottom: 1rem;
+    }
+
+    .case-mark {
+      margin-bottom: 0;
+      background: rgba(120, 167, 255, .12);
+      border-color: rgba(120, 167, 255, .18);
+    }
+
+    .case-title {
+      font-size: 1.28rem;
+      margin-bottom: .32rem
+    }
+
+    .case-subtitle {
+      margin: 0;
+      color: var(--muted-2);
+      font-size: .98rem
+    }
+
+    .case-body {
+      display: grid;
+      gap: .9rem
+    }
+
+    .case-block {
+      padding: .95rem 1rem;
+      border-radius: 16px;
+      background: rgba(255, 255, 255, .03);
+      border: 1px solid rgba(255, 255, 255, .06);
+    }
+
+    .case-block small {
+      display: block;
+      margin-bottom: .38rem;
+      color: var(--muted);
+      text-transform: uppercase;
+      letter-spacing: .12em;
+      font-size: .73rem;
+    }
+
+    .case-block p {
+      margin: 0;
+      color: var(--muted-2)
+    }
+
+    .case-footer {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      gap: 1rem;
+      margin-top: 1rem;
+      align-items: center;
+    }
+
+    .project-link {
+      display: inline-flex;
+      align-items: center;
+      gap: .52rem;
+      font-weight: 650;
+    }
+
+    .project-link svg {
+      width: 15px;
+      height: 15px
+    }
+
+    .timeline {
+      position: relative;
+      display: grid;
+      gap: 1rem
+    }
+
+    .timeline-card {
+      padding: 1.25rem 1.25rem 1.25rem 3rem;
+      position: relative;
+      margin-left: .55rem;
+    }
+
+    .timeline-card::after {
+      content: "";
+      position: absolute;
+      left: 1rem;
+      top: 1.32rem;
+      width: 14px;
+      height: 14px;
+      border-radius: 999px;
+      background: var(--accent);
+      box-shadow: 0 0 0 8px rgba(108, 227, 208, .08);
+    }
+
+    .timeline-meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: .6rem 1rem;
+      color: var(--muted-2);
+      font-size: .93rem;
+      margin-bottom: .7rem;
+    }
+
+    .timeline-points {
+      margin: 1rem 0 0;
+      padding: 0;
+      list-style: none;
+      display: grid;
+      gap: .56rem;
+    }
+
+    .timeline-points li {
+      position: relative;
+      padding-left: 1rem;
+      color: var(--muted-2);
+    }
+
+    .timeline-points li::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: .63rem;
+      width: 6px;
+      height: 6px;
+      border-radius: 999px;
+      background: rgba(108, 227, 208, .92);
+    }
+
+    .method-card .flow {
+      display: grid;
+      gap: .8rem;
+      margin-top: 1rem;
+    }
+
+    .flow-step {
+      padding: .95rem 1rem;
+      border-radius: 16px;
+      background: rgba(255, 255, 255, .03);
+      border: 1px solid rgba(255, 255, 255, .06);
+    }
+
+    .flow-step strong {
+      display: block;
+      margin-bottom: .2rem;
+      font-size: 1rem;
+      font-weight: 740;
+      letter-spacing: -.03em;
+    }
+
+    .cert-top {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+      margin-bottom: .9rem;
+    }
+
+    .cert-status {
+      display: inline-flex;
+      align-items: center;
+      gap: .5rem;
+      padding: .42rem .7rem;
+      border-radius: 999px;
+      font-size: .79rem;
+      color: var(--muted-2);
+      background: rgba(255, 255, 255, .04);
+      border: 1px solid rgba(255, 255, 255, .07);
+      text-transform: uppercase;
+      letter-spacing: .1em;
+    }
+
+    .cert-status::before {
+      content: "";
+      width: 7px;
+      height: 7px;
+      border-radius: 999px;
+      background: var(--accent);
+    }
+
+    .cert-card ul {
+      margin: 1rem 0 0;
+      padding-left: 1rem;
+      color: var(--muted-2);
+      display: grid;
+      gap: .45rem;
+    }
+
+    .cert-card li::marker {
+      color: var(--accent)
+    }
+
+    .contact-card a {
+      color: var(--text);
+      font-weight: 650
+    }
+
+    .footer {
+      padding: 1.5rem 0 2.6rem;
+      color: var(--muted);
+      font-size: .95rem;
+    }
+
+    .footer-inner {
+      display: flex;
+      flex-direction: column;
+      gap: .5rem;
+      padding-top: 1rem;
+      border-top: 1px solid rgba(255, 255, 255, .06);
+    }
+
+    .reveal {
+      opacity: 0;
+      transform: translateY(28px);
+      transition: opacity .72s ease, transform .72s ease;
+      will-change: opacity, transform;
+    }
+
+    .reveal.is-visible {
+      opacity: 1;
+      transform: translateY(0)
+    }
+
+    @media (min-width:720px) {
+
+      .grid-2,
+      .split-layout,
+      .stack-layout,
+      .contact-grid,
+      .method-grid,
+      .cert-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr))
+      }
+
+      .grid-3,
+      .logo-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr))
+      }
+
+      .grid-4 {
+        grid-template-columns: repeat(2, minmax(0, 1fr))
+      }
+
+      .case-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr))
+      }
+
+      .headline-row {
+        grid-template-columns: 1fr auto
+      }
+    }
+
+    @media (min-width:960px) {
+      .nav-links {
+        display: flex
+      }
+
+      .menu-toggle,
+      .mobile-panel {
+        display: none !important
+      }
+
+      .hero-grid {
+        grid-template-columns: 1.16fr .84fr
+      }
+
+      .grid-4 {
+        grid-template-columns: repeat(4, minmax(0, 1fr))
+      }
+
+      .grid-3 {
+        grid-template-columns: repeat(3, minmax(0, 1fr))
+      }
+
+      .logo-grid {
+        grid-template-columns: repeat(4, minmax(0, 1fr))
+      }
+
+      .split-layout {
+        grid-template-columns: 1.08fr .92fr
+      }
+
+      .stack-layout {
+        grid-template-columns: repeat(4, minmax(0, 1fr))
+      }
+
+      .method-grid {
+        grid-template-columns: 1.1fr .9fr
+      }
+
+      .contact-grid {
+        grid-template-columns: 1.15fr .85fr
+      }
+
+      .cert-grid {
+        grid-template-columns: repeat(4, minmax(0, 1fr))
+      }
+    }
+
+    @media (max-width:719px) {
+      .hero-title {
+        max-width: 12ch
+      }
+
+      .hero-proof {
+        grid-template-columns: 1fr
+      }
+
+      .case-footer {
+        align-items: flex-start
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <header class="site-header" id="siteHeader">
+    <div class="container nav">
+      <a class="brand" href="#top" aria-label="Ir para o topo">
+        <span class="brand-mark">JS</span>
+        <span>
+          <p class="brand-title">Jessé Silva</p>
+        </span>
+      </a>
+
+      <ul class="nav-links" aria-label="Navegação principal">
+        <li><a href="#sobre">Sobre</a></li>
+        <li><a href="#problemas">Valor</a></li>
+        <li><a href="#tecnologias">Tecnologias</a></li>
+        <li><a href="#projetos">Projetos</a></li>
+        <li><a href="#experiencia">Experiência</a></li>
+        <li><a href="#formacao">Formações</a></li>
+        <li><a href="#certificacoes">Certificações</a></li>
+        <li><a href="#contato">Contato</a></li>
+      </ul>
+
+      <div class="nav-actions">
+        <a class="nav-cta" href="https://www.linkedin.com/in/jesse-silva/" target="_blank" rel="noreferrer">LinkedIn</a>
+        <button class="menu-toggle" id="menuToggle" type="button" aria-expanded="false" aria-controls="mobilePanel"
+          aria-label="Abrir menu">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round">
+            <path d="M4 7h16M4 12h16M4 17h16" />
+          </svg>
+        </button>
+      </div>
+    </div>
+    <div class="container mobile-panel" id="mobilePanel">
+      <nav class="mobile-menu" aria-label="Navegação móvel">
+        <a href="#sobre">Sobre</a>
+        <a href="#problemas">Valor</a>
+        <a href="#tecnologias">Tecnologias</a>
+        <a href="#projetos">Projetos</a>
+        <a href="#experiencia">Experiência</a>
+        <a href="#certificacoes">Certificações</a>
+        <a href="#contato">Contato</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="top">
+    <section class="section">
+      <div class="container hero-grid">
+        <div class="reveal">
+          <h1 class="hero-title">
+            Engenharia, <span class="accent">dados</span> e decisão aplicados ao negócio digital.
+          </h1>
+
+          <div class="hero-actions">
+            <a class="button" href="#projetos">Ver estudos de caso</a>
+            <a class="button-secondary" href="https://www.linkedin.com/in/jesse-silva/" target="_blank"
+              rel="noreferrer">LinkedIn</a>
+            <a class="button-secondary" href="https://github.com/jesse-dsa" target="_blank" rel="noreferrer">GitHub</a>
+            <a class="button-secondary" href="mailto:jesse.net19@gmail.com">Contato</a>
+          </div>
+
+          <div class="hero-proof">
+            <div class="proof-mini">
+              <strong>13 anos em software</strong>
+              <span>Base construída em produto digital, arquitetura de soluções, e-commerce e execução
+                operacional.</span>
+            </div>
+            <div class="proof-mini">
+              <strong>MBA USP/ESALQ</strong>
+              <span>Data Science &amp; Analytics aplicado à leitura de negócio e arquitetura de dados.</span>
+            </div>
+            <div class="proof-mini">
+              <strong>VTEX, OMS e varejo digital</strong>
+              <span>Leitura prática de jornada, catálogo, performance, logística e operação omnichannel.</span>
+            </div>
+            <div class="proof-mini">
+              <strong>Stack de evolução clara</strong>
+              <span>Python, SQL, PySpark, Databricks, Delta Lake, BI, dbt e engenharia analítica.</span>
+            </div>
+          </div>
+        </div>
+
+        <aside class="hero-panel reveal" aria-label="Resumo executivo do posicionamento">
+          <div class="panel-heading">
+            <h2>Resumo executivo</h2>
+            <span class="signal">Posicionamento consultivo</span>
+          </div>
+
+          <div class="panel-list">
+            <article class="panel-item">
+              <small>Posicionamento</small>
+              <strong>Engenharia, arquitetura analítica e operação digital em contexto de negócio</strong>
+              <p>Atuo na interseção entre software, dados e comércio digital, estruturando problemas complexos com mais
+                clareza operacional, confiabilidade analítica e capacidade de decisão.</p>
+            </article>
+
+            <article class="panel-item">
+              <small>Tipo de cenário em que gero valor</small>
+              <strong>Ambientes em que a operação cresce mais rápido do que a leitura do que acontece</strong>
+              <p>Meu trabalho ganha força quando há fragmentação entre canais, baixa visibilidade sobre performance,
+                dificuldade de priorização e dado disponível, mas ainda pouco útil para orientar gestão, produto e
+                operação.</p>
+            </article>
+
+            <article class="panel-item">
+              <small>Forma de contribuição</small>
+              <strong>Estruturas que tornam o dado mais confiável, legível e acionável</strong>
+              <p>Desenho e organizo ativos como datalayer, pipelines, camadas analíticas, indicadores e leituras
+                aplicadas ao dia a dia, conectando execução técnica, contexto comercial e valor para o negócio.</p>
+            </article>
+          </div>
+        </aside>
+      </div>
+    </section>
+
+    <section class="section" aria-label="Pilares do posicionamento">
+      <div class="container grid-4">
+        <article class="card value-card reveal">
+          <strong>Arquitetura</strong>
+          <span>Modelagem, camadas analíticas e fluxos de dados desenhados para dar estrutura, rastreabilidade e
+            confiança ao consumo da informação.</span>
+        </article>
+        <article class="card value-card reveal">
+          <strong>Operação</strong>
+          <span>Leitura aplicada de OMS, catálogo, jornada digital, logística e performance em contextos reais de
+            comércio e operação digital.</span>
+        </article>
+        <article class="card value-card reveal">
+          <strong>Negócio</strong>
+          <span>Dados e arquitetura colocados a serviço da priorização, da clareza gerencial, da eficiência operacional
+            e da geração de valor.</span>
+        </article>
+        <article class="card value-card reveal">
+          <strong>Execução</strong>
+          <span>Capacidade de transformar problemas difusos em estruturas utilizáveis de trabalho, com entregas que
+            conectam contexto técnico e decisão.</span>
+        </article>
+      </div>
+    </section>
+
+    <section class="section" id="sobre">
+      <div class="container split-layout">
+        <div class="about-main reveal">
+          <span class="eyebrow">Sobre</span>
+          <br>
+          <div style="display:flex; justify-content:center; margin-bottom:18px;">
+            <img src="images/jesse-profile.jpg" alt="Retrato profissional de Jessé Silva" style="
+
+            height: 180px;
+            border-radius: 50%;
+            object-fit: cover;
+            object-position: center 18%;
+            display: block;
+            border: 3px solid rgba(255,255,255,0.08);
+            box-shadow: 0 18px 40px rgba(0,0,0,0.35), 0 0 0 10px rgba(92,230,201,0.06);
+          " />
+          </div>
+          <p>
+            Minha base foi construída em engenharia de software, produto digital e operação de e-commerce. Foi nesse
+            ambiente que aprendi, na prática, que tecnologia não serve só para colocar funcionalidade no ar. Ela precisa
+            sustentar operação, responder a pressões reais do negócio e fazer sentido dentro de uma estrutura que
+            envolve
+            plataforma, jornada, performance, time e decisão.
+          </p>
+          <p>
+            Com o tempo, meu olhar foi ficando cada vez mais voltado para o dado e para a arquitetura da informação por
+            trás da operação. Passei a me interessar não apenas pelo que estava sendo entregue, mas pela forma como os
+            dados eram capturados, organizados, lidos e transformados em algo realmente útil para gestão e evolução do
+            negócio. Foi aí que minha atuação começou a ganhar um contorno mais claro: consigo transitar entre software,
+            operação e análise sem perder de vista o contexto comercial.
+          </p>
+          <p>
+            Hoje me posiciono em arquitetura analítica, engenharia de dados e business intelligence aplicados ao
+            comércio
+            digital. Gosto de trabalhar em contextos em que existe complexidade real, porque é justamente aí que consigo
+            gerar mais valor: organizando estrutura, dando clareza ao dado e aproximando tecnologia, operação e decisão
+            de uma forma mais útil, confiável e orientada ao que o negócio precisa de fato enxergar.
+          </p>
+        </div>
+
+        <aside class="about-side reveal">
+          <h3>O que sustenta minha atuação</h3>
+          <p>
+            Mais do que stack, o que dá consistência ao meu perfil é a combinação entre repertório técnico, experiência
+            em
+            e-commerce e capacidade de transformar dor operacional em estrutura analítica, leitura de contexto e apoio à
+            decisão.
+          </p>
+
+          <div class="stat-line">
+            <span class="stat-dot"></span>
+            <span>Internalização de operação digital em Chile e Colômbia com leitura prática de contexto ASICS
+              LATAM.</span>
+          </div>
+          <div class="stat-line">
+            <span class="stat-dot"></span>
+            <span>Implementação de totem em lojas físicas, conectando jornada digital e experiência omnichannel.</span>
+          </div>
+          <div class="stat-line">
+            <span class="stat-dot"></span>
+            <span>Estruturação de datalayer, redesign de interface e melhoria de UX com impacto em tracking e leitura de
+              comportamento.</span>
+          </div>
+          <div class="stat-line">
+            <span class="stat-dot"></span>
+            <span>Configuração de Jira, Confluence e Bitbucket, com apoio à organização de framework ágil, documentação
+              e fluxo de trabalho.</span>
+          </div>
+
+          <div class="tag-group">
+            <span class="tag">Arquitetura analítica</span>
+            <span class="tag">Engenharia de dados</span>
+            <span class="tag">Business intelligence</span>
+            <span class="tag">Dados para e-commerce</span>
+            <span class="tag">Produto digital</span>
+            <span class="tag">Inteligência operacional</span>
+          </div>
+        </aside>
+      </div>
+    </section>
+
+    <section class="section" id="problemas">
+      <div class="container">
+        <span class="eyebrow reveal">Valor entregue</span>
+        <div class="grid-4" style="margin-top:2rem">
+          <article class="problem-card card reveal">
+            <span class="problem-index">01</span>
+            <h3>Confiabilidade do dado</h3>
+            <p>Reduzo distância entre origem, tratamento e consumo analítico, organizando o caminho da informação para
+              que ela sustente leitura gerencial com mais confiança.</p>
+          </article>
+          <article class="problem-card card reveal">
+            <span class="problem-index">02</span>
+            <h3>Leitura de performance operacional</h3>
+            <p>Transformo eventos de pedido, catálogo, pagamento e logística em sinais úteis para priorização,
+              acompanhamento e melhoria do fluxo operacional.</p>
+          </article>
+          <article class="problem-card card reveal">
+            <span class="problem-index">03</span>
+            <h3>Arquitetura para consumo analítico</h3>
+            <p>Estruturo camadas, métricas e modelos para que o dado deixe de ser apenas registro histórico e passe a
+              apoiar investigação, governança e decisão.</p>
+          </article>
+          <article class="problem-card card reveal">
+            <span class="problem-index">04</span>
+            <h3>Conexão entre técnica e negócio</h3>
+            <p>Faço a tradução entre engenharia, operação e gestão, diminuindo ruído de comunicação e aumentando a
+              utilidade prática do que é construído.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="tecnologias">
+      <div class="container">
+        <span class="eyebrow reveal">Tecnologias em prática</span>
+
+        <br>
+
+        <div class="logo-grid" style="margin-top:2rem">
+          <article class="logo-card reveal">
+            <div class="logo-badge" aria-hidden="true">
+              <svg viewBox="0 0 48 48" fill="none">
+                <rect x="6" y="6" width="36" height="36" rx="12" fill="#3776AB" />
+                <path
+                  d="M24 12c-7 0-6 3-6 3v4h12v2H13s-5-.1-5 7c0 7.1 4.4 6.9 4.4 6.9h2.6v-3.8s-.1-4.4 4.3-4.4H31s6.6.1 6.6-6.4v-5.3S38.6 12 31 12H24Zm-6.2 3.7a1.7 1.7 0 1 1 0 3.4 1.7 1.7 0 0 1 0-3.4Z"
+                  fill="#fff" />
+                <path
+                  d="M24 36c7 0 6-3 6-3v-4H18v-2h17s5 .1 5-7c0-7.1-4.4-6.9-4.4-6.9H33v3.8s.1 4.4-4.3 4.4H17s-6.6-.1-6.6 6.4V33S9.4 36 17 36h7Zm6.2-3.7a1.7 1.7 0 1 1 0-3.4 1.7 1.7 0 0 1 0 3.4Z"
+                  fill="#FFD43B" />
+              </svg>
+            </div>
+            <div class="logo-meta">
+              <strong>Python</strong>
+              <span>Base para engenharia de dados, automação, APIs e análise.</span>
+            </div>
+          </article>
+
+          <article class="logo-card reveal">
+            <div class="logo-badge" aria-hidden="true">
+              <svg viewBox="0 0 48 48" fill="none">
+                <ellipse cx="24" cy="10.5" rx="12" ry="5.5" fill="#78A7FF" />
+                <path d="M12 10.5v9c0 3 5.4 5.5 12 5.5s12-2.5 12-5.5v-9" stroke="#78A7FF" stroke-width="3" />
+                <path d="M12 19.5v9c0 3 5.4 5.5 12 5.5s12-2.5 12-5.5v-9" stroke="#78A7FF" stroke-width="3"
+                  opacity=".8" />
+                <path d="M12 28.5v9c0 3 5.4 5.5 12 5.5s12-2.5 12-5.5v-9" stroke="#78A7FF" stroke-width="3"
+                  opacity=".65" />
+              </svg>
+            </div>
+            <div class="logo-meta">
+              <strong>SQL</strong>
+              <span>Consulta, modelagem e raciocínio estruturado sobre dados.</span>
+            </div>
+          </article>
+
+          <article class="logo-card reveal">
+            <div class="logo-badge" aria-hidden="true">
+              <svg viewBox="0 0 48 48" fill="none">
+                <path d="M12 32 24 10l12 22H12Z" fill="#00ADD8" opacity=".95" />
+                <path d="M18 32 24 21l6 11H18Z" fill="#fff" opacity=".9" />
+                <path d="M10 36h28" stroke="#00ADD8" stroke-width="3" stroke-linecap="round" />
+              </svg>
+            </div>
+            <div class="logo-meta">
+              <strong>PySpark</strong>
+              <span>Processamento distribuído e transformação de dados em escala.</span>
+            </div>
+          </article>
+
+          <article class="logo-card reveal">
+            <div class="logo-badge" aria-hidden="true">
+              <svg viewBox="0 0 48 48" fill="none">
+                <path d="m11 31 13-7 13 7-13 7-13-7Z" fill="#FF3621" />
+                <path d="m11 17 13-7 13 7-13 7-13-7Z" fill="#FF3621" opacity=".82" />
+                <path d="m11 24 13-7 13 7-13 7-13-7Z" fill="#FF3621" opacity=".56" />
+              </svg>
+            </div>
+            <div class="logo-meta">
+              <strong>Databricks</strong>
+              <span>Lakehouse, notebooks, Spark e arquitetura medalhão.</span>
+            </div>
+          </article>
+
+          <article class="logo-card reveal">
+            <div class="logo-badge" aria-hidden="true">
+              <svg viewBox="0 0 48 48" fill="none">
+                <path
+                  d="M24 10c2 0 4 5 4 8 0 2 2 4 4 4 3 0 8 2 8 4s-5 4-8 4c-2 0-4 2-4 4 0 3-2 8-4 8s-4-5-4-8c0-2-2-4-4-4-3 0-8-2-8-4s5-4 8-4c2 0 4-2 4-4 0-3 2-8 4-8Z"
+                  stroke="#017CEE" stroke-width="3" fill="none" />
+                <circle cx="24" cy="26" r="4.5" fill="#017CEE" />
+              </svg>
+            </div>
+            <div class="logo-meta">
+              <strong>Airflow</strong>
+              <span>Orquestração de pipelines, automação e fluxo operacional.</span>
+            </div>
+          </article>
+
+          <article class="logo-card reveal">
+            <div class="logo-badge" aria-hidden="true">
+              <svg viewBox="0 0 48 48" fill="none">
+                <path
+                  d="M10 12h10.5c4.2 0 7 2.7 7 6.2s-2.8 6.3-7 6.3H10V12Zm0 12h11.8c4.8 0 8.2 2.9 8.2 6.8S26.6 38 21.8 38H10V24Z"
+                  fill="#FF694B" />
+                <path d="M30 14h8v24h-8z" fill="#FF694B" opacity=".78" />
+              </svg>
+            </div>
+            <div class="logo-meta">
+              <strong>dbt</strong>
+              <span>Analytics engineering, testes, modelos e camadas de consumo.</span>
+            </div>
+          </article>
+
+          <article class="logo-card reveal">
+            <div class="logo-badge" aria-hidden="true">
+              <svg viewBox="0 0 48 48" fill="none">
+                <path d="M12 30c0-8 7-14 15-14 5.3 0 10 2.4 12.8 6.7" stroke="#00C8C8" stroke-width="3.2"
+                  stroke-linecap="round" />
+                <path d="M10 35c2.8 2.3 6.4 3.6 10.3 3.6 9.5 0 17.2-7.7 17.2-17.1" stroke="#8A7CF7" stroke-width="3.2"
+                  stroke-linecap="round" />
+                <path d="M17 20c5.2 0 9.5 4.2 9.5 9.4" stroke="#5BD6FF" stroke-width="3.2" stroke-linecap="round" />
+              </svg>
+            </div>
+            <div class="logo-meta">
+              <strong>Delta Lake</strong>
+              <span>Camadas confiáveis, versionamento e consistência para lakehouse.</span>
+            </div>
+          </article>
+
+          <article class="logo-card reveal">
+            <div class="logo-badge" aria-hidden="true">
+              <svg viewBox="0 0 48 48" fill="none">
+                <path
+                  d="M11 31c0-2 1.6-3.5 3.5-3.5H17V37h-2.5A3.5 3.5 0 0 1 11 33.5V31Zm8-6.5h4V37h-4V24.5Zm6-6.5h4V37h-4V18Zm6-4h4V37h-4V14Z"
+                  fill="#F2C811" />
+              </svg>
+            </div>
+            <div class="logo-meta">
+              <strong>Power BI</strong>
+              <span>Visualização executiva, indicadores e leitura orientada à decisão.</span>
+            </div>
+          </article>
+
+          <article class="logo-card reveal">
+            <div class="logo-badge" aria-hidden="true">
+              <svg viewBox="0 0 48 48" fill="none">
+                <path d="M8 33 18.5 11h8.3L16.3 33H8Zm12 0 9.7-16.7L40 33H20Z" fill="#0078D4" />
+              </svg>
+            </div>
+            <div class="logo-meta">
+              <strong>Azure</strong>
+              <span>Frente estratégica de cloud para evolução de dados em ambiente corporativo.</span>
+            </div>
+          </article>
+
+          <article class="logo-card reveal">
+            <div class="logo-badge" aria-hidden="true">
+              <svg viewBox="0 0 48 48" fill="none">
+                <path d="M8 29h8v7H8zM18 29h8v7h-8zM28 29h8v7h-8zM18 20h8v7h-8zM28 20h8v7h-8zM28 11h8v7h-8z"
+                  fill="#2496ED" />
+                <path d="M6 35h36" stroke="#2496ED" stroke-width="3" stroke-linecap="round" />
+              </svg>
+            </div>
+            <div class="logo-meta">
+              <strong>Docker</strong>
+              <span>Empacotamento de ambientes, reprodutibilidade e fluxo local de desenvolvimento.</span>
+            </div>
+          </article>
+
+          <article class="logo-card reveal">
+            <div class="logo-badge" aria-hidden="true">
+              <svg viewBox="0 0 48 48" fill="none">
+                <path
+                  d="M24 8a16 16 0 0 0-5 31.2c.8.1 1.1-.3 1.1-.8v-2.9c-4.5 1-5.4-1.8-5.4-1.8-.7-1.8-1.8-2.3-1.8-2.3-1.5-1 .1-1 .1-1 1.7.1 2.7 1.8 2.7 1.8 1.5 2.6 4 1.9 5 1.4.2-1.1.6-1.9 1.1-2.4-3.6-.4-7.4-1.8-7.4-8 0-1.8.7-3.3 1.8-4.4-.2-.4-.8-2.1.2-4.4 0 0 1.5-.5 4.7 1.7a16 16 0 0 1 8.6 0c3.2-2.2 4.7-1.7 4.7-1.7 1 2.3.4 4 .2 4.4 1.1 1.1 1.8 2.6 1.8 4.4 0 6.2-3.8 7.6-7.4 8 .6.5 1.2 1.5 1.2 3.1v4.6c0 .5.3.9 1.1.8A16 16 0 0 0 24 8Z"
+                  fill="#fff" />
+              </svg>
+            </div>
+            <div class="logo-meta">
+              <strong>GitHub</strong>
+              <span>Versionamento, portfólio técnico, fluxo de projeto e automação com CI.</span>
+            </div>
+          </article>
+
+          <article class="logo-card reveal">
+            <div class="logo-badge" aria-hidden="true">
+              <svg viewBox="0 0 48 48" fill="none">
+                <path d="M10 16 24 10l14 6-14 6-14-6Zm0 8 14 6 14-6M10 32l14 6 14-6" stroke="#F05A22" stroke-width="3"
+                  stroke-linecap="round" stroke-linejoin="round" />
+              </svg>
+            </div>
+            <div class="logo-meta">
+              <strong>VTEX / OMS</strong>
+              <span>E-commerce, pedidos, catálogo, operação omnichannel e contexto de negócio digital.</span>
+            </div>
+          </article>
+        </div>
+
+        <div class="stack-layout" style="margin-top:1.4rem">
+          <article class="stack-card reveal">
+            <h3>Engenharia e dados</h3>
+            <p>Camada que sustenta ingestão, transformação, modelagem e governança.</p>
+            <ul>
+              <li>Python, SQL e PySpark</li>
+              <li>ETL / ELT e arquitetura medalhão</li>
+              <li>Modelagem analítica e rastreabilidade</li>
+              <li>Databricks, Delta Lake e dbt</li>
+            </ul>
+          </article>
+
+          <article class="stack-card reveal">
+            <h3>Analytics e BI</h3>
+            <p>Leitura de performance e estruturação de indicadores com contexto operacional.</p>
+            <ul>
+              <li>Power BI e consumo executivo</li>
+              <li>Exploração analítica e hipóteses</li>
+              <li>KPIs, métricas e interpretação de jornada</li>
+              <li>Análise aplicada a e-commerce</li>
+            </ul>
+          </article>
+
+          <article class="stack-card reveal">
+            <h3>Cloud e infraestrutura</h3>
+            <p>Base para ambientes reproduzíveis, automação e evolução técnica consistente.</p>
+            <ul>
+              <li>Docker e ambientes containerizados</li>
+              <li>Airflow para orquestração</li>
+              <li>GitHub Actions e fluxo de CI</li>
+              <li>Frentes estratégicas em Azure</li>
+            </ul>
+          </article>
+
+          <article class="stack-card reveal">
+            <h3>Produto e operação</h3>
+            <p>Camada em que tecnologia conversa diretamente com o dia a dia do negócio.</p>
+            <ul>
+              <li>VTEX, OMS e comércio digital</li>
+              <li>Datalayer, jornada e UX</li>
+              <li>Jira, Confluence e Bitbucket</li>
+              <li>Integração entre áreas técnicas e negócio</li>
+            </ul>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="projetos">
+      <div class="container">
+        <span class="eyebrow reveal">Projetos em destaque</span>
+
+        <div class="case-grid" style="margin-top:2rem">
+          <article class="case-card reveal">
+            <div class="case-head">
+              <div>
+                <h3 class="case-title">OmniDataLab</h3>
+                <p class="case-subtitle">Laboratório aberto de arquitetura de dados para e-commerce omnichannel com
+                  forte integração VTEX.</p>
+              </div>
+              <span class="case-mark">OD</span>
+            </div>
+            <div class="case-body">
+              <div class="case-block">
+                <small>Contexto</small>
+                <p>Projeto criado para organizar uma arquitetura robusta de extração, transformação, auditoria e análise
+                  preditiva em ambientes digitais complexos.</p>
+              </div>
+              <div class="case-block">
+                <small>Solução</small>
+                <p>Combina pipelines modernos, integração com APIs VTEX, governança contínua e espaço para evolução em
+                  machine learning, engenharia e otimização operacional.</p>
+              </div>
+              <div class="case-block">
+                <small>Arquitetura demonstrada</small>
+                <p>Estrutura real de repositório com <strong>config</strong>, <strong>src</strong>,
+                  <strong>tests/integration</strong>, Dockerfile, docker-compose, pyproject, workflows e integração com
+                  PostgreSQL e Airflow.
+                </p>
+              </div>
+              <div class="case-block">
+                <small>Leitura de valor</small>
+                <p>Demonstra visão de plataforma de dados orientada a confiabilidade, automação e capacidade de escalar
+                  ativos analíticos para operação de e-commerce.</p>
+              </div>
+            </div>
+            <div class="case-footer">
+              <div class="tag-group" style="margin-top:0">
+                <span class="tag">Python</span>
+                <span class="tag">APIs VTEX</span>
+                <span class="tag">PostgreSQL</span>
+                <span class="tag">Airflow</span>
+                <span class="tag">Docker</span>
+                <span class="tag">Terraform</span>
+              </div>
+              <a class="project-link" href="https://github.com/jesse-dsa/OmniDataLab" target="_blank" rel="noreferrer">
+                Ver repositório
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"
+                  stroke-linejoin="round">
+                  <path d="M7 17 17 7" />
+                  <path d="M8 7h9v9" />
+                </svg>
+              </a>
+            </div>
+          </article>
+
+          <article class="case-card reveal">
+            <div class="case-head">
+              <div>
+                <h3 class="case-title">data-driven-ecommerce</h3>
+                <p class="case-subtitle">Machine learning aplicado ao e-commerce para otimização de conversão e análise
+                  preditiva.</p>
+              </div>
+              <span class="case-mark">DE</span>
+            </div>
+            <div class="case-body">
+              <div class="case-block">
+                <small>Contexto</small>
+                <p>Parte da premissa de que operações digitais possuem muitos dados, mas nem sempre conseguem
+                  transformá-los em leitura útil sobre comportamento, decisão comercial e performance.</p>
+              </div>
+              <div class="case-block">
+                <small>Solução</small>
+                <p>Cria um ativo técnico centrado no uso de machine learning para apoiar perguntas relevantes do
+                  comércio eletrônico, especialmente ligadas a conversão e análise preditiva.</p>
+              </div>
+              <div class="case-block">
+                <small>Arquitetura demonstrada</small>
+                <p>Repositório focado, enxuto e com direção clara de propósito, orientado a raciocínio analítico
+                  aplicado ao negócio digital.</p>
+              </div>
+              <div class="case-block">
+                <small>Leitura de valor</small>
+                <p>Revela uma preocupação consistente em usar dados para responder dores de mercado, e não apenas para
+                  produzir artefatos técnicos desconectados do uso final.</p>
+              </div>
+            </div>
+            <div class="case-footer">
+              <div class="tag-group" style="margin-top:0">
+                <span class="tag">Machine learning</span>
+                <span class="tag">E-commerce</span>
+                <span class="tag">Conversão</span>
+                <span class="tag">Analytics</span>
+              </div>
+              <a class="project-link" href="https://github.com/jesse-dsa/data-driven-ecommerce" target="_blank"
+                rel="noreferrer">
+                Ver repositório
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"
+                  stroke-linejoin="round">
+                  <path d="M7 17 17 7" />
+                  <path d="M8 7h9v9" />
+                </svg>
+              </a>
+            </div>
+          </article>
+
+          <article class="case-card reveal">
+            <div class="case-head">
+              <div>
+                <h3 class="case-title">oms-dbt-cloud</h3>
+                <p class="case-subtitle">Estrutura de analytics engineering voltada à modelagem com dbt em contexto
+                  OMS/cloud.</p>
+              </div>
+              <span class="case-mark">dbt</span>
+            </div>
+            <div class="case-body">
+              <div class="case-block">
+                <small>Contexto</small>
+                <p>Projeto organizado a partir da estrutura clássica de um ambiente dbt, com macros, models, seeds,
+                  snapshots, tests e dbt_project.yml.</p>
+              </div>
+              <div class="case-block">
+                <small>Solução</small>
+                <p>Serve como base para evolução de modelagem analítica governada, padronização de transformações e
+                  testes sobre dados de operação.</p>
+              </div>
+              <div class="case-block">
+                <small>Arquitetura demonstrada</small>
+                <p>Mostra familiaridade com a disciplina de analytics engineering e com a separação entre camada bruta,
+                  transformação controlada e consumo confiável.</p>
+              </div>
+              <div class="case-block">
+                <small>Leitura de valor</small>
+                <p>É um tipo de ativo importante para consolidar governança e tornar o dado mais consistente para
+                  dashboards, análises e produtos internos.</p>
+              </div>
+            </div>
+            <div class="case-footer">
+              <div class="tag-group" style="margin-top:0">
+                <span class="tag">dbt</span>
+                <span class="tag">Models</span>
+                <span class="tag">Tests</span>
+                <span class="tag">Snapshots</span>
+              </div>
+              <a class="project-link" href="https://github.com/jesse-dsa/oms-dbt-cloud" target="_blank"
+                rel="noreferrer">
+                Ver repositório
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"
+                  stroke-linejoin="round">
+                  <path d="M7 17 17 7" />
+                  <path d="M8 7h9v9" />
+                </svg>
+              </a>
+            </div>
+          </article>
+
+          <article class="case-card reveal">
+            <div class="case-head">
+              <div>
+                <h3 class="case-title">bitcoin-mining-analytics</h3>
+                <p class="case-subtitle">Projeto analítico com aplicação Python e camada web voltado a monitoramento e
+                  interpretação operacional.</p>
+              </div>
+              <span class="case-mark">BM</span>
+            </div>
+            <div class="case-body">
+              <div class="case-block">
+                <small>Contexto</small>
+                <p>Repositório com estrutura mais aplicada, incluindo <strong>app</strong>, <strong>web_app</strong>,
+                  <strong>openapi</strong>, configuração de deploy e organização de dados compartilhados.
+                </p>
+              </div>
+              <div class="case-block">
+                <small>Solução</small>
+                <p>Combina camada analítica e interface operacional, ampliando a leitura de dados para um formato mais
+                  acionável e próximo do uso cotidiano.</p>
+              </div>
+              <div class="case-block">
+                <small>Arquitetura demonstrada</small>
+                <p>Mostra preocupação com produto, API, deploy e disponibilização prática do resultado analítico, e não
+                  apenas com script isolado.</p>
+              </div>
+              <div class="case-block">
+                <small>Leitura de valor</small>
+                <p>Reforça a capacidade de pensar o dado como sistema utilizável, com backend, interface e fluxo de
+                  disponibilização da informação.</p>
+              </div>
+            </div>
+            <div class="case-footer">
+              <div class="tag-group" style="margin-top:0">
+                <span class="tag">Python</span>
+                <span class="tag">Web app</span>
+                <span class="tag">API</span>
+                <span class="tag">Analytics</span>
+              </div>
+              <a class="project-link" href="https://github.com/jesse-dsa/bitcoin-mining-analytics" target="_blank"
+                rel="noreferrer">
+                Ver repositório
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"
+                  stroke-linejoin="round">
+                  <path d="M7 17 17 7" />
+                  <path d="M8 7h9v9" />
+                </svg>
+              </a>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container method-grid">
+        <article class="method-card reveal">
+          <span class="eyebrow">Método de trabalho</span>
+          <p>Meu raciocínio geralmente começa na dor operacional e termina em uma estrutura que permita ver, interpretar
+            e agir melhor.</p>
+          <div class="flow">
+            <div class="flow-step">
+              <strong>1. Diagnóstico da dor</strong>
+              Pergunta de negócio, atrito operacional, hipótese de valor e decisão que precisa ser sustentada.
+            </div>
+            <div class="flow-step">
+              <strong>2. Mapeamento do dado</strong>
+              Origem, granularidade, entidades, eventos, lacunas de captura e confiabilidade do fluxo.
+            </div>
+            <div class="flow-step">
+              <strong>3. Arquitetura de consumo</strong>
+              Camadas de transformação, modelo analítico, indicadores e desenho de uso por times.
+            </div>
+            <div class="flow-step">
+              <strong>4. Leitura aplicada</strong>
+              Interpretação, governança, visibilidade gerencial e capacidade de priorização com mais precisão.
+            </div>
+          </div>
+        </article>
+
+        <article class="method-card reveal">
+          <span class="eyebrow">Diferenciais</span>
+          <div class="grid-2" style="grid-template-columns:1fr; margin-top:1rem">
+            <div class="problem-card card" style="padding:1rem">
+              <h3>Leio o problema além da ferramenta</h3>
+              <p>Minha preocupação principal é o contexto em que o dado será usado e a decisão que ele precisa
+                sustentar.</p>
+            </div>
+            <div class="problem-card card" style="padding:1rem">
+              <h3>Conecto arquitetura e operação</h3>
+              <p>Tenho familiaridade com sistemas, jornada digital, times de negócio e a realidade do comércio
+                eletrônico.</p>
+            </div>
+            <div class="problem-card card" style="padding:1rem">
+              <h3>Transformo projeto em argumento de mercado</h3>
+              <p>Procuro construir ativos que demonstrem raciocínio, método, clareza e maturidade de execução.</p>
+            </div>
+            <div class="problem-card card" style="padding:1rem">
+              <h3>Penso dados como estrutura de decisão</h3>
+              <p>O objetivo final não é apenas reportar números, mas aumentar discernimento, governança e confiança para
+                agir.</p>
+            </div>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="section" id="experiencia">
+      <div class="container">
+        <span class="eyebrow reveal">Experiência profissional</span>
+
+        <div class="timeline" style="margin-top:2rem">
+          <article class="timeline-card reveal">
+            <h3>Global System • Especialista em Engenheiria de software</h3>
+            <div class="timeline-meta">
+              <span>ASICS</span>
+              <span>E-commerce</span>
+              <span>Operação LATAM</span>
+            </div>
+            <p>
+              Atuação em iniciativas estruturantes da operação digital da ASICS na América Latina, conectando
+              tecnologia,
+              experiência, plataforma e negócio em um contexto de expansão regional, evolução da jornada digital e maior
+              maturidade operacional.
+            </p>
+            <ul class="timeline-points">
+              <li>Condução da internalização de operações digitais da ASICS no Chile e na Colômbia, ampliando autonomia
+                operacional e integração regional.</li>
+              <li>Implementação de totem em lojas físicas para aproximar jornada digital e experiência presencial,
+                fortalecendo a convergência entre canais.</li>
+              <li>Estruturação do datalayer do site como base para leitura de comportamento, rastreabilidade de eventos
+                e amadurecimento analítico.</li>
+              <li>Redesign de interface e melhorias de UX com foco em navegação, consistência da experiência e
+                eficiência da jornada de conversão.</li>
+              <li>Configuração do ecossistema Jira, Confluence e Bitbucket, apoiando governança operacional, colaboração
+                entre times e consolidação do framework ágil.</li>
+            </ul>
+          </article>
+          <article class="timeline-card reveal">
+            <h3>M3, Cadastra Company • Especialista em Engenheiria de software</h3>
+            <div class="timeline-meta">
+              <span>OXXO • Éxito</span>
+            </div>
+            <p>
+              Atuação no desenvolvimento, manutenção e evolução de lojas virtuais em diferentes contextos de operação
+              digital,
+              com entregas voltadas a ambientes B2C, B2B e B2E. O trabalho envolveu construção de interfaces,
+              sustentação
+              técnica, testes, escalabilidade e organização de arquiteturas mais consistentes para operações de varejo
+              digital.
+            </p>
+            <ul class="timeline-points">
+              <li>Responsável pelo desenvolvimento, manutenção e teste de lojas virtuais para marcas como OXXO e Éxito,
+                em contextos de comércio digital com diferentes regras de negócio e jornada.</li>
+              <li>Atuação em projetos com modelos B2C, B2B e B2E, ampliando repertório em estruturas de navegação,
+                catálogos, experiência e operação de loja.</li>
+              <li>Uso de React, Node.js, JavaScript ES6, HTML, CSS, SASS e ecossistema VTEX, incluindo VTEX IO, VTEX CMS
+                legado e VTEX FastStore.</li>
+              <li>Participação em rotinas de desenvolvimento orientadas por Scrum, com uso de Jira, Trello, Asana e
+                Monday para gestão ágil e acompanhamento de entregas.</li>
+              <li>Adoção de práticas de CI, CD e TDD para promover maior confiabilidade técnica, fluidez de publicação e
+                qualidade de software.</li>
+              <li>Contribuição para o desenho e a implementação de arquiteturas escaláveis, com foco em eficiência,
+                manutenibilidade e evolução sustentável dos projetos.</li>
+            </ul>
+          </article>
+          <article class="timeline-card reveal">
+            <h3>EzLogic Tecnologia • análise de sistemas e engenharia front-end para operações em VTEX</h3>
+            <div class="timeline-meta">
+              <span>mar 2020 — dez 2022</span>
+              <span>São Paulo, Brasil</span>
+              <span>VTEX • B2C • B2B • Omnichannel • Marketplace</span>
+            </div>
+            <p>
+              Atuação em desenvolvimento front-end para e-commerce na plataforma VTEX, com participação em projetos de
+              evolução contínua para diferentes modelos de operação digital. O trabalho combinou desenvolvimento,
+              análise,
+              desenho de interfaces e melhoria da experiência em contextos de varejo com alta diversidade de negócio.
+            </p>
+            <ul class="timeline-points">
+              <li>Desenvolvimento especializado front-end em VTEX, com foco na evolução de interfaces e sustentação de
+                experiências digitais mais eficientes.</li>
+              <li>Atuação em projetos de e-commerce com diferentes estruturas de negócio, incluindo operações B2C, B2B,
+                omnichannel e marketplace.</li>
+              <li>Participação em iniciativas contínuas de análise, revisão e otimização de interface, com foco em
+                melhoria da experiência do usuário.</li>
+              <li>Contribuição em entregas para marcas e operações relevantes como Claro, Vivo, Nubank, Usaflex,
+                Unilever, Loja Avenida, Tupperware e Loja do Vasco.</li>
+              <li>Interface com necessidades de negócio e contexto operacional para apoiar soluções aderentes à jornada
+                digital e à realidade de cada operação.</li>
+              <li>Experiência consolidada em ambientes dinâmicos de varejo digital, com atuação voltada à consistência
+                visual, eficiência de navegação e qualidade de entrega.</li>
+            </ul>
+          </article>
+          <article class="timeline-card reveal">
+            <h3>Transição estratégica para dados e inteligência de negócio</h3>
+            <div class="timeline-meta">
+              <span>MBA em Data Science &amp; Analytics • USP/ESALQ</span>
+              <span>BI e engenharia analítica</span>
+            </div>
+            <p>
+              Movimento profissional direcionado para arquitetura de dados, engenharia analítica e leitura de negócio,
+              sem abandonar a base de software que sustenta meu rigor técnico.
+            </p>
+            <ul class="timeline-points">
+              <li>Projetos com Databricks, PySpark, Delta Lake, SQL e Power BI.</li>
+              <li>Estudos e aplicações voltados à operação de e-commerce, especialmente em contexto OMS, conversão e
+                confiabilidade analítica.</li>
+              <li>Construção de portfólio com repositórios que demonstram pipeline, lakehouse, analytics engineering e
+                produtos de dados.</li>
+            </ul>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="formacao">
+      <div class="container">
+        <span class="eyebrow reveal">Formação Acadêmica </span>
+
+        <div class="cert-grid" style="margin-top:2rem">
+          <article class="cert-card reveal">
+            <div class="cert-top">
+              <h3>USP/ESALQ • MBA em Data Science &amp; Analytics</h3>
+            </div>
+            <span class="cert-status">Concluído em 2025</span>
+
+
+            <ul>
+              <ul>
+                <li>Fundamentos avançados de estatística, inferência, modelagem matemática, séries temporais, análise
+                  espacial e otimização para leitura analítica de cenários complexos</li>
+                <li>Mineração de dados e modelagem com machine learning supervisionado e não supervisionado, incluindo
+                  árvores, ensembles, clustering, deep learning, redes, NLP e text mining</li>
+                <li>Construção de pipelines e ativos analíticos com Python, data wrangling, engenharia de dados, BI,
+                  visualização, cloud e big data, com visão de deployment e aplicação em contexto real de negócio</li>
+              </ul>
+            </ul>
+          </article>
+
+          <article class="cert-card reveal">
+            <div class="cert-top">
+              <h3>Escola Conquer • Business Intelligence &amp; Analytics</h3>
+            </div>
+            <span class="cert-status">Concluído em 2023</span>
+
+            <ul>
+              <li>Modelagem dimensional e construção de dashboards com foco em gestão, acompanhamento e priorização</li>
+              <li>ETL, pipelines analíticos e organização de dados para consumo mais claro, consistente e orientado ao
+                negócio</li>
+              <li>Projetos práticos com ênfase em confiabilidade analítica, performance e utilidade gerencial da
+                informação</li>
+            </ul>
+          </article>
+
+          <article class="cert-card reveal">
+            <div class="cert-top">
+              <h3>Universidade Salvador • Análise e Desenvolvimento de Sistemas</h3>
+            </div>
+            <span class="cert-status">Concluído em 2022</span>
+            <ul>
+              <li>Desenvolvimento full-stack, arquitetura de software e construção de soluções orientadas a contexto de
+                negócio</li>
+              <li>Engenharia de requisitos, modelagem de sistemas e desenho técnico voltado à manutenção e à evolução do
+                software</li>
+              <li>Versionamento, integração contínua, qualidade de código e disciplina de entrega aplicadas a ambientes
+                de maior maturidade operacional</li>
+            </ul>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="certificacoes">
+      <div class="container">
+        <span class="eyebrow reveal">Certificações e trilhas estratégicas</span>
+
+        <div class="cert-grid" style="margin-top:2rem">
+          <article class="cert-card reveal">
+            <div class="cert-top">
+              <h3>Airflow</h3>
+              <span class="cert-status">Concluído</span>
+            </div>
+            <p>Frente de certificação e aprofundamento ligada à orquestração de pipelines, governança do fluxo e
+              confiabilidade operacional em ambientes de dados.</p>
+            <ul>
+              <li>Orquestração e scheduling</li>
+              <li>Observabilidade do pipeline</li>
+              <li>Dependências, DAGs e automação</li>
+            </ul>
+          </article>
+
+          <article class="cert-card reveal">
+            <div class="cert-top">
+              <h3>Databricks</h3>
+              <span class="cert-status">Andamento</span>
+            </div>
+            <p>Frente direcionada a lakehouse, Spark, engenharia analítica e arquitetura medalhão, alinhada ao tipo de
+              projeto que compõe meu portfólio atual.</p>
+            <ul>
+              <li>Lakehouse e Delta Lake</li>
+              <li>PySpark e notebooks</li>
+              <li>Camadas bronze, silver e gold</li>
+            </ul>
+          </article>
+
+          <article class="cert-card reveal">
+            <div class="cert-top">
+              <h3>Azure</h3>
+              <span class="cert-status">Andamento</span>
+            </div>
+            <p>Direção formal de aprofundamento em cloud corporativa, infraestrutura de dados e integração de serviços
+              como apoio a uma atuação mais robusta em ambiente empresarial.</p>
+            <ul>
+              <li>Fundamentos de nuvem e dados</li>
+              <li>Arquitetura de serviços</li>
+              <li>Evolução de soluções analíticas</li>
+            </ul>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="contato">
+      <div class="container contact-grid">
+        <article class="contact-card reveal">
+          <span class="eyebrow">Contato</span>
+          <h2 class="section-title" style="max-width:20ch; font-size:clamp(2rem, 4vw, 2.85rem)">Vamos conversar sobre
+            arquitetura analítica, dados e valor de negócio.</h2>
+          <p>Se sua dor envolver e-commerce, confiabilidade analítica ou estrutura de decisão
+            orientada por dados, vale a pena trocarmos uma ideia.</p>
+          <div class="hero-actions" style="margin-top:1.4rem">
+            <a class="button" href="mailto:jesse.net19@gmail.com?subject=Contato%20pelo%20portf%C3%B3lio">Enviar
+              e-mail</a>
+            <a class="button-secondary" href="https://www.linkedin.com/in/jesse-silva/" target="_blank"
+              rel="noreferrer">LinkedIn</a>
+            <a class="button-secondary" href="https://github.com/jesse-dsa" target="_blank" rel="noreferrer">GitHub</a>
+          </div>
+        </article>
+
+        <aside class="contact-card reveal">
+          <h3>Canais principais</h3>
+          <p><a href="mailto:jesse.net19@gmail.com">jesse.net19@gmail.com</a></p>
+          <p style="margin-top:.72rem"><a href="https://www.linkedin.com/in/jesse-silva/" target="_blank"
+              rel="noreferrer">linkedin.com/in/jesse-silva</a></p>
+          <p style="margin-top:.72rem"><a href="https://github.com/jesse-dsa" target="_blank"
+              rel="noreferrer">github.com/jesse-dsa</a></p>
+
+          <div class="tag-group">
+            <span class="tag">Arquitetura analítica</span>
+            <span class="tag">Engenharia de dados</span>
+            <span class="tag">Business intelligence</span>
+            <span class="tag">Lakehouse</span>
+            <span class="tag">E-commerce</span>
+            <span class="tag">Operação digital</span>
+          </div>
+        </aside>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-inner">
+      <span>Jessé Silva • arquitetura analítica, dados e inteligência para comércio digital</span>
+      <span>Portfólio em arquivo único, com posicionamento consultivo, hierarquia editorial e leitura orientada a
+        valor.</span>
+    </div>
+  </footer>
+
+  <script>
+    const header = document.getElementById('siteHeader');
+    const menuToggle = document.getElementById('menuToggle');
+    const mobilePanel = document.getElementById('mobilePanel');
+    const revealEls = document.querySelectorAll('.reveal');
+    const mobileLinks = document.querySelectorAll('.mobile-menu a');
+
+    const updateHeader = () => {
+      if (window.scrollY > 8) header.classList.add('scrolled');
+      else header.classList.remove('scrolled');
+    };
+
+    updateHeader();
+    window.addEventListener('scroll', updateHeader, { passive: true });
+
+    if (menuToggle && mobilePanel) {
+      menuToggle.addEventListener('click', () => {
+        const open = mobilePanel.classList.toggle('open');
+        menuToggle.setAttribute('aria-expanded', String(open));
+      });
+
+      mobileLinks.forEach(link => {
+        link.addEventListener('click', () => {
+          mobilePanel.classList.remove('open');
+          menuToggle.setAttribute('aria-expanded', 'false');
+        });
+      });
+    }
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('is-visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.14, rootMargin: '0px 0px -40px 0px' });
+
+    revealEls.forEach((el) => observer.observe(el));
+  </script>
+</body>
+
+</html>
