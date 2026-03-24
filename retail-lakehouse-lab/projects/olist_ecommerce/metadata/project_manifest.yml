@@ -1,0 +1,31 @@
+project:
+  name: olist_ecommerce
+  domain: ecommerce
+  architecture: medallion
+  primary_stack:
+    - Databricks
+    - PySpark
+    - Delta Lake
+  status: structured_repository
+  description: >
+    Repositório base para engenharia de dados aplicada ao caso Olist, com organização
+    preparada para Bronze, Silver, Gold, analytics e futura expansão para machine learning.
+
+layers:
+  bronze:
+    purpose: ingestao e persistencia do dado bruto
+  silver:
+    purpose: limpeza, padronizacao e enriquecimento
+  gold:
+    purpose: consumo analitico e metricas de negocio
+
+datasets:
+  - customers
+  - geolocation
+  - order_items
+  - order_payments
+  - order_reviews
+  - orders
+  - products
+  - sellers
+  - product_category_name_translation
