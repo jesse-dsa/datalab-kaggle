@@ -1,12 +1,14 @@
 <!DOCTYPE html>
+
 <html lang="pt-BR">
 
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description"
-    content="Jessé Silva — portfólio consultivo em arquitetura analítica, engenharia de dados e inteligência operacional para comércio digital." />
-  <meta name="theme-color" content="#071018" />
+  <meta charset="utf-8" />
+  <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+  <meta
+    content="Jessé Silva — portfólio consultivo em arquitetura analítica, engenharia de dados e inteligência operacional para comércio digital."
+    name="description" />
+  <meta content="#071018" name="theme-color" />
   <title>Jessé Silva • Arquitetura analítica, dados e inteligência para comércio digital</title>
   <style>
     :root {
@@ -591,6 +593,10 @@
       letter-spacing: -.03em;
     }
 
+    .cert-card h3 {
+      font-size: 1.07rem;
+    }
+
     .problem-card p,
     .stack-card p,
     .logo-card p,
@@ -908,6 +914,66 @@
       color: var(--accent)
     }
 
+    #certificacoes .cert-grid-tech {
+      align-items: stretch;
+    }
+
+    #certificacoes .cert-card-tech {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    #certificacoes .cert-top-tech {
+      display: flex;
+      flex-direction: column;
+      align-items: stretch;
+      gap: 1.25rem;
+      margin-bottom: 0;
+    }
+
+    #certificacoes .cert-logo-box {
+      border-radius: 1.25rem;
+      min-height: 108px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 1.25rem;
+      overflow: hidden;
+    }
+
+    #certificacoes .cert-logo-box-light {
+      background: #f3f5f7;
+    }
+
+    #certificacoes .cert-logo-box-dark {
+      background: #0b0f14;
+    }
+
+    #certificacoes .cert-logo-img {
+      max-width: 100%;
+      max-height: 72px;
+      object-fit: contain;
+      display: block;
+    }
+
+    #certificacoes .cert-card-tech h3 {
+      margin: 0;
+      line-height: 1.45;
+      font-size: 1.08rem;
+    }
+
+    #certificacoes .cert-card-tech .cert-status {
+      display: inline-flex;
+      align-items: center;
+      gap: .55rem;
+      margin-top: 1.5rem;
+      padding: .8rem 1rem;
+      border-radius: 999px;
+      width: fit-content;
+    }
+
+
     .contact-card a {
       color: var(--text);
       font-weight: 650
@@ -1027,6 +1093,16 @@
       .case-footer {
         align-items: flex-start
       }
+
+      #certificacoes .cert-logo-box {
+        min-height: 96px;
+        padding: 1rem;
+      }
+
+      #certificacoes .cert-logo-img {
+        max-height: 64px;
+      }
+
     }
   </style>
 </head>
@@ -1034,15 +1110,13 @@
 <body>
   <header class="site-header" id="siteHeader">
     <div class="container nav">
-      <a class="brand" href="#top" aria-label="Ir para o topo">
+      <a aria-label="Ir para o topo" class="brand" href="#top">
         <span class="brand-mark">JS</span>
         <span>
           <p class="brand-title">Jessé Silva</p>
         </span>
       </a>
-
-      <ul class="nav-links" aria-label="Navegação principal">
-        <li><a href="#sobre">Sobre</a></li>
+      <ul aria-label="Navegação principal" class="nav-links">
         <li><a href="#problemas">Valor</a></li>
         <li><a href="#tecnologias">Tecnologias</a></li>
         <li><a href="#projetos">Projetos</a></li>
@@ -1051,20 +1125,18 @@
         <li><a href="#certificacoes">Certificações</a></li>
         <li><a href="#contato">Contato</a></li>
       </ul>
-
       <div class="nav-actions">
-        <a class="nav-cta" href="https://www.linkedin.com/in/jesse-silva/" target="_blank" rel="noreferrer">LinkedIn</a>
-        <button class="menu-toggle" id="menuToggle" type="button" aria-expanded="false" aria-controls="mobilePanel"
-          aria-label="Abrir menu">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round">
-            <path d="M4 7h16M4 12h16M4 17h16" />
+        <a class="nav-cta" href="https://www.linkedin.com/in/jesse-silva/" rel="noreferrer" target="_blank">LinkedIn</a>
+        <button aria-controls="mobilePanel" aria-expanded="false" aria-label="Abrir menu" class="menu-toggle"
+          id="menuToggle" type="button">
+          <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-width="1.8" viewbox="0 0 24 24">
+            <path d="M4 7h16M4 12h16M4 17h16"></path>
           </svg>
         </button>
       </div>
     </div>
     <div class="container mobile-panel" id="mobilePanel">
-      <nav class="mobile-menu" aria-label="Navegação móvel">
-        <a href="#sobre">Sobre</a>
+      <nav aria-label="Navegação móvel" class="mobile-menu">
         <a href="#problemas">Valor</a>
         <a href="#tecnologias">Tecnologias</a>
         <a href="#projetos">Projetos</a>
@@ -1075,7 +1147,6 @@
       </nav>
     </div>
   </header>
-
   <main id="top">
     <section class="section">
       <div class="container hero-grid">
@@ -1083,101 +1154,38 @@
           <h1 class="hero-title">
             Engenharia, <span class="accent">dados</span> e decisão aplicados ao negócio digital.
           </h1>
-
+          <p class="section-copy hero-intro" style="margin-top:1rem; max-width:700px">Estruturo pipelines, camadas
+            analíticas e leituras operacionais para transformar dado em clareza de negócio no comércio digital.</p>
           <div class="hero-actions">
             <a class="button" href="#projetos">Ver estudos de caso</a>
-            <a class="button-secondary" href="https://www.linkedin.com/in/jesse-silva/" target="_blank"
-              rel="noreferrer">LinkedIn</a>
-            <a class="button-secondary" href="https://github.com/jesse-dsa" target="_blank" rel="noreferrer">GitHub</a>
+            <a class="button-secondary" href="https://www.linkedin.com/in/jesse-silva/" rel="noreferrer"
+              target="_blank">LinkedIn</a>
+            <a class="button-secondary" href="https://github.com/jesse-dsa" rel="noreferrer" target="_blank">GitHub</a>
             <a class="button-secondary" href="mailto:jesse.net19@gmail.com">Contato</a>
           </div>
-
           <div class="hero-proof">
             <div class="proof-mini">
               <strong>13 anos em software</strong>
-              <span>Base construída em produto digital, arquitetura de soluções, e-commerce e execução
-                operacional.</span>
+              <span>Produto digital, e-commerce e execução.</span>
             </div>
             <div class="proof-mini">
               <strong>MBA USP/ESALQ</strong>
-              <span>Data Science &amp; Analytics aplicado à leitura de negócio e arquitetura de dados.</span>
+              <span>Formação aplicada a dados, analytics e decisão.</span>
             </div>
             <div class="proof-mini">
               <strong>VTEX, OMS e varejo digital</strong>
-              <span>Leitura prática de jornada, catálogo, performance, logística e operação omnichannel.</span>
+              <span>Jornada, catálogo, performance e operação.</span>
             </div>
             <div class="proof-mini">
-              <strong>Stack de evolução clara</strong>
-              <span>Python, SQL, PySpark, Databricks, Delta Lake, BI, dbt e engenharia analítica.</span>
+              <strong>Stack de dados</strong>
+              <span>Python, SQL, PySpark, Databricks, Delta Lake e BI.</span>
             </div>
           </div>
         </div>
-
-        <aside class="hero-panel reveal" aria-label="Resumo executivo do posicionamento">
+        <aside aria-label="Resumo executivo do posicionamento" class="hero-panel reveal">
           <div class="panel-heading">
-            <h2>Resumo executivo</h2>
-            <span class="signal">Posicionamento consultivo</span>
-          </div>
-
-          <div class="panel-list">
-            <article class="panel-item">
-              <small>Posicionamento</small>
-              <strong>Engenharia, arquitetura analítica e operação digital em contexto de negócio</strong>
-              <p>Atuo na interseção entre software, dados e comércio digital, estruturando problemas complexos com mais
-                clareza operacional, confiabilidade analítica e capacidade de decisão.</p>
-            </article>
-
-            <article class="panel-item">
-              <small>Tipo de cenário em que gero valor</small>
-              <strong>Ambientes em que a operação cresce mais rápido do que a leitura do que acontece</strong>
-              <p>Meu trabalho ganha força quando há fragmentação entre canais, baixa visibilidade sobre performance,
-                dificuldade de priorização e dado disponível, mas ainda pouco útil para orientar gestão, produto e
-                operação.</p>
-            </article>
-
-            <article class="panel-item">
-              <small>Forma de contribuição</small>
-              <strong>Estruturas que tornam o dado mais confiável, legível e acionável</strong>
-              <p>Desenho e organizo ativos como datalayer, pipelines, camadas analíticas, indicadores e leituras
-                aplicadas ao dia a dia, conectando execução técnica, contexto comercial e valor para o negócio.</p>
-            </article>
-          </div>
-        </aside>
-      </div>
-    </section>
-
-    <section class="section" aria-label="Pilares do posicionamento">
-      <div class="container grid-4">
-        <article class="card value-card reveal">
-          <strong>Arquitetura</strong>
-          <span>Modelagem, camadas analíticas e fluxos de dados desenhados para dar estrutura, rastreabilidade e
-            confiança ao consumo da informação.</span>
-        </article>
-        <article class="card value-card reveal">
-          <strong>Operação</strong>
-          <span>Leitura aplicada de OMS, catálogo, jornada digital, logística e performance em contextos reais de
-            comércio e operação digital.</span>
-        </article>
-        <article class="card value-card reveal">
-          <strong>Negócio</strong>
-          <span>Dados e arquitetura colocados a serviço da priorização, da clareza gerencial, da eficiência operacional
-            e da geração de valor.</span>
-        </article>
-        <article class="card value-card reveal">
-          <strong>Execução</strong>
-          <span>Capacidade de transformar problemas difusos em estruturas utilizáveis de trabalho, com entregas que
-            conectam contexto técnico e decisão.</span>
-        </article>
-      </div>
-    </section>
-
-    <section class="section" id="sobre">
-      <div class="container split-layout">
-        <div class="about-main reveal">
-          <span class="eyebrow">Sobre</span>
-          <br>
-          <div style="display:flex; justify-content:center; margin-bottom:18px;">
-            <img src="images/jesse-profile.jpg" alt="Retrato profissional de Jessé Silva" style="
+            <div style="display:flex; justify-content:center; width: stretch;margin-bottom:18px;">
+              <img alt="Retrato profissional de Jessé Silva" src="images/jesse-profile.jpg" style="
 
             height: 180px;
             border-radius: 50%;
@@ -1187,66 +1195,24 @@
             border: 3px solid rgba(255,255,255,0.08);
             box-shadow: 0 18px 40px rgba(0,0,0,0.35), 0 0 0 10px rgba(92,230,201,0.06);
           " />
-          </div>
-          <p>
-            Minha base foi construída em engenharia de software, produto digital e operação de e-commerce. Foi nesse
-            ambiente que aprendi, na prática, que tecnologia não serve só para colocar funcionalidade no ar. Ela precisa
-            sustentar operação, responder a pressões reais do negócio e fazer sentido dentro de uma estrutura que
-            envolve
-            plataforma, jornada, performance, time e decisão.
-          </p>
-          <p>
-            Com o tempo, meu olhar foi ficando cada vez mais voltado para o dado e para a arquitetura da informação por
-            trás da operação. Passei a me interessar não apenas pelo que estava sendo entregue, mas pela forma como os
-            dados eram capturados, organizados, lidos e transformados em algo realmente útil para gestão e evolução do
-            negócio. Foi aí que minha atuação começou a ganhar um contorno mais claro: consigo transitar entre software,
-            operação e análise sem perder de vista o contexto comercial.
-          </p>
-          <p>
-            Hoje me posiciono em arquitetura analítica, engenharia de dados e business intelligence aplicados ao
-            comércio
-            digital. Gosto de trabalhar em contextos em que existe complexidade real, porque é justamente aí que consigo
-            gerar mais valor: organizando estrutura, dando clareza ao dado e aproximando tecnologia, operação e decisão
-            de uma forma mais útil, confiável e orientada ao que o negócio precisa de fato enxergar.
-          </p>
-        </div>
+            </div>
 
-        <aside class="about-side reveal">
-          <h3>O que sustenta minha atuação</h3>
-          <p>
-            Mais do que stack, o que dá consistência ao meu perfil é a combinação entre repertório técnico, experiência
-            em
-            e-commerce e capacidade de transformar dor operacional em estrutura analítica, leitura de contexto e apoio à
-            decisão.
-          </p>
-
-          <div class="stat-line">
-            <span class="stat-dot"></span>
-            <span>Internalização de operação digital em Chile e Colômbia com leitura prática de contexto ASICS
-              LATAM.</span>
           </div>
-          <div class="stat-line">
-            <span class="stat-dot"></span>
-            <span>Implementação de totem em lojas físicas, conectando jornada digital e experiência omnichannel.</span>
-          </div>
-          <div class="stat-line">
-            <span class="stat-dot"></span>
-            <span>Estruturação de datalayer, redesign de interface e melhoria de UX com impacto em tracking e leitura de
-              comportamento.</span>
-          </div>
-          <div class="stat-line">
-            <span class="stat-dot"></span>
-            <span>Configuração de Jira, Confluence e Bitbucket, com apoio à organização de framework ágil, documentação
-              e fluxo de trabalho.</span>
-          </div>
-
-          <div class="tag-group">
-            <span class="tag">Arquitetura analítica</span>
-            <span class="tag">Engenharia de dados</span>
-            <span class="tag">Business intelligence</span>
-            <span class="tag">Dados para e-commerce</span>
-            <span class="tag">Produto digital</span>
-            <span class="tag">Inteligência operacional</span>
+          <div class="panel-list">
+            <span class="signal">Posicionamento consultivo</span>
+            <article class="panel-item">
+              <strong>Arquitetura analítica para operação digital</strong>
+              <p>Uno software, dados e contexto comercial para estruturar informação confiável e útil para decisão.</p>
+            </article>
+            <article class="panel-item">
+              <strong>Operações com baixa visibilidade e muita fricção</strong>
+              <p>Gero valor quando há crescimento, fragmentação entre canais e dificuldade para transformar dado em
+                prioridade.</p>
+            </article>
+            <article class="panel-item">
+              <strong>Pipelines, métricas e camadas que ficam utilizáveis</strong>
+              <p>Organizo ativos analíticos para aproximar execução técnica, leitura operacional e decisão.</p>
+            </article>
           </div>
         </aside>
       </div>
@@ -1259,350 +1225,274 @@
           <article class="problem-card card reveal">
             <span class="problem-index">01</span>
             <h3>Confiabilidade do dado</h3>
-            <p>Reduzo distância entre origem, tratamento e consumo analítico, organizando o caminho da informação para
-              que ela sustente leitura gerencial com mais confiança.</p>
+            <p>Organizo origem, transformação e consumo para sustentar leitura gerencial com mais confiança.</p>
           </article>
           <article class="problem-card card reveal">
             <span class="problem-index">02</span>
-            <h3>Leitura de performance operacional</h3>
-            <p>Transformo eventos de pedido, catálogo, pagamento e logística em sinais úteis para priorização,
-              acompanhamento e melhoria do fluxo operacional.</p>
+            <h3>Leitura operacional</h3>
+            <p>Transformo eventos de pedido, catálogo e logística em sinais úteis para priorização.</p>
           </article>
           <article class="problem-card card reveal">
             <span class="problem-index">03</span>
-            <h3>Arquitetura para consumo analítico</h3>
-            <p>Estruturo camadas, métricas e modelos para que o dado deixe de ser apenas registro histórico e passe a
-              apoiar investigação, governança e decisão.</p>
+            <h3>Arquitetura analítica</h3>
+            <p>Estruturo camadas, métricas e modelos para apoiar investigação, governança e decisão.</p>
           </article>
           <article class="problem-card card reveal">
             <span class="problem-index">04</span>
-            <h3>Conexão entre técnica e negócio</h3>
-            <p>Faço a tradução entre engenharia, operação e gestão, diminuindo ruído de comunicação e aumentando a
-              utilidade prática do que é construído.</p>
+            <h3>Conexão com o negócio</h3>
+            <p>Traduzo engenharia, operação e gestão para aumentar a utilidade do que é construído.</p>
           </article>
         </div>
       </div>
     </section>
-
     <section class="section" id="tecnologias">
       <div class="container">
         <span class="eyebrow reveal">Tecnologias em prática</span>
-
-        <br>
-
+        <br />
         <div class="logo-grid" style="margin-top:2rem">
           <article class="logo-card reveal">
-            <div class="logo-badge" aria-hidden="true">
-              <svg viewBox="0 0 48 48" fill="none">
-                <rect x="6" y="6" width="36" height="36" rx="12" fill="#3776AB" />
+            <div aria-hidden="true" class="logo-badge">
+              <svg fill="none" viewbox="0 0 48 48">
+                <rect fill="#3776AB" height="36" rx="12" width="36" x="6" y="6"></rect>
                 <path
                   d="M24 12c-7 0-6 3-6 3v4h12v2H13s-5-.1-5 7c0 7.1 4.4 6.9 4.4 6.9h2.6v-3.8s-.1-4.4 4.3-4.4H31s6.6.1 6.6-6.4v-5.3S38.6 12 31 12H24Zm-6.2 3.7a1.7 1.7 0 1 1 0 3.4 1.7 1.7 0 0 1 0-3.4Z"
-                  fill="#fff" />
+                  fill="#fff"></path>
                 <path
                   d="M24 36c7 0 6-3 6-3v-4H18v-2h17s5 .1 5-7c0-7.1-4.4-6.9-4.4-6.9H33v3.8s.1 4.4-4.3 4.4H17s-6.6-.1-6.6 6.4V33S9.4 36 17 36h7Zm6.2-3.7a1.7 1.7 0 1 1 0-3.4 1.7 1.7 0 0 1 0 3.4Z"
-                  fill="#FFD43B" />
+                  fill="#FFD43B"></path>
               </svg>
             </div>
             <div class="logo-meta">
               <strong>Python</strong>
-              <span>Base para engenharia de dados, automação, APIs e análise.</span>
+              <span>Engenharia de dados, automação e análise.</span>
             </div>
           </article>
-
           <article class="logo-card reveal">
-            <div class="logo-badge" aria-hidden="true">
-              <svg viewBox="0 0 48 48" fill="none">
-                <ellipse cx="24" cy="10.5" rx="12" ry="5.5" fill="#78A7FF" />
-                <path d="M12 10.5v9c0 3 5.4 5.5 12 5.5s12-2.5 12-5.5v-9" stroke="#78A7FF" stroke-width="3" />
-                <path d="M12 19.5v9c0 3 5.4 5.5 12 5.5s12-2.5 12-5.5v-9" stroke="#78A7FF" stroke-width="3"
-                  opacity=".8" />
-                <path d="M12 28.5v9c0 3 5.4 5.5 12 5.5s12-2.5 12-5.5v-9" stroke="#78A7FF" stroke-width="3"
-                  opacity=".65" />
+            <div aria-hidden="true" class="logo-badge">
+              <svg fill="none" viewbox="0 0 48 48">
+                <ellipse cx="24" cy="10.5" fill="#78A7FF" rx="12" ry="5.5"></ellipse>
+                <path d="M12 10.5v9c0 3 5.4 5.5 12 5.5s12-2.5 12-5.5v-9" stroke="#78A7FF" stroke-width="3"></path>
+                <path d="M12 19.5v9c0 3 5.4 5.5 12 5.5s12-2.5 12-5.5v-9" opacity=".8" stroke="#78A7FF" stroke-width="3">
+                </path>
+                <path d="M12 28.5v9c0 3 5.4 5.5 12 5.5s12-2.5 12-5.5v-9" opacity=".65" stroke="#78A7FF"
+                  stroke-width="3"></path>
               </svg>
             </div>
             <div class="logo-meta">
               <strong>SQL</strong>
-              <span>Consulta, modelagem e raciocínio estruturado sobre dados.</span>
+              <span>Consulta, modelagem e raciocínio sobre dados.</span>
             </div>
           </article>
-
           <article class="logo-card reveal">
-            <div class="logo-badge" aria-hidden="true">
-              <svg viewBox="0 0 48 48" fill="none">
-                <path d="M12 32 24 10l12 22H12Z" fill="#00ADD8" opacity=".95" />
-                <path d="M18 32 24 21l6 11H18Z" fill="#fff" opacity=".9" />
-                <path d="M10 36h28" stroke="#00ADD8" stroke-width="3" stroke-linecap="round" />
+            <div aria-hidden="true" class="logo-badge">
+              <svg fill="none" viewbox="0 0 48 48">
+                <path d="M12 32 24 10l12 22H12Z" fill="#00ADD8" opacity=".95"></path>
+                <path d="M18 32 24 21l6 11H18Z" fill="#fff" opacity=".9"></path>
+                <path d="M10 36h28" stroke="#00ADD8" stroke-linecap="round" stroke-width="3"></path>
               </svg>
             </div>
             <div class="logo-meta">
               <strong>PySpark</strong>
-              <span>Processamento distribuído e transformação de dados em escala.</span>
+              <span>Transformação distribuída em escala.</span>
             </div>
           </article>
-
           <article class="logo-card reveal">
-            <div class="logo-badge" aria-hidden="true">
-              <svg viewBox="0 0 48 48" fill="none">
-                <path d="m11 31 13-7 13 7-13 7-13-7Z" fill="#FF3621" />
-                <path d="m11 17 13-7 13 7-13 7-13-7Z" fill="#FF3621" opacity=".82" />
-                <path d="m11 24 13-7 13 7-13 7-13-7Z" fill="#FF3621" opacity=".56" />
+            <div aria-hidden="true" class="logo-badge">
+              <svg fill="none" viewbox="0 0 48 48">
+                <path d="m11 31 13-7 13 7-13 7-13-7Z" fill="#FF3621"></path>
+                <path d="m11 17 13-7 13 7-13 7-13-7Z" fill="#FF3621" opacity=".82"></path>
+                <path d="m11 24 13-7 13 7-13 7-13-7Z" fill="#FF3621" opacity=".56"></path>
               </svg>
             </div>
             <div class="logo-meta">
               <strong>Databricks</strong>
-              <span>Lakehouse, notebooks, Spark e arquitetura medalhão.</span>
+              <span>Lakehouse, Spark e arquitetura medalhão.</span>
             </div>
           </article>
-
           <article class="logo-card reveal">
-            <div class="logo-badge" aria-hidden="true">
-              <svg viewBox="0 0 48 48" fill="none">
+            <div aria-hidden="true" class="logo-badge">
+              <svg fill="none" viewbox="0 0 48 48">
                 <path
                   d="M24 10c2 0 4 5 4 8 0 2 2 4 4 4 3 0 8 2 8 4s-5 4-8 4c-2 0-4 2-4 4 0 3-2 8-4 8s-4-5-4-8c0-2-2-4-4-4-3 0-8-2-8-4s5-4 8-4c2 0 4-2 4-4 0-3 2-8 4-8Z"
-                  stroke="#017CEE" stroke-width="3" fill="none" />
-                <circle cx="24" cy="26" r="4.5" fill="#017CEE" />
+                  fill="none" stroke="#017CEE" stroke-width="3"></path>
+                <circle cx="24" cy="26" fill="#017CEE" r="4.5"></circle>
               </svg>
             </div>
             <div class="logo-meta">
               <strong>Airflow</strong>
-              <span>Orquestração de pipelines, automação e fluxo operacional.</span>
+              <span>Orquestração e automação de pipelines.</span>
             </div>
           </article>
-
           <article class="logo-card reveal">
-            <div class="logo-badge" aria-hidden="true">
-              <svg viewBox="0 0 48 48" fill="none">
+            <div aria-hidden="true" class="logo-badge">
+              <svg fill="none" viewbox="0 0 48 48">
                 <path
                   d="M10 12h10.5c4.2 0 7 2.7 7 6.2s-2.8 6.3-7 6.3H10V12Zm0 12h11.8c4.8 0 8.2 2.9 8.2 6.8S26.6 38 21.8 38H10V24Z"
-                  fill="#FF694B" />
-                <path d="M30 14h8v24h-8z" fill="#FF694B" opacity=".78" />
+                  fill="#FF694B"></path>
+                <path d="M30 14h8v24h-8z" fill="#FF694B" opacity=".78"></path>
               </svg>
             </div>
             <div class="logo-meta">
               <strong>dbt</strong>
-              <span>Analytics engineering, testes, modelos e camadas de consumo.</span>
+              <span>Modelos, testes e camada de consumo.</span>
             </div>
           </article>
-
           <article class="logo-card reveal">
-            <div class="logo-badge" aria-hidden="true">
-              <svg viewBox="0 0 48 48" fill="none">
-                <path d="M12 30c0-8 7-14 15-14 5.3 0 10 2.4 12.8 6.7" stroke="#00C8C8" stroke-width="3.2"
-                  stroke-linecap="round" />
-                <path d="M10 35c2.8 2.3 6.4 3.6 10.3 3.6 9.5 0 17.2-7.7 17.2-17.1" stroke="#8A7CF7" stroke-width="3.2"
-                  stroke-linecap="round" />
-                <path d="M17 20c5.2 0 9.5 4.2 9.5 9.4" stroke="#5BD6FF" stroke-width="3.2" stroke-linecap="round" />
+            <div aria-hidden="true" class="logo-badge">
+              <svg fill="none" viewbox="0 0 48 48">
+                <path d="M12 30c0-8 7-14 15-14 5.3 0 10 2.4 12.8 6.7" stroke="#00C8C8" stroke-linecap="round"
+                  stroke-width="3.2"></path>
+                <path d="M10 35c2.8 2.3 6.4 3.6 10.3 3.6 9.5 0 17.2-7.7 17.2-17.1" stroke="#8A7CF7"
+                  stroke-linecap="round" stroke-width="3.2"></path>
+                <path d="M17 20c5.2 0 9.5 4.2 9.5 9.4" stroke="#5BD6FF" stroke-linecap="round" stroke-width="3.2">
+                </path>
               </svg>
             </div>
             <div class="logo-meta">
               <strong>Delta Lake</strong>
-              <span>Camadas confiáveis, versionamento e consistência para lakehouse.</span>
+              <span>Consistência, versionamento e confiabilidade.</span>
             </div>
           </article>
-
           <article class="logo-card reveal">
-            <div class="logo-badge" aria-hidden="true">
-              <svg viewBox="0 0 48 48" fill="none">
+            <div aria-hidden="true" class="logo-badge">
+              <svg fill="none" viewbox="0 0 48 48">
                 <path
                   d="M11 31c0-2 1.6-3.5 3.5-3.5H17V37h-2.5A3.5 3.5 0 0 1 11 33.5V31Zm8-6.5h4V37h-4V24.5Zm6-6.5h4V37h-4V18Zm6-4h4V37h-4V14Z"
-                  fill="#F2C811" />
+                  fill="#F2C811"></path>
               </svg>
             </div>
             <div class="logo-meta">
               <strong>Power BI</strong>
-              <span>Visualização executiva, indicadores e leitura orientada à decisão.</span>
+              <span>Indicadores e leitura orientada à decisão.</span>
             </div>
           </article>
-
           <article class="logo-card reveal">
-            <div class="logo-badge" aria-hidden="true">
-              <svg viewBox="0 0 48 48" fill="none">
-                <path d="M8 33 18.5 11h8.3L16.3 33H8Zm12 0 9.7-16.7L40 33H20Z" fill="#0078D4" />
+            <div aria-hidden="true" class="logo-badge">
+              <svg fill="none" viewbox="0 0 48 48">
+                <path d="M8 33 18.5 11h8.3L16.3 33H8Zm12 0 9.7-16.7L40 33H20Z" fill="#0078D4"></path>
               </svg>
             </div>
             <div class="logo-meta">
               <strong>Azure</strong>
-              <span>Frente estratégica de cloud para evolução de dados em ambiente corporativo.</span>
+              <span>Frente estratégica de cloud corporativa.</span>
             </div>
           </article>
-
           <article class="logo-card reveal">
-            <div class="logo-badge" aria-hidden="true">
-              <svg viewBox="0 0 48 48" fill="none">
+            <div aria-hidden="true" class="logo-badge">
+              <svg fill="none" viewbox="0 0 48 48">
                 <path d="M8 29h8v7H8zM18 29h8v7h-8zM28 29h8v7h-8zM18 20h8v7h-8zM28 20h8v7h-8zM28 11h8v7h-8z"
-                  fill="#2496ED" />
-                <path d="M6 35h36" stroke="#2496ED" stroke-width="3" stroke-linecap="round" />
+                  fill="#2496ED"></path>
+                <path d="M6 35h36" stroke="#2496ED" stroke-linecap="round" stroke-width="3"></path>
               </svg>
             </div>
             <div class="logo-meta">
               <strong>Docker</strong>
-              <span>Empacotamento de ambientes, reprodutibilidade e fluxo local de desenvolvimento.</span>
+              <span>Ambientes reproduzíveis e fluxo local.</span>
             </div>
           </article>
-
           <article class="logo-card reveal">
-            <div class="logo-badge" aria-hidden="true">
-              <svg viewBox="0 0 48 48" fill="none">
+            <div aria-hidden="true" class="logo-badge">
+              <svg fill="none" viewbox="0 0 48 48">
                 <path
                   d="M24 8a16 16 0 0 0-5 31.2c.8.1 1.1-.3 1.1-.8v-2.9c-4.5 1-5.4-1.8-5.4-1.8-.7-1.8-1.8-2.3-1.8-2.3-1.5-1 .1-1 .1-1 1.7.1 2.7 1.8 2.7 1.8 1.5 2.6 4 1.9 5 1.4.2-1.1.6-1.9 1.1-2.4-3.6-.4-7.4-1.8-7.4-8 0-1.8.7-3.3 1.8-4.4-.2-.4-.8-2.1.2-4.4 0 0 1.5-.5 4.7 1.7a16 16 0 0 1 8.6 0c3.2-2.2 4.7-1.7 4.7-1.7 1 2.3.4 4 .2 4.4 1.1 1.1 1.8 2.6 1.8 4.4 0 6.2-3.8 7.6-7.4 8 .6.5 1.2 1.5 1.2 3.1v4.6c0 .5.3.9 1.1.8A16 16 0 0 0 24 8Z"
-                  fill="#fff" />
+                  fill="#fff"></path>
               </svg>
             </div>
             <div class="logo-meta">
               <strong>GitHub</strong>
-              <span>Versionamento, portfólio técnico, fluxo de projeto e automação com CI.</span>
+              <span>Versionamento, portfólio técnico e CI.</span>
             </div>
           </article>
-
           <article class="logo-card reveal">
-            <div class="logo-badge" aria-hidden="true">
-              <svg viewBox="0 0 48 48" fill="none">
-                <path d="M10 16 24 10l14 6-14 6-14-6Zm0 8 14 6 14-6M10 32l14 6 14-6" stroke="#F05A22" stroke-width="3"
-                  stroke-linecap="round" stroke-linejoin="round" />
+            <div aria-hidden="true" class="logo-badge">
+              <svg fill="none" viewbox="0 0 48 48">
+                <path d="M10 16 24 10l14 6-14 6-14-6Zm0 8 14 6 14-6M10 32l14 6 14-6" stroke="#F05A22"
+                  stroke-linecap="round" stroke-linejoin="round" stroke-width="3"></path>
               </svg>
             </div>
             <div class="logo-meta">
               <strong>VTEX / OMS</strong>
-              <span>E-commerce, pedidos, catálogo, operação omnichannel e contexto de negócio digital.</span>
+              <span>E-commerce, pedidos, catálogo e operação.</span>
             </div>
-          </article>
-        </div>
-
-        <div class="stack-layout" style="margin-top:1.4rem">
-          <article class="stack-card reveal">
-            <h3>Engenharia e dados</h3>
-            <p>Camada que sustenta ingestão, transformação, modelagem e governança.</p>
-            <ul>
-              <li>Python, SQL e PySpark</li>
-              <li>ETL / ELT e arquitetura medalhão</li>
-              <li>Modelagem analítica e rastreabilidade</li>
-              <li>Databricks, Delta Lake e dbt</li>
-            </ul>
-          </article>
-
-          <article class="stack-card reveal">
-            <h3>Analytics e BI</h3>
-            <p>Leitura de performance e estruturação de indicadores com contexto operacional.</p>
-            <ul>
-              <li>Power BI e consumo executivo</li>
-              <li>Exploração analítica e hipóteses</li>
-              <li>KPIs, métricas e interpretação de jornada</li>
-              <li>Análise aplicada a e-commerce</li>
-            </ul>
-          </article>
-
-          <article class="stack-card reveal">
-            <h3>Cloud e infraestrutura</h3>
-            <p>Base para ambientes reproduzíveis, automação e evolução técnica consistente.</p>
-            <ul>
-              <li>Docker e ambientes containerizados</li>
-              <li>Airflow para orquestração</li>
-              <li>GitHub Actions e fluxo de CI</li>
-              <li>Frentes estratégicas em Azure</li>
-            </ul>
-          </article>
-
-          <article class="stack-card reveal">
-            <h3>Produto e operação</h3>
-            <p>Camada em que tecnologia conversa diretamente com o dia a dia do negócio.</p>
-            <ul>
-              <li>VTEX, OMS e comércio digital</li>
-              <li>Datalayer, jornada e UX</li>
-              <li>Jira, Confluence e Bitbucket</li>
-              <li>Integração entre áreas técnicas e negócio</li>
-            </ul>
           </article>
         </div>
       </div>
     </section>
-
     <section class="section" id="projetos">
       <div class="container">
         <span class="eyebrow reveal">Projetos em destaque</span>
-
         <div class="case-grid" style="margin-top:2rem">
           <article class="case-card reveal">
             <div class="case-head">
               <div>
-                <h3 class="case-title">OmniDataLab</h3>
-                <p class="case-subtitle">Laboratório aberto de arquitetura de dados para e-commerce omnichannel com
-                  forte integração VTEX.</p>
+                <h3 class="case-title">Olist lakehouse</h3>
+                <p class="case-subtitle">Projeto de dados para e-commerce com arquitetura medalhão em Databricks.</p>
               </div>
-              <span class="case-mark">OD</span>
+              <span class="case-mark">OL</span>
             </div>
+
             <div class="case-body">
               <div class="case-block">
-                <small>Contexto</small>
-                <p>Projeto criado para organizar uma arquitetura robusta de extração, transformação, auditoria e análise
-                  preditiva em ambientes digitais complexos.</p>
+                <small>Problema</small>
+                <p>Dados transacionais de e-commerce exigem organização, padronização e estrutura confiável para análise
+                  e evolução analítica.</p>
               </div>
+
               <div class="case-block">
                 <small>Solução</small>
-                <p>Combina pipelines modernos, integração com APIs VTEX, governança contínua e espaço para evolução em
-                  machine learning, engenharia e otimização operacional.</p>
+                <p>Construção de pipeline em Databricks com PySpark e Delta Lake, organizando os dados em camadas
+                  bronze, silver e gold.</p>
               </div>
+
               <div class="case-block">
-                <small>Arquitetura demonstrada</small>
-                <p>Estrutura real de repositório com <strong>config</strong>, <strong>src</strong>,
-                  <strong>tests/integration</strong>, Dockerfile, docker-compose, pyproject, workflows e integração com
-                  PostgreSQL e Airflow.
-                </p>
-              </div>
-              <div class="case-block">
-                <small>Leitura de valor</small>
-                <p>Demonstra visão de plataforma de dados orientada a confiabilidade, automação e capacidade de escalar
-                  ativos analíticos para operação de e-commerce.</p>
+                <small>Valor</small>
+                <p>Demonstra capacidade de estruturar uma base analítica moderna, escalável e orientada a decisão para
+                  contexto de negócio digital.</p>
               </div>
             </div>
+
             <div class="case-footer">
               <div class="tag-group" style="margin-top:0">
-                <span class="tag">Python</span>
-                <span class="tag">APIs VTEX</span>
-                <span class="tag">PostgreSQL</span>
-                <span class="tag">Airflow</span>
-                <span class="tag">Docker</span>
-                <span class="tag">Terraform</span>
+                <span class="tag">Databricks</span>
+                <span class="tag">PySpark</span>
+                <span class="tag">Delta Lake</span>
+                <span class="tag">SQL</span>
+                <span class="tag">Medallion</span>
+                <span class="tag">E-commerce</span>
               </div>
-              <a class="project-link" href="https://github.com/jesse-dsa/OmniDataLab" target="_blank" rel="noreferrer">
+
+              <a class="project-link" href="https://github.com/jesse-dsa/datalab-kaggle" rel="noreferrer"
+                target="_blank">
                 Ver repositório
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"
-                  stroke-linejoin="round">
-                  <path d="M7 17 17 7" />
-                  <path d="M8 7h9v9" />
+                <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8"
+                  viewBox="0 0 24 24">
+                  <path d="M7 17 17 7"></path>
+                  <path d="M8 7h9v9"></path>
                 </svg>
               </a>
             </div>
           </article>
-
           <article class="case-card reveal">
             <div class="case-head">
               <div>
                 <h3 class="case-title">data-driven-ecommerce</h3>
-                <p class="case-subtitle">Machine learning aplicado ao e-commerce para otimização de conversão e análise
-                  preditiva.</p>
+                <p class="case-subtitle">Machine learning aplicado ao e-commerce para leitura preditiva e conversão.</p>
               </div>
               <span class="case-mark">DE</span>
             </div>
             <div class="case-body">
               <div class="case-block">
-                <small>Contexto</small>
-                <p>Parte da premissa de que operações digitais possuem muitos dados, mas nem sempre conseguem
-                  transformá-los em leitura útil sobre comportamento, decisão comercial e performance.</p>
+                <small>Problema</small>
+                <p>Operações digitais acumulam dados, mas nem sempre conseguem transformá-los em leitura acionável.</p>
               </div>
               <div class="case-block">
                 <small>Solução</small>
-                <p>Cria um ativo técnico centrado no uso de machine learning para apoiar perguntas relevantes do
-                  comércio eletrônico, especialmente ligadas a conversão e análise preditiva.</p>
+                <p>Repositório focado em machine learning para responder perguntas relevantes de conversão e
+                  comportamento.</p>
               </div>
               <div class="case-block">
-                <small>Arquitetura demonstrada</small>
-                <p>Repositório focado, enxuto e com direção clara de propósito, orientado a raciocínio analítico
-                  aplicado ao negócio digital.</p>
-              </div>
-              <div class="case-block">
-                <small>Leitura de valor</small>
-                <p>Revela uma preocupação consistente em usar dados para responder dores de mercado, e não apenas para
-                  produzir artefatos técnicos desconectados do uso final.</p>
+                <small>Valor</small>
+                <p>Reforça uso de dados para responder dor de mercado, e não apenas para produzir artefato técnico.</p>
               </div>
             </div>
             <div class="case-footer">
@@ -1612,114 +1502,13 @@
                 <span class="tag">Conversão</span>
                 <span class="tag">Analytics</span>
               </div>
-              <a class="project-link" href="https://github.com/jesse-dsa/data-driven-ecommerce" target="_blank"
-                rel="noreferrer">
+              <a class="project-link" href="https://github.com/jesse-dsa/data-driven-ecommerce" rel="noreferrer"
+                target="_blank">
                 Ver repositório
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"
-                  stroke-linejoin="round">
-                  <path d="M7 17 17 7" />
-                  <path d="M8 7h9v9" />
-                </svg>
-              </a>
-            </div>
-          </article>
-
-          <article class="case-card reveal">
-            <div class="case-head">
-              <div>
-                <h3 class="case-title">oms-dbt-cloud</h3>
-                <p class="case-subtitle">Estrutura de analytics engineering voltada à modelagem com dbt em contexto
-                  OMS/cloud.</p>
-              </div>
-              <span class="case-mark">dbt</span>
-            </div>
-            <div class="case-body">
-              <div class="case-block">
-                <small>Contexto</small>
-                <p>Projeto organizado a partir da estrutura clássica de um ambiente dbt, com macros, models, seeds,
-                  snapshots, tests e dbt_project.yml.</p>
-              </div>
-              <div class="case-block">
-                <small>Solução</small>
-                <p>Serve como base para evolução de modelagem analítica governada, padronização de transformações e
-                  testes sobre dados de operação.</p>
-              </div>
-              <div class="case-block">
-                <small>Arquitetura demonstrada</small>
-                <p>Mostra familiaridade com a disciplina de analytics engineering e com a separação entre camada bruta,
-                  transformação controlada e consumo confiável.</p>
-              </div>
-              <div class="case-block">
-                <small>Leitura de valor</small>
-                <p>É um tipo de ativo importante para consolidar governança e tornar o dado mais consistente para
-                  dashboards, análises e produtos internos.</p>
-              </div>
-            </div>
-            <div class="case-footer">
-              <div class="tag-group" style="margin-top:0">
-                <span class="tag">dbt</span>
-                <span class="tag">Models</span>
-                <span class="tag">Tests</span>
-                <span class="tag">Snapshots</span>
-              </div>
-              <a class="project-link" href="https://github.com/jesse-dsa/oms-dbt-cloud" target="_blank"
-                rel="noreferrer">
-                Ver repositório
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"
-                  stroke-linejoin="round">
-                  <path d="M7 17 17 7" />
-                  <path d="M8 7h9v9" />
-                </svg>
-              </a>
-            </div>
-          </article>
-
-          <article class="case-card reveal">
-            <div class="case-head">
-              <div>
-                <h3 class="case-title">bitcoin-mining-analytics</h3>
-                <p class="case-subtitle">Projeto analítico com aplicação Python e camada web voltado a monitoramento e
-                  interpretação operacional.</p>
-              </div>
-              <span class="case-mark">BM</span>
-            </div>
-            <div class="case-body">
-              <div class="case-block">
-                <small>Contexto</small>
-                <p>Repositório com estrutura mais aplicada, incluindo <strong>app</strong>, <strong>web_app</strong>,
-                  <strong>openapi</strong>, configuração de deploy e organização de dados compartilhados.
-                </p>
-              </div>
-              <div class="case-block">
-                <small>Solução</small>
-                <p>Combina camada analítica e interface operacional, ampliando a leitura de dados para um formato mais
-                  acionável e próximo do uso cotidiano.</p>
-              </div>
-              <div class="case-block">
-                <small>Arquitetura demonstrada</small>
-                <p>Mostra preocupação com produto, API, deploy e disponibilização prática do resultado analítico, e não
-                  apenas com script isolado.</p>
-              </div>
-              <div class="case-block">
-                <small>Leitura de valor</small>
-                <p>Reforça a capacidade de pensar o dado como sistema utilizável, com backend, interface e fluxo de
-                  disponibilização da informação.</p>
-              </div>
-            </div>
-            <div class="case-footer">
-              <div class="tag-group" style="margin-top:0">
-                <span class="tag">Python</span>
-                <span class="tag">Web app</span>
-                <span class="tag">API</span>
-                <span class="tag">Analytics</span>
-              </div>
-              <a class="project-link" href="https://github.com/jesse-dsa/bitcoin-mining-analytics" target="_blank"
-                rel="noreferrer">
-                Ver repositório
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"
-                  stroke-linejoin="round">
-                  <path d="M7 17 17 7" />
-                  <path d="M8 7h9v9" />
+                <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8"
+                  viewbox="0 0 24 24">
+                  <path d="M7 17 17 7"></path>
+                  <path d="M8 7h9v9"></path>
                 </svg>
               </a>
             </div>
@@ -1727,145 +1516,38 @@
         </div>
       </div>
     </section>
-
-    <section class="section">
-      <div class="container method-grid">
-        <article class="method-card reveal">
-          <span class="eyebrow">Método de trabalho</span>
-          <p>Meu raciocínio geralmente começa na dor operacional e termina em uma estrutura que permita ver, interpretar
-            e agir melhor.</p>
-          <div class="flow">
-            <div class="flow-step">
-              <strong>1. Diagnóstico da dor</strong>
-              Pergunta de negócio, atrito operacional, hipótese de valor e decisão que precisa ser sustentada.
-            </div>
-            <div class="flow-step">
-              <strong>2. Mapeamento do dado</strong>
-              Origem, granularidade, entidades, eventos, lacunas de captura e confiabilidade do fluxo.
-            </div>
-            <div class="flow-step">
-              <strong>3. Arquitetura de consumo</strong>
-              Camadas de transformação, modelo analítico, indicadores e desenho de uso por times.
-            </div>
-            <div class="flow-step">
-              <strong>4. Leitura aplicada</strong>
-              Interpretação, governança, visibilidade gerencial e capacidade de priorização com mais precisão.
-            </div>
-          </div>
-        </article>
-
-        <article class="method-card reveal">
-          <span class="eyebrow">Diferenciais</span>
-          <div class="grid-2" style="grid-template-columns:1fr; margin-top:1rem">
-            <div class="problem-card card" style="padding:1rem">
-              <h3>Leio o problema além da ferramenta</h3>
-              <p>Minha preocupação principal é o contexto em que o dado será usado e a decisão que ele precisa
-                sustentar.</p>
-            </div>
-            <div class="problem-card card" style="padding:1rem">
-              <h3>Conecto arquitetura e operação</h3>
-              <p>Tenho familiaridade com sistemas, jornada digital, times de negócio e a realidade do comércio
-                eletrônico.</p>
-            </div>
-            <div class="problem-card card" style="padding:1rem">
-              <h3>Transformo projeto em argumento de mercado</h3>
-              <p>Procuro construir ativos que demonstrem raciocínio, método, clareza e maturidade de execução.</p>
-            </div>
-            <div class="problem-card card" style="padding:1rem">
-              <h3>Penso dados como estrutura de decisão</h3>
-              <p>O objetivo final não é apenas reportar números, mas aumentar discernimento, governança e confiança para
-                agir.</p>
-            </div>
-          </div>
-        </article>
-      </div>
-    </section>
-
     <section class="section" id="experiencia">
       <div class="container">
         <span class="eyebrow reveal">Experiência profissional</span>
-
         <div class="timeline" style="margin-top:2rem">
           <article class="timeline-card reveal">
-            <h3>Global System • Especialista em Engenheiria de software</h3>
+            <h3>Global System • especialista em engenharia de software</h3>
             <div class="timeline-meta">
               <span>ASICS</span>
               <span>E-commerce</span>
               <span>Operação LATAM</span>
             </div>
-            <p>
-              Atuação em iniciativas estruturantes da operação digital da ASICS na América Latina, conectando
-              tecnologia,
-              experiência, plataforma e negócio em um contexto de expansão regional, evolução da jornada digital e maior
-              maturidade operacional.
-            </p>
+            <p>Atuação em iniciativas estruturantes da operação digital da ASICS na América Latina, conectando
+              tecnologia, experiência, plataforma e negócio.</p>
             <ul class="timeline-points">
-              <li>Condução da internalização de operações digitais da ASICS no Chile e na Colômbia, ampliando autonomia
-                operacional e integração regional.</li>
-              <li>Implementação de totem em lojas físicas para aproximar jornada digital e experiência presencial,
-                fortalecendo a convergência entre canais.</li>
-              <li>Estruturação do datalayer do site como base para leitura de comportamento, rastreabilidade de eventos
-                e amadurecimento analítico.</li>
-              <li>Redesign de interface e melhorias de UX com foco em navegação, consistência da experiência e
-                eficiência da jornada de conversão.</li>
-              <li>Configuração do ecossistema Jira, Confluence e Bitbucket, apoiando governança operacional, colaboração
-                entre times e consolidação do framework ágil.</li>
+              <li>Internalização das operações digitais da ASICS no Chile e na Colômbia.</li>
+              <li>Implementação de totem em lojas físicas para aproximar jornada digital e experiência presencial.</li>
+              <li>Estruturação do datalayer do site para rastreabilidade de eventos e amadurecimento analítico.</li>
+              <li>Configuração de Jira, Confluence e Bitbucket com apoio à governança e ao framework ágil.</li>
             </ul>
           </article>
           <article class="timeline-card reveal">
-            <h3>M3, Cadastra Company • Especialista em Engenheiria de software</h3>
+            <h3>M3, Cadastra Company • especialista em engenharia de software</h3>
             <div class="timeline-meta">
               <span>OXXO • Éxito</span>
             </div>
-            <p>
-              Atuação no desenvolvimento, manutenção e evolução de lojas virtuais em diferentes contextos de operação
-              digital,
-              com entregas voltadas a ambientes B2C, B2B e B2E. O trabalho envolveu construção de interfaces,
-              sustentação
-              técnica, testes, escalabilidade e organização de arquiteturas mais consistentes para operações de varejo
-              digital.
-            </p>
+            <p>Atuação na evolução de lojas virtuais em diferentes contextos de operação digital, com foco em interface,
+              sustentação técnica e arquitetura mais consistente.</p>
             <ul class="timeline-points">
-              <li>Responsável pelo desenvolvimento, manutenção e teste de lojas virtuais para marcas como OXXO e Éxito,
-                em contextos de comércio digital com diferentes regras de negócio e jornada.</li>
-              <li>Atuação em projetos com modelos B2C, B2B e B2E, ampliando repertório em estruturas de navegação,
-                catálogos, experiência e operação de loja.</li>
-              <li>Uso de React, Node.js, JavaScript ES6, HTML, CSS, SASS e ecossistema VTEX, incluindo VTEX IO, VTEX CMS
-                legado e VTEX FastStore.</li>
-              <li>Participação em rotinas de desenvolvimento orientadas por Scrum, com uso de Jira, Trello, Asana e
-                Monday para gestão ágil e acompanhamento de entregas.</li>
-              <li>Adoção de práticas de CI, CD e TDD para promover maior confiabilidade técnica, fluidez de publicação e
-                qualidade de software.</li>
-              <li>Contribuição para o desenho e a implementação de arquiteturas escaláveis, com foco em eficiência,
-                manutenibilidade e evolução sustentável dos projetos.</li>
-            </ul>
-          </article>
-          <article class="timeline-card reveal">
-            <h3>EzLogic Tecnologia • análise de sistemas e engenharia front-end para operações em VTEX</h3>
-            <div class="timeline-meta">
-              <span>mar 2020 — dez 2022</span>
-              <span>São Paulo, Brasil</span>
-              <span>VTEX • B2C • B2B • Omnichannel • Marketplace</span>
-            </div>
-            <p>
-              Atuação em desenvolvimento front-end para e-commerce na plataforma VTEX, com participação em projetos de
-              evolução contínua para diferentes modelos de operação digital. O trabalho combinou desenvolvimento,
-              análise,
-              desenho de interfaces e melhoria da experiência em contextos de varejo com alta diversidade de negócio.
-            </p>
-            <ul class="timeline-points">
-              <li>Desenvolvimento especializado front-end em VTEX, com foco na evolução de interfaces e sustentação de
-                experiências digitais mais eficientes.</li>
-              <li>Atuação em projetos de e-commerce com diferentes estruturas de negócio, incluindo operações B2C, B2B,
-                omnichannel e marketplace.</li>
-              <li>Participação em iniciativas contínuas de análise, revisão e otimização de interface, com foco em
-                melhoria da experiência do usuário.</li>
-              <li>Contribuição em entregas para marcas e operações relevantes como Claro, Vivo, Nubank, Usaflex,
-                Unilever, Loja Avenida, Tupperware e Loja do Vasco.</li>
-              <li>Interface com necessidades de negócio e contexto operacional para apoiar soluções aderentes à jornada
-                digital e à realidade de cada operação.</li>
-              <li>Experiência consolidada em ambientes dinâmicos de varejo digital, com atuação voltada à consistência
-                visual, eficiência de navegação e qualidade de entrega.</li>
+              <li>Desenvolvimento e manutenção de lojas virtuais para marcas como OXXO e Éxito.</li>
+              <li>Projetos em contextos B2C, B2B e B2E, ampliando repertório em jornada, catálogo e operação.</li>
+              <li>Uso de React, Node.js, JavaScript, VTEX IO, VTEX CMS legado e FastStore.</li>
+              <li>Adoção de práticas de CI, CD e TDD para aumentar confiabilidade e qualidade de entrega.</li>
             </ul>
           </article>
           <article class="timeline-card reveal">
@@ -1874,155 +1556,132 @@
               <span>MBA em Data Science &amp; Analytics • USP/ESALQ</span>
               <span>BI e engenharia analítica</span>
             </div>
-            <p>
-              Movimento profissional direcionado para arquitetura de dados, engenharia analítica e leitura de negócio,
-              sem abandonar a base de software que sustenta meu rigor técnico.
-            </p>
+            <p>Movimento profissional direcionado para arquitetura de dados, engenharia analítica e leitura de negócio,
+              sem abandonar a base de software que sustenta meu rigor técnico.</p>
             <ul class="timeline-points">
               <li>Projetos com Databricks, PySpark, Delta Lake, SQL e Power BI.</li>
-              <li>Estudos e aplicações voltados à operação de e-commerce, especialmente em contexto OMS, conversão e
-                confiabilidade analítica.</li>
-              <li>Construção de portfólio com repositórios que demonstram pipeline, lakehouse, analytics engineering e
-                produtos de dados.</li>
+              <li>Aplicações voltadas à operação de e-commerce, OMS, conversão e confiabilidade analítica.</li>
+              <li>Portfólio com repositórios que demonstram pipeline, lakehouse, analytics engineering e produtos de
+                dados.</li>
             </ul>
           </article>
         </div>
       </div>
     </section>
-
     <section class="section" id="formacao">
       <div class="container">
-        <span class="eyebrow reveal">Formação Acadêmica </span>
+        <span class="eyebrow reveal">Formação Acadêmica</span>
 
         <div class="cert-grid" style="margin-top:2rem">
           <article class="cert-card reveal">
-            <div class="cert-top">
+            <div class="cert-top" style="display:flex; flex-direction:column; gap:1rem;">
+              <div style="display:flex; align-items:center; justify-content:center; min-height:110px; background: white;
+    border-radius: 5%;">
+                <img alt="Logo USP ESALQ" class="edu-logo"
+                  src="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wCEAAMCAggICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAoICAgICQkJCAgLDQoIDQgICQgBAwQEBgUGCAYGCAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICP/AABEIALQCAAMBEQACEQEDEQH/xAAeAAEAAgICAwEAAAAAAAAAAAAACAkBBwUGAwQKAv/EAF8QAAIBAwICBQMLDA4GCAcAAAECAwAEBRESBhMHCAkUIRkiMRUjNkFRVFV1lLXUMjM1YXFzgZGVsrPVFhg0QlJWYnJ0kpO00tOChqGkwcYkN1N2hKKx8SUmRWNkpeP/xAAbAQEAAgMBAQAAAAAAAAAAAAAAAQIDBAcGBf/EAEIRAQABAwEDBwgIBAQHAAAAAAABAgMREgQxMgUGEyFBUfBCUmFxgZGSwRYiNHJzobHCFFOi4TNjk7MVI2LR0+Px/9oADAMBAAIRAxEAPwC1OgUCgUCgUCgUCgUCgUCgUCgUCgUCgUCgUCgUCgUCgUCgUCgUCgUCgUCgUCgUCgUCgUCgUCgUCgUCgUCgUCgUCgUCgUCgUCgUCgUCgUCgUCgUCgUCgUCgUCgUCgUCgUCgUCgUCgUCgUCgUCgUCgUCgUCgUCgUCgUCgUCgUCgUCgUCgUCgUCgUCgUCgUCgUCgUCgUCgUCgUCgUCgUCgUCgUCgUCgUCgUCgUCgUCgUCgUCgUCgUCgUCgUCgUCgUCgUCgUCg6V0rdLtlhreO5vndIpJlt1McTynmskkgBVASBtifztNNQB7Yr522bda2SiK7vVTM4j14z+kKzVFPXLV37e/hz3xc/I7j/BXyPpFsXnV/CxdNSft7+HPfFz8juP8ABT6Q7F51fwnTUg693Dvvi5+R3H+Cn0i2Lzq/gOmp8Qz+3t4d98XPyOf/AAVH0i2Lzq/gOmp8Qx+3v4c98XPyO4/wVP0h2Lzq/hOmpP29/Dnvi5+R3H+Cn0h2Lzq/hOmpZ/b28O++Ln5HP/gqPpFsXnV/AdNT4hj9vfw574ufkdx/gqfpDsXnV/CdNS7z0T9YfGZqSaKwkld7dEeXmQSQgLIzKuhdQGJKt4D0afcr6WxcpWNsmqLVXD6ML0101bmza+syFAoFAoFAoFAoFBjWgzQKBQKBQKBQKBQKDFBmgUCgUCgUCgUGNaDNAoFAoFAoFAoFAoFAoFAoFAoFAoFAoFAoFBFjtE/sLafGkX90va8Pzq+zW/xf21MF7hV51y1osMwHpOlXppmdwzWMeK7vEjUvI6xoo1Z3IVVHuljoB+Gti1aru1aKKZqqnsjes/GPyUcyCSKRJUOujRurr4ekblJGo9se1Vr9i5Yq0XaZoq7p6h7FaqpQKCX/AGcP7syv9Ftf0stdA5qcd37kNjZ+Kr2fNPSult0oFAoFAoFAoFAoMUGaBQKBQKBQKBQKBQKBQKBQKBQKBQKDFBmgUCgUCgUCgUCgUCgUCgUCgUCgUCgUCgUCgix2if2FtPjSL+6XteH51fZ7f4v7amC9wq865a0XXOka2VrG53jcqR84gen1giXw+35lfb5Hrqp2u1FO+Z0/6kY+a9vidjJr49cYqn1qOU4D6JLXN5Swx97I6QSG5cBJzbmSWG3kmWPmLHKyNy45mDiNwCu3aTIunu+akUxcuT32/Hj9GzY3uuZfg20sMzkrfHxmOzMdpPEnfGvREJ1lliiklaGE947s9u8kbCSSHcImmuCgnl2+dkRiz53/ADPX2fl3enPpTee/XNWqUCgl/wBnD+7Mr/RrX9LLXQOanHd+5DY2fiq9nzT0rpbdKBQKBQKBQKBQKBQKDxXM+1Sx9Cgk/cA1OlBBqDtiuFmUHumcGoB0NlbajUeg6XxH4iR9s1bSPJ5YXhb3rm/kVv8ATanRIeWF4W965v5Fb/TaaJDywvC3vXN/Irf6bTRIeWF4W965v5Fb/TajTIeWF4W965v5Fb/TanRIeWF4W965v5Fb/TaaJDywvC3vXN/Irf6bTRIeWF4W965v5Fb/AE2miRKnoM6ZrTiDF2uXsVmS1u+fy1uEWOZTb3EttIJER5FU8yF9NHbVdD4a6VQdl4q4wtbGCS6vLmC1tohrJPcSpDEg/lSSFVGvoA11J8BrQRU4u7VrhC1ZliuL2/KsVJsrGYoSpIJSS57tG6+GodGZGHiCQQanA62O2G4W965v5Fb/AE2raJGfLC8Le9c38it/ptNEh5YXhb3rm/kVv9NpokPLC8Le9c38it/ptNEj92vbA8KswVrfNRg+l2sYWUfdEd27/iU1GmRvToc66fDOekEOPykDXLHRbS4ElndOQu4iKC6SJp9F1JMHMA0bx81tIwN3A1A8c9yqgsxCqoJYkgBQBqSSfAADxJPgBQRm6Q+0k4Qx0jQtlBeSp9UmOgmvU18Rt7xEptS2o8V5+o1GoGoNTga6PbBcK+980f8AwMP/ABuxU6ZGPLB8K+9838hh+mU0yHlg+Ffe+b+Qw/TKaZDywfCvvfN/IYfplNMj9J2wPCv/AGGaH3bGL/hdGmmRsbo67SDhDJSpAmUFpM/1CZGCayRidAFE8yC23EnQKZgx9oGowJMQThgGUgggEEEEEEaggjwII8QR6RUDyUCgUCgUCgUCgUCgUCgUEV+0U+wtp8aRf3S9rw/Or7Pb/F/bUwXuFXpXLWi5PhrCw3NzBbXCs8FzNHbyojKrOk7iJlVm0UFg2mrEAanXT0j6fJ2P4qzn+ZRu9a9HE4Toux09+lhFCrST3nJWFCQWLT6ctXZURfMVhzJAiIArvtRQdNzbNn6Tb67Nqnr6XT+f6FVP1tMJk9Xrqww2uSt8nezc2O1NxFFbcpZYzdSWsCLMxHpTZPcskZgaT121bepSUS9L5N5ItbDGqOPz/wD5+WW9RREOg9cTq843Hm8y2IlS2lm5c72JtpIbWSVWla8kluG2wo08Zi5aMsfLmjkbe3ejs3dt5Ps7bRi5T1/zM+r+/v8AemiJ3ol8O8dmRA0oVGYRjlKyNIHYFyrKH3q6xvEWDhdu1zp4Nt8LtXNyaOq215su4RvqAfd90af+teIu2pt11UTvpYGawKpf9nD+7Mr/AEa1/Sy10Dmpx3fuQ2Nn4qvZ809K6W3SgUCgUCgUCgUCgUCg9TLfWpPvb/mmg+eLqqdEUefzeKw800lvFfc5XmhVGkQQWNxdDaJAUJZoFU7gfNZvb0IydiyxbyMeL+HMn/Y2X+VVMmTyMeL+HMn/AGNl/lVOTJ5GPF/DmT/sbL/Kpkyjl14uoTZ8J46zvrbI3d49zkFs2juI7dUVGtbqfepiRW3hoFXxJGjN7elTTJl5Oo31CLHizG3l/dZC9tHtsi9ksdsluUZFtbS4DsZonbeWuGU6EDRV8NdSWoSN8jJifhrK/wBnZfR6jJk8jJifhvK/2dl/kUyZZPYyYj4ayv8AZ2P0eoyZb+huMZ0dcKJHNcT3FrjuesBkEYury5vLqe5jt0VAqb3lnZQ2gVIkLvoEdg3qqm+NePuI+kDNJCqSXU77ntcdC5Wwx1uh0MrbiIogm4CW+n9dldlQHzoYBfGFktejnsZiY1fL5tllKrugxtsmyNvHcO83W8ze0AwtYPQTodRpGoy7t5GfDfDOX/FY/RajJk8jPhvhnL/isfotMmTyM+G+Gcv+Kx+i0yZPIz4b4Zy/4rH6LTJl4LzsZMSVITN5VW08C8dk6g+1qogjJH2g6/dFMmUTOs12cWb4cge/jkjyuPgHMlurWOSC5tAviZp7TfKyRJ9UbiCeblgbnESrvqYkykB2f/aLPuTC8R3YZOWxsMtcP52kSFza30zH1wmNSYbpzvdhy3Ls6M0zSI+9cbru5Diq7NhYmeHDmdYbSxgEnPychfZFJdRp65M8zaGGxAKpqmqSSjUMDZ/Ql2QuUvIY58zfR4lWAYWVvEt3eBNPASymRLa3fXTVEF1oBoSpJCxqMt1DsZcP8NZb+pY/RqjJk8jNh/hrLf1LH6NUZMnkZsP8NZb+pY/RqZMnkZsP8NZb+pY/RqZMh7GXD/DWW/qWP0amTLTPTX2QeTtIpJ8Nfx5VVBJsriJbS7ZNPFYpRI9tPITrojraAggbiQN9oqMtZdTTrx3/AAtdDH5FriXDLM0F3ZzrIbjFSK3Lkkto5PXYuQw9fsdApAcoiSAl5mBdjh8xFcRRzwSJLDNGksUsbB45IpFDxyIw8GR0IZWBIIINY1Xu0CgUCgUCgUCgUCgUCgix2if2FtPjSL+6XteH51fZ7f4v7amC9wq865a0Xkt52VlZSVZWDKw9Ksp1Vh9sEA/grNar0V01+bMT7pTS3Z1bLDHY3E2/FneUYYu2yFvcWCsplXNrJJZW8FuCUBiuYpiYopNrIxiIZg/rXWrPJtqnaI5Q1aaKrXSYnsmY39vVj3N6KIzrSh6teRvVlvLGUJcQoLEudPDV8FiUkWVWOik3UdySmgO0rqPHVvTxVq3MzrPXq4rW2x72Is49l7tjmdY4ioTVvqyykAKdujEeYXU1cVgrw1I5UwpKUUrzBG6RIjqHBRAWUnYNgLrJE7NzD5pYpH8Pb+UrFjVbruaK2GuuKWzrOMhVDaa6DXaNqj7QXc2gHo+qP3a41tFdNdyqqnc0nlrVVS/7OH92ZX+jWv6WWugc1OO79yGxs/FV7PmnpXS26UCgUCgUCgUCgUCgUHp5b61J97f800FEPZtezLh3+de/NF/V+xK+qqIKBQQD7ZT7AYr48j+bsjVqR+uxt9j2U+PZfm3G1E7xPqoCgxQU89rt0xNc52DErJ/0bEWizSorNob69XmM0ihtpaKzEHL1XeouJdCBJpV6VoTm7Pfq2xYDAWzvEoyWTiivchLtHM1lUyW9oW1b1uzhkEe0NsMxnkABlNUVShoFAoMbqDNAoPHLECCCAQQQQRqCD6QR7YPtigoq7Qfq7RcPcQyRWsax47IxC/solXSODc5jurVBroFhnHMRQFCQzxRgaR61elalJjsierpFKLriW6jV5I5nscWHXXlFEHfLtNSRvfmC0RwoKLHcAEiY6RVItAAqqrNAoFAoFBigrE7XTq5QxrbcTWsSpI0yWWV2KBzhIullduQRrJGyd0dtrPIstvqQLcVamVobb7JPpWkvuHJbCZy74a8a2iZmLN3O4QXNupLEkCJnmgRQdqxRRqAAoAShOGqoKBQKBQKBQKBQKBQKCLHaJ/YW0+NIv7pe14fnV9nt/i/tqYL3CrzrlrRKgdX4Iw0LPcRO/KAv5o5ZC0gREuHWcTOiHRzDHcsVfa0iKXCFdxFe1uX7tdez2oqxbvW9n7Inhza7fTnqnq74Z5q4Y8dy0/oq6Q0sbOJzHJci5hhu5JEU95aWeINpLFt3KioESJmVIhCsYR3QR6dVphvI99Y7p6izBlgntHtMVZLLdZC75nMmaO25YSFOWDAlxcTOlrDbSF5edKJdhFtOiyImYC1CxA7UjMryztHGdY42uJHmMUR0HrURk5UfgDy0WuJcsX6r213ap7K+j/0/q989ff2Z3Pm3Ks1OQr4KhQS/7OH92ZX+jWv6WWugc1OO79yGxs/FV7PmnpXS26UCgUCgUCgUCgUCgUHp5b61J97f800FEPZs+zLh3+fe/NF/V+xK+qqIKBQQD7ZT7AYr48j+bsjVqd/juGext9j2U+PZfm7G0lMp91VBQKChPtIm/wDnLiL+fZ/NFj/wq8bll8OJjAijA8AI0AHuAKABVFXt0Cg/EjaCgpw6YOvVxbiuL57m7ja1Wzc2xwDyE2UuPZtykSAaST3ACzR5JEJV9FCmJZbdrRSstJ6A+nzHcR46LJY2XfE/mSwuAtxaTqAZLa5jBblzR6g+kpIhWRGdHR2rhVsmgUGgOs91LcVxZJZSZGa+hawS4SHuUsMQcXLQM/N5tvOW2mBdm0oBufUNqpWYkd66Aeg+04cxcGJsnuJbe3e4dZLpo3nZrieS4fe0UUKHRpCq6Rg7AupY6kwNi0CgxQVaDtK+I/2Veo3LxXcv2SepOvdJ+f3X1V7ju5nfNnN5Xju5W3d47dPCp09QtMqAoFBFDtRUB4Kyn2psWR9o+qtmNfxEj8NTCYRp7FqQ87iUfveXh209rcWyg1+6R7fuAe5UylaLVVSgUCgUCgUCgUCgUCgix2if2FtPjSL+6XteH51fZrf4v7amC9wq865a0SoHH8B5Y2uSnlTxkhubK+UBiupVEVfOXzl3NaEajxHj6a9JVdqot7JfiODXHtt3Ol+cepk1Y0ysD6Mune0TG23fGtbFBZ24Q53bFbGGVImRLfMbhBJAFmiZYZI+8QrLCJBGZI416/Yu9LbpuYxr6/Hy/SJ6m/TOWg+sl1dMhNic7lXvYhjpi99FaWAlFu7RsbOxishOI4xDLaE3M92kAa4ku2jjkmjSO5fYWaCs/qfqDGNz6RnmboxvbSNubHDLujGiNzIYn1U6oh1UcM5Vx/GXsfzJ8dT5tfE9bKcQQQlBNKiNIwVFJ892PgAqDVj4+2BpWvY2K9fpqqt0zNNHXKsU5e/WghL/ALOH92ZX+jWv6WWvf81OO79yGxs/FV7PmnpXS26UCgUCgUCgUCgUCgUHqZb61J/Mf800FEPZtezLh3+de/NF/V+xK+mqIKBQQD7ZT7AYr48j+bsjVqd/juH67G32PZT49l+bcbSRPmqjNAoKFO0hXXjPiLTx9csx/wDqbGrwleXwDxbbX1lbXdnNHcW08MckM0TBkdSvpBHtggqVOjKwIIBBAoh2CgUGKCO/XE6ndlxVZbW22+TtlY2F8F8UJ8e73AHjLaSt9Un1SNo6aMCHCo3o46Sc9wFnpQYmhuIWWLJY6Zj3bIW2pZDvUFW1BMlpfRhmQsfBkeeF8m9Zdn0A9PuO4kx0WSxsu+N/MmhfRbi0uFAMltcxgnZLHqPQSkiFZEZ0dHbGq2RQKBQKBQKCgUez/wD13/5iq/krL+qoqUCgij2ovsJyv37F/OtnUwmEaOxY+vcS/esL+dlqmslaLVUFAoFAoFAoFAoFAoFBFjtE/sLafGkX90va8Pzq+z2/xf21MF7hV51y1olQOATRcg3uzWakD2j3ad9T90d6WvvT9bYaf8u7/u0f+tk8lNvIW5uOD+Sg3CbDvCfQRqbHBQMpDjafPY+DDxCmuvbD9lt/h2/0b1HC7L12+PoxwTY6yMPVSbC2yG3cCWRJZIZ5u7udQsgtoppEkIIRlDEaCtu5XTbpqrq4aImfcugJmsn3aKNEZ5JG9bjadw0jbV86ad9NGZVG+R9uhc66eNcf2exG37TcuTGLeZuY9dzqt+uv+75sRqqdU4U4dlfWRTymcsJLtvXbmfx9MTOByYSNAqgKBt8BIujH7XKG2WLExa069O61H1Ldv7/8ytmrmml3fEYgQggPLIWIJaaQuxIAHh6FX0akIqgnU+3Xj9p2r+IqzNFuj0W6Me/tn2teZymb2cP7syv9Gtf0stev5qcd37kM2z8VXs+aeldLbxQKBQKBQKBQKBQYBoM0Hp5b61J97f8ANNBRD2bXsy4d/n3vzRf1fsWX1VRUoFBAPtk/sBivjyP5uyNWp3+O4frsbPY9lPj2X5txtRO8T6qAoFBBztAOoEueWTMYhFjzkaDnQ6hI8tFEoVY3YkKl7GihIJ2IV1VYZSFWKW3tTJCCvUx65l7wletaXaTyYqSdkvrCRWW4srgOY5Z4In0aOeNgVntmCiXaR5siqTOFl2fBvGNtkLWC8s547m1uYxLDNE25JEb0EH2iDqGU6MrAqwBUgUVc1QKBQR164vU5suKrLa223ydsrdwv9upQ+nu9wF86W0lb6pfqo2PMTzgQ4VHdG/STnuAc9KDE0NxCyw5LGysRbZC2BJTzwCDqp32l9GGMZY+DI08LZN6y7PoC6fcdxJjosljZd8T+ZLE+i3FpcKAZLa5jBPLmj1B8CUdSsiNIjo7YsKtkVIUCgUCgoFHs/wD9d/8AmKr+Slf1VEFAoIo9qJ7Csr9+xfzrZ1MJhGjsWPr3Ev3rC/nZaprJWi1VBQKBQKBQKBQKBQKBQRY7RP7C2nxpF/dL2vD86vs1v8X9tTBe4VedctaLxXFwF90nQkKoJLae0NAfbIHj7or6exbDc2uvFulNNM1OtZDJILnHzPrG0sdxFtkBQrzI0nIYOAQVMG06gaE6e2AfvU8nX6LG02ejudVy3NH1OOYmbfV38XZnv72SKKsVQsA6LLbm8IQMV3AR3EL/AL4GOW8x8Z1P2owG8PQq6AnaK6RyfTVTstqKv5Vr9Ib1G5pXrA4a5k4H4Ql05UOOkxkLgsxlZjNHYrEyecFjWMEli5csEUBRvD25QpirZr1P+Xc/KJwircilkbgXl7yFOqJuSTTUaJGRztp0I1eVo4QQQdOYR4x14KxH/D9g6WeKv/cng+Cj6+WpHVQ2AiAAADQAAADwAAGgAHtACvCVVTVOqpgZqgl/2cP7syv9Gtf0ste/5qcd37kNjZ+Kr2fNPSult0oFAoFAoFAoFAoFAoPUy31qT72/5poKIOzZ9mfDv869+aL+r9iy+qqKlAoIB9sp9gMV8eR/N2Rq1I/XY2ex7KfHsvzbjaid4n1UBQKDFBB3r+9QFM6kmXxEaR5uNNZoQRHHlo410CSE6Kl8igLDcMQsigQykKIZba0SlBfqX9c+84SvHtLxJ5MTJO6X1i6MtxY3CsY5biCJ9rRzRspW4tiF5oU+AlQEzKV2PB/GFtf20F5Zzx3FrcRrLDPE25JEb0EH2j6QVOjKwIIBBFUVc1QKDBoI6dcfqcWXFVkAdttlLZG7hfBfqSfE29yF8ZbWVvql+qjY8xPO3LJECo/o06TM9wFnpvWWhuIGWHJY2ZiLfIW4JZNHAIOoJktL2NWKFiQHjaaGTLxLLtOgLp8x3EeOhyWNlMkT+ZLE+i3FpcKAZLa6jBPLmj1HtlJEKyIzo6O2PCrZFAoFAoKBR7P/APXf/mKr+Slf1VEFAoIo9qJ7Csr9+xfzrZ1MJhGjsWPr3Ev3rC/nZaprJWi1VBQKBQKBQKBQKBQKBQRY7RP7C2nxpF/dL2vD86vs1v8AF/bUwXuFXPlJJgFMKRudw3iV2jGzRtSrLHL52umgK6aa+IrnmzUWapq6eqqjq6sU5nPqmY6vGGm1TxJxBcNeSxzLFDsVFXdKCsccnKIkiLpHzDKxkV2PL2CLQMGQibqPI1qzY2WK7NXHx3Oj69+MTGer1en0w27cRTHUzw9iTPslla5BjvhDu7xNGQQssR5YhkWJCx5RaWELuZ5QCoO0TylyjcsVzRbqjV0HS7on2TnPun0SVVzC1LopK/sPS085dtrE5csSWEJsOY5cnczOXcszEsSGJPoJ+3sNyq9YtXKvLtxPd2d0bvVDNG5q/rZNdXPA8Vtaw/8AS1yNnGscYSQK8EnfJQV1fYLV45IZBKNS1tIdrI8ZbeWV8cKWl4l4y25WSU+ZfSz20kMUCII9iLCjRKZXPMkABIKNEQsO6Xd5fl7+FixTTtEz/l27U9efdOI8d0Rr3dOnrbn0rj2lpGlNMiX3Zw/uzK/0a1/Sy177mpx3fuQ2Nn4qvZ809K6W3SgUCgUCgUCgUCgUCg9TLfWpPvb/AJpoKIOza9mXDv8APvfmi/q/YsvqqipQKCAfbJ/YDFfHkfzdkatA/XY2+x7KfHsvzbjaiRPqoCgUCgwRQQd6/wD1AkzqPl8RGkebiTWaEbY48tGi6BHJ0RL5FAWGdiFkUCGUhRDLbWplaEGOpf10LzhK8ezvEnkxMk7JfWLqwnsbgNslngifRo5o2BW4tW283T97KPOtMC7LhHi+2v7aG8s5o7i1uI1lhmiYMkiN6CCPxEHRlIIIBBAxquYoFBigjf1zOprZ8VWQ8UtsrbI3cL7b6P33dbnbq0lpK3pHi0THmJ470lmJFSHRd0pZ3gPOzetPDcwOsGUxczEQX8AJZfOUMupVjJaX0QbbvJAeKSaJ771l4vQf0x2efxdplrEyd2u0ZlWZDHNFJHI8M0Mq+I3wzRyRMUZo2KbkZ1ZWONV3ugUCg+e3jTiZbHjK8vnVnSy4subx0TbvdLXNyTuibiq72VCq7mVdxGpA8ayRuWWHeWYwnwPmf9w+m1XBg8sxhPgjM/7h9NpgweWYwnwRmf8AcPptMGGmet72kuL4jwF5iLXHZK3muZLN1luO6clRbXkFy+7lXMj6skRVdEPnEa6DUiYhDsnYs/XuJfvWF/Oy1RJK0aqoKBQKBQKBQKBQKBQKDQvXZ4Le9wFwYkLyWckV6FHpKRblnIHpOy3klfQeJCkD06HzHODZpvbHVMeRPSe7OfymWK7GqlVtkLBW08WT0eKbFOuuuoYqW1HuA+P265fYvzR/1NFwd1wXA8gdyHZdwXeIvQwGq7hHroSNT5uv3fb+tZ5VvW6NNH1I9GU66nvPwmoUKg2BXicaN4LypVl0Vdm1dxGh0A8DWlRyjVNVVVf18xXHxRjv9sdhqbwwHWevrS1js2tbOW1jhWDkRpKm9QnLZpJHuGZmkQeuA6K7APoGUNXptn5xVRTRaotW4oojqzXMersn5s1N54uPOs7dX9peWvd4rZb1oZi6XE0L208W3dLa8nlyI0pDOyvNLEXlmLRyrNMsmxXzjrqoqp6ONW7MTM+2OqPZuW6ZoCHhVVfcY38WZ9qsBGGYli2kcQBYk+LMzM2viSTrXxa+UpuU/wCJ+Wbn9csOp5bjCMXHrZ2jXXdI2nj7gWBvAe0NR6Trr4Vho2u3FPF/RH/kV1OVg4eXUE+ge1omh+76yp/DqDXz69vqx1eP61dSf/Zy8ESRwZDIMpWO4eG2g1Gm4W3NaZ191eZKI9R++ice1Xsua1iqmm5dq3V4iPnLasU9WrvTMr3zaKBQKBQKBQKBQKBQKD1Mt9ak+9v+aaCiDs2fZlw7/Ovfmi/q/YsvqqipQKCAfbKfYDFfHkfzdkatA/XY2+x7KfHsvzbjKid4n1UBQKBQKDFBBzr/AHUATOo+XxCJFm401nhG1I8tHGugRydFS+RQFhnYhZAFilYKIZbeYnAg51LuufecJXjWV6k8mJkndL2ydGFxYXAYpLcQRPo6SowIuLUheZtPgkq+deYWXX8I8XW1/bQXlnNHcW1xGssE8Tbo5I29DKf9hB0ZSCCAQQMarmKDFBmgqp7Z7HxrfcPShEEj2uTR5AoDukcti0aMwG5ljMkhQEkKXcjTc2toWhKnsu/YTivv2U+db2qqpW0GKDNB893GfDCX3GV5ZSM6R3vFlzZyPGVEiR3WbkgkaMurqHVJCVLIy7tNVYeFX8laFjHkbOHfhPPf2+N/VlRlGTyNvDvwnn/7fG/qumTMg7Gzh34Tz39vjf1XTJk8jbw78J5/+3xv6rplOZb36rHUvxvCLXzY+6v7k5AWyzd+ktn2C07wY+V3e2ttupuX3bt+ui6bfHWqqQVAoFAoFAoFAoFAoFAoPyya1Aiz0qdQXH3kjz4+dsbI53NCIhNZ7j4kpDujeHX+DHLy1/exjx18btvNuzdnXanoqurq8j2d3jqa1VmJ3NJ5js9s0hPJuMdOntEyzwuf9A27qP7U152vmvtMTOmq3VHj0MXQ1eh0rOdTbiODU+p/PUelre4t5B+BGljlJ+0I6+dc5A22if8AD1emJVm1X4w1LneH7i1k5N1BNbSjU8u4ikhfQHTcFkVSV19DAFT7ROtfEu2blmrFdM0T6YY9Ol6tlZPI6xxI8kjnRI4kZ5HPp0SNAWY+k6KCdKpTRVXOKfrfmltXh7qncRXIVkxc0aMNd1xJBbaA/wAKOaVJwftcrUe5X2LXIm2XMTFuevvxGPXn9N/oZKbVTvOM7P7PORvkx0I9vdczOw/BHaspP+n+Gvp082dqnyrdPrn/ALRPjuT0NXobV4C7Oq3Rw+Sv3uVBB7vaxm3RvdV5meSVlP8A9sQN/K8a+1svNaiirVeuao7qI7fTPdu7P7ZYseclzgsFDbQx29vGkMMSCOOKNQqIijQKqj0D/wB/STXuLdum1TFFFOKYbLkazhQKBQKBQKBQKBQKBQerkkJjcD0lHA+6VIAoKG+zhuAnGXDpY6euXa/6TYq+QD8LED7tX7Fl91UVKBQR566/VXfi3HWljHfJYG2vlvea9u1yHC21zb8vYs8BBPeN27edNumnjqIyM9SjqsScJY26sJL5L9rm/e95qW5tgge2trfl7DNPqR3fdu3jXfpoNNTIkLQKDFBBfp+7U+0wOXv8S+Hubo2EiRvcRXcMaOXt4p20R4ywKc0oRqdSuuvjoJwJwY++EkaSL4rIiupB18HUMPH7hqB7NAoIN9f7qAJnUfL4eNI81GgM0I2xxZaONdAjk6Il8igLDcMQsgCwykKIZbe0SNk9QTqzXfDOG5F9dSS3V3ILqW0Em+0sGZfGC3HjrIfTcSqdkkv1I0XfJUSboFAoKru2imBvOHV184W2UYj2wGlsAp/CVYfgNWhaEpuy/iI4JxGo03SZRh9sHLXuh+4dPD3RVVUq6BQKCgYez7/Xf/mKr+Ssv5qipQKBQKBQKBQKBQKBQKBQKBQKBQKBQY0oOucddHlnk7dra9t47iJtfBx5yEjTfE40eKQe08bKw92tHadktbRRou06v19/YrMat7r/AERdBOOwkPKs4vXGGkt1Lte6m8dfXJQq+aPajQJGvtKNSTr7FybY2OMW6cz2zO+SmmKdzYelfWWZoFAoFAoFAoFAoFAoFAoFAoMUFCnWV4Lu+EuMbh7cBGt8imaxbabI5Lae5a5hTRG1MSOJrCXxXeIZPNCuFq/Ysul6AOnWw4ixdvlLCTWOUbZYW0E1pcr9etZ09KSxN4fwZEKSIXSRHairY1BmgUCgUCg1r1genmw4cxk+Tv5AscY2QwqRzru5YHk2tunpeWRh46eEcYeRiqRu6h8+PGHFE+Qu7u+uyHuL24murllDcvm3EjOyruLFYwSUjVmOiKq6nb4ZVlyPZr9aWHNYWDGTzD1WxEEdvNG5PMubSICO2vY9xLSgx7IZ21LLcKSwUTQl6SqmNVRmgUCgUCg9DN52G2hluLiWOCCCN5ZppXWOKKKNS7ySOxCoiKCzMxAABNBQ91v+nCTi/iVp7BHlhc2+KwsJUpJOhkKxMUdhtkvbqZ5BqIysTQq4UxsReFl23QZ0ZrhsPjMWrBu4WUFszgaCSREHNk09rmS730/le3VFXeqBQKCgUez/AP13/wCYqv5KV/VUQUCgUCgUCgUCgUCgiVxB2pPB1rPPbTX1ys1vNLBKosLpgskLtG4DLGVYBlI1UkH00HH+Vm4J9/3X5Pu/8qgeVm4J9/3X5Pu/8qg3d1f+s9h+J4rmbETSzx2siRTNJBLBo8il1AEqqW80a6gaDwoPF0+davBcMxo+XvUgeYEwW0avPdTAa+ckESs4j1UrzpOXCG0UuCQCEUG7a/hvdoMZm9n8IxWAb+p3/T8G+gkp0C9d3hviNhFjcgveyNe43Sm2vPBSzCOOTzbjYoJc2zzKoBJIHjQb3oFBHHKdoNwtDmDg3v37+L1McVW2neAXbyLDyzcKhiXZK3LkYsFjZXDFdp0CR1AoI4dPHX84e4bv/U7KSXaXPIjuAIbVpkMcpcId6sPHVG1GnhQby4F4yhyNlaX9sWNvfW0F3AXXa5huYlmiLKfqWKOuq+O0+HtUHO0Cg/Lvp4n0UEX+mPtKOEcLJJBJkDfXUWu62xkZu2DAspjM4ZLJZFZSrRtdB0P1QXUahpUdtfw5u09S83t93l2G7+r37T/zUG9ehjtFuE848cMGSFpdS7Atpkl7nKXkIVYkkctayzFyEEcNzIzN9SG1GoSWBoM0CgUCgUCgUCgj11yOqJacV49YmZbfI2u+TH3u3Xlu2m+CYDxe1nKrvQecrKjr4ptZE4FREV5xTwBlH05+KuZCFbcqzY7JwxNqum4G3u49G0Vl2XMKyMAbdmYVk3+PHcsk1w92zGUSNVusHYTygaNJBeXFqjfbELwXZXX06c5qjSq5Py0V3/Fy2/Ksn6vpoMHlorv+Llt+VZP1fTQYPLR3f8XLb8qyfq+mgweWju/4uW35Vk/V9NBhxnEPbMZR42W1wdhbykaLJPeXF0i/bMKQWhbT3OaoppEZJLvinj/Kp9fytzGWRSqrDj8ZFKxLalQLe0j80AsxkuZhGoJuGVQW5MLSuhHs8sTjuH7rDXqLezZREOSvANjmWMloBaE6tDHZP58GupMm6RhrIyiuUK0+nvqtcQcE36X0T3HdreTfY52yDIqbjsVLkpr3WZw3LeKbW3nDFVaVXKC2Vm3ujjtgc7bwpHf2FhlCqqBcq8lhNJoAC8oiS4t2dj5xMMMCanwRfCmlV3Ly0V3/ABctvyrL+r6aDB5aK7/i5bflWT9X00GDy0V3/Fy2/Ksn6vpoMHlorv8Ai5bflWX9X00GHjuu2gvSpCcO2qt7RbJzOo+6osUJ/AwppEZOmrrc8TcYypj5S0kUzqYcLioJDHLIhLoXjUy3N2yabvXpDCpQSCOIrupuE9+z+7PpsK6ZrNKhypQi0tAVkTGrIpVnd1JSS9dCYy0ZKQozKrSM7OK1SON6zfae3nD+eyGGhw9tdJYtbATyXksTSc+zt7o6xrbyBdpnKDRjqFB8PQEUjV3ln8h/F+z/AChP9Eq2hODyz+Q/i/Z/lCf6JTQYZ8s/kP4v2f5Qn+iU0IQ96OOJ2vuLcdfOgja94psrxo1YssbXWYinMasQCwQybQxVdwGug10qfH5rPobrGqUCgUCgUCgUCgUCg+cG94LjyXGj46V3jiyHFDWUske3mJHdZUwO6bgy71WQldwI1A1BoLKfIl4D4WzH47L6LQPIl4D4WzH47L6LQb86COrhjej/ABOZnhuru5tlikyVy1yIi6JZW0juI+REmusanw2s2vo9OlBUH0UcDZXpG4qdbq6CT3fNu7y6Kl47Ozi2jbBAZAeXHvit4IeZ4Fk3NpvegsjXsZ+FO78rvGY52n7q73biTXXX633Pkbf3unK12/vt3n0GpOjDs0clwxxhhMjazDJ4hLyTmTBOVd2geC4RO8wAsrxgtGneYW2liS8VuNuoWm0GrOtB01R8PYHI5d9pa1tz3dG1IlvJSIrSMgakq07x7yB5sYdjoFJAfNxkshLPJLPKzySSyNJNK5LM8srM7O7H0u7bmJPifE+1rQfRJ1Jen0cScOWGQZw12qd0yABXct9bBUmLKpOznqY7pVPiI508BrQb2oKOu2L9l4+KbL9Jc0FtvVJ9ivDXxBh/m+3oNsUHiublUVndlVVBZmYhVVVGpZifAAAEknwAFBSJ1+O0YvM9cXGLxE8lrgYy8DtGdk2W0O15ZnHnJZtoeTagqJI23zhmdIbcOe6sXZEZPKRRXubuDiLWVVeO0WLmZKRGBIMqSbYrLUFWAkE0o84PDEQCQlAexU4X26DI57d/C7zjyuv831M9H2t2v26CJXWn7J3LYWGS+xMxzNjFueaMRCLIW0QDNvaEO6XUcagB3tysup17uqK7IHNdnt2kFxi5oMNnrlpsVIVhtr2di0mMZvBFklY6vYa6KQ7Huy6FSI0KALm0fXxHiD4gj0Ee6PtUH6oFAoFAoFAoMGg4ribhS1vYXtru3gureQEPBcQxzwuCNCGjkVkYEEjxFBonOdndwXcNvfAWiH/8eS6tV/qW08SfiWrRVgcd5NTgj4Dj+W5H6XU6pGfJp8EfAcfyzI/S6a5GR2anBHwHH8syP0umuQ8mrwR8Bx/LMj9Lprkcjhezy4LgfemAs3b3J2uLlP7O4mlQ/hWqZG9OGeFLWyhS3s7eC1t4wFjht4o4IkAGgCxxqqKNPDwFBy1B4prdWBVgCpBBUgEEHwIIPgQR4EGg0Zxf1E+EL5me4wGPDsSzNbxNZszEklmNm8GpJJJPpJ9ug635NXgj4Dj+WZD6XV9Uh5NPgj4Dj+WZH6XTXIeTT4I+A4/luR+mU1SP0OzX4J+AovleQ+l01SP3bdm7wSrBhgYCR4gPc30i/hR7pkb8INRqkbl6O+hvFYhGjxeOsrBX+r7rbRQtJpoAZHRQ8h0A8XZj4VUdx1qg0H0kdRPhXL31xksjixc3tyYzPN3zIRbzFDHBH63DdRxLtiiRdERddup1JJNx1vyZnBHwIPl+U+m1k1z4wvrnxEM+TO4I+BF+X5P6bUa5NUg7M7ggf/RF/Df5M/8Are01yap8RD3sB2dfBtrcW91b4cR3FrPDcwSC+yR2TQSLLE+1rwo+yRFba6sp00IIJFRqlRJECqjNAoFAoFAoFAoFAoPni4H/AOsSz/76W/z4lB9DtAoOodMHA/qnicnjQ2w5DH3tkH/gG6tpIQ+n8kuG/BQfPf1f+mnI8GcQC7WEd4s5ZrHI2U3m82IScu7tGddxilWSPVJV3BJokYrKgeNwvv6AOsfiuJbFL7F3AkUhefbuVW6tJCPGG5hBYowIIDgtFIBujeRSGIbQoFBUd20HT+Jbqw4bgcMtmBkL8KQdtzMjJZwto25XitnknKso1S7gYE0HP8LdQwy9FzqYScxcEcSwgAmTdHCRb2ihQjsZcWXUQvuC3VyT4lF0DWvY6dYDuWZuMFO+lvl4zLbAkkLf2qM+gH1K94tRIrMSNzwQINSwFBc5QUddsX7Lx8U2X6S5oLbeqT7FeGviDD/N9vQbYoISdrZ02yYrhjucD7J81P3FiG0dbJUaW8KjQ7hIoitXHgNly3iDtBCH3ZC9WCHJ5G4zt9EstriWjSzjkUMkmScCQTEFjqbGILIoZPrtxBIrAwEUFzlAoMUFHnat9V+LB5qLI2UQisM0JZeUg0S3v4WXvUaKqBY4plkiuI13EmRrlVVEiQUFhXZddN0ma4UtxcMz3OKmfFyu+mskcEcUlq+upLaWs0UJZtGZ4ZCQddzBLqgUCgUCgUHrZByEcjwIViPwKTQRL7OXpfyeZ4Ukv8ndvd3ne76MTusSsEiji5agRIiaKSSPN11JoNY9Xbr5SY7guxzvEUl3kZLvOTY1p40gEkS8uWVZGRRCpihit5CVRTIxIAB18A3V0bdfC2vsza4W5w+YxE2RhefGy5K2SJLyNI3l1CLIzxFo43YbgwBUKxRmQMGo+Aet1jcDbcQZB/2RZG2i4rmx9697PBciwlfmefbKrgx45THsVfrhZok2akAyJIce9aqysc5isCIpbm7ykEt2JIWiEFpZxLI5urlndWWJkhnZSqtrymHtjWBp5O06x5iOR9Rc4eHlvO5HPi2j7oHMnL55g5guRa7iPXNnM1Ii5XOIgqcDsnSr2g+PxeVvcKMblMhkbeK1ktrfHW4umyHeoEuPWBGWZFgibdI0gGoBKLJVcDwZTr9p3y7sLHh7NZS5xtvbz5SOyjt2eye4iWQ24jklSa4mhJaJ1ji8ZEZQDpqLD8Y3pLtf2cbZps1bXDcLJfS2VxcwjEW0HMVpGltkZyL6Igq7q7xjSTR21FQI7dbztAFzHDOQOJsc/Ywm5gjss6IWtrOd4LqJpoluoZd8LSwiQoj6F9GjYI/rdBMXivp3u8Zb4uK3wOZzUlzYJO0thHC0MXKjiDrPcTzx7ZnLhkQjdKAxUsVYAOo2vaKYJuHJ+I3W7gitrxsbJYTxJHf+qKqHFoqGQxMzRHn7xLtSJZC2xoZI1DRF91k7zL8ccGJ3PNYNJI783OOyAkt0uo5LSaa2uAiScq5TUOvriCSGSMhlXzC0jbvEXaPWkbZKazweZyWKw9w1rkcvaRwd2ilQgS8lJJkkmji1Bd/WwqEOdqOkjMCS0PSZZNjRlxcJ6nGy9Ue9HUJ3Pk945xBAYAQ+eQRuHo01BqBWn11+v0Mzw5vxNtxDiAclEbLKPDLZ2t+kC3EdzDDeW0xHMXxdoHYa8pwfPiKCcCZHST1w47LJNhMbichnsnb2iXd7Bj+Sq2cLqjJz5ZpFHPkR1kSBVLOrp46uBUDYvV+6eLLiPGx5KyEqRs8kMsFwgjuLa4hO2WCdAzBZE1DeDEFWU+3oAgdw10nZ/iHP5ywl40bha/s8nNa4vDGxgKTQRO6xsDM8JuXkjUMYy80jbueq8p4oxI3P1rMZme94uG1XjG8ltccZO94CaxsbSS8SaMT3F+ZDyLi5ZY124+W1SExTzcncTMsEDx9DfXRwmN4ObO3F7lb1Uv7m3uBkeS2VmyssjTtaJFG4to1ETrJDFE0cUNooJCFHWg7/ANEXXdhv8rDhcjiMngcjd25urGLIogS8hCtIRG6HVZhGjs0TINpSRSwddpDqnaP9J2Ux1rgUxWRlxkuQzkFhNcRLE5WGeKQEssqspCNtk01XXbpuXUmogh0zq79LmdsuNJuF77PxcUWjYx73vaWtvBLY3CEHkyGB3CsUKh45ZpB6/bMOTq6vbA7xnu0MFg9q+W4Zz+JsLu9FjFf3sdqipMzuu6aETl0jCxyTbkaTfCjPGJht3MDanDfWitrninIcKLa3C3ePskvnumMXdpI3WyYLGA5lDDvyA7kUaxv6RtJgRd633W1OV4P4jnxnfsbPh83b4qSZJ+TM0kV3EsrwyW7h1icNt0JUsNQQKRA3Z0gdcuLFXGOwtrjcjncxPjorxrWwVCYbfljSW5mlYBWkKsQAHI83cVMsIlnA2L1besrY8TWct1aR3NtLa3D2l7ZXkYiurS5jALRyoGZfEHVWDH98rCN0kjSBtugUCgUCgUHzS9JIuv2S5DuPP776u3fc+68zvXevVCTu/duT693jnbOVyvP5m3b46UG2uX0pe5x/+LiKgcvpS9zj/wDFxFQWedl4ufGBvf2RerHffVeblerXfe9d17nY7OX3713u/N523b5nM5unjuoMddrs6MfxQJL+0KWGd5YC3WjC2veWNI479EDHXQCMXkaNNGgQMtwkMUShUDneG+JeB8uN3e8RkISRFcRk8m5iBRiYZNDb3tq52b0Ilj1GyRFZWRQti6hfaPQcTFcXk0is82qkx7DttskiLud7dWJMVyigvJalmBRTLGxUSRQBMXjnjKDHWV3f3TbLaytprqdgCxWKCNpXKqAWZtqnaqgsx0ABJAoKCOiPBS8dcarJfsFiyF9Jf5EtJosVhCeY9ususbKogWOxhcaMpaNtPA0F/UXE1mAFFxbBQAAoliAAA0AADaAAeAHuUFBXXC6OzwnxhK+NeJYUuYMziWiMbRwo0xnijCp5qpa3UUsCIfHlxITru1oL1+hLpUt85ibDLWxBhvraObaGDGKTTbPAxUkcy3mWSBwCdHjYe1QU49sX7Lx8U2X6S5oLbeqT7FeGviDD/N9vQbYoKou3I15nDP8AB2ZjT+duxm7/AGbaDd3Y0xwjhKcx/XDmbw3HiT673eyCjx9A5AhOg8PEn0k0E76BQKCvHtrwn7HcXrpzPVqPb7uzuF9v0/0uX/soOtdiBJJ6n58HXki8sinucwwTCXT7e0Q6/goLM6BQKBQKBQeK4h3KV9ogj8Y0oK2ugW/4m4Ix9/w03C2RzLNdXUmKyWOUNY3AuI1RWvJAX7ooZA5MhVgGMZUbBJJO8dO6TupjnLfo6wmFWylu8iOIFyF5a2m2Z7WCe2yCEMynYWiWSFZCjOiyuwV3VQ5CUXWA6Nchccb8FX9taTS2WPTJC8uUXWK250BSMSt+93+gf8Kga56F+qxeXmJ6QMXkrSS19Wc1kbjHvcR+a+rNLZXiDUbkS4SKQaFdQNNRrQcV1Kurlm7yXKZLiS2nsboYC04XxouCTMtulmIbq60JbcXZYnEu4lnluV+20jTnR31YJrCwbC5rgniHLXscs6Rz47MzRYW9j5plgkkK3cVtaDdp4tblyESV0WRnQBKLov6Fr+26SspkjYzpiTw9b2VreP50Lyxx4hOWshJYuBBKpJGp5bnU6+MDTfXK6Lbi+y13cYbhjiey4kjmUWmcxcqw4y+jG1BNc3HNjWFmgBUleXJvjiEjyL4EO93XV4zt9xNJJkYnAvOj5sLe5SHQWwy1zFy7jlPp6RI7yKRGBpodBqFqcjQk3DHFTcBTcF/sSygu7G43zXhEXdpLdsm2RU2ZDHvtxzpOSyWrSosCtKZNRyqDb3ThwdxAeIbIXuN4iyvDpwtrb2tjg72WySPJCGMSeqLQ3FtygrrMGlmdVCvBozbHjIamt+pjxE3B+TtVxskeSseMPVi2sHZZhe28dnHatyJpJALlFMjSLKzl7lIJBoXlUUyN6TvxBn+LeDszPw1f4mwx65GOd7oxNKkk9o4keVEPMht+YY47d5VV5W5rbEAXeGjuDeqFLg2yGLy3Cedz0L3Uhx1/h8pNDbXNq6qqR3tvFdwRQNogZ5ZY9zNI6FSsUTyTnIsA4t6GjccHT4KygFi82CextraWdphayvZ7I7eW5O5pFjkIiabx3AFvGqivjpFsuJ8lwNa8Krwhl4rrDzW6XVy1uvIkSB5UhewXcJLqWUyoZ5IFkijj5z72DjSRs/p86r13BxXkM1PgsjxBiMrbWzbMPfy2V9YXcEFvAVeOG5t3uY35G4a6oocEFWjYSBLLqb9G1tjcS622GusELu8nu5LG9vHvbneyxwieWV5JdjTRQRsYQ52aeOrFiYEMet7jMlxTHc2DdHt/Hno5ljs83GY0tWt4Z/B3v3SGOWKaDeFtZ5pEhaUOrqyBqkcp0j9EPFAztrFmbPOcS4hMFY2lvFiMnJj7d8rDb2qXE9+y3dssTSXSXkjzyMCyTWx1cQmMB0zhbqR8Sjg65tBZrHmMZxgc1a2kroYb+GCwtrb1mRpQGjaQO8bSyK0qRMpKtKGDI3jhsFn+KOMMBmbzA3WBx2At7tpGvpYjNc3c8ZUwwIhEjRhypWQpyzGkpZlZ442gdt7SHoeu81b8O21vZT3sK5+2a/SBXPLsXikiuJJGTRo05chUyAgrrqCCAaiBsXHdVTH4DE5WPhOxgx+UuLC7jtbks805uTFIbUPc3bTvy1uNjBHYxAqpKELUiuHirq78SZHCWqPgOJ583Z3wlyl/lMlLcR3MYlkRIcdZzXhWU7ZY3adYgI0hlHPfm7jljeslHx1wrncH0h33EdpgbzNWOVxMVkncXhDQzrHZLtmMrARKHsF1eQJHy5wwZ2RkONVpPiHoA4iXgrjC3ucPdDI5DieK/is7WNrxpY3nt3kkthb8x5oEYPo4XUqu4hfHQN28Y8CZvh/i2Hiqyw11m7K/wNvjb23s3QXtnPGlqNRBJ5zITaQeKggbrjcYyqCUO99n50HZTHtxDmcvbGwu+I8o98McZVlNpDzbmdQ5TzRI0l5Imng3LiiLLGxKLAmBQKBQKBQKD54uB/8ArEs/++lv8+JQfQ7QKD1slko4Y3lldI4o0aSSSRgiRogLM7uxCqqqCSxIAA1oPYBoOj9MXQpjM/ZvYZW0jurdtWXePXIJNpUTW8o8+CZQxAkjIO0sp3KzKQ+ffpl4IuOD+Kbm1tpy0+Gv4Z7O49sqBFeWjyAbRvMUkXNUeaW3gajSgsj7XTrJiDA2GIt22zZwR3VwARqmPg5coRtGVlNzcmNVO1keO3uVOmo1CCnQd2c/EvEGNhythHZi0uGmWFri6ETvyJWhkYJsfzBKkiAkgko3hpoSHfPI/cY/wMb8u/8A40HVOlXsx+KsPj7rJ3UNm9vZx86cW91zZREGAeQR8tdyxKeY5181FZvHSgll2LvWB3xX/Dc7ktDuyWPDEn1p2SO9hXw2qElaGdUB1Yz3DaeaxoNAdsX7Lx8U2X6S5oLbeqT7FeGviDD/ADfb0G2KCEHa49CsmT4ZF7Am+fC3HfGAXc5spEMN4F0+pEesNy58QI7d9R6CAhd2WnWhlxcuSwSvbCbKR87DC9cx2ZzUaGOK2mdAHVcgvKiD8weuQQxopefxDrfHHWg6TM5f3eOifLw3FvMI7jH4W0ltWsnDFQkk1qhuo4yyseZcXbqy7jvKDwDzHq/dLIHM14l9GuozbmT+qMhv1+1t1oOKxXXg6QuGJo4chPf+G7S1z9nJJzlU6E864SO9dQdPPiugD4eJBoOs9dDry3XGK4tJrRLFLCKYyRxTvLHPdTsgecBlXaixxIsaPzHjLzDmMHoLReyp6G3xPCVtNMrLPl5nyjK207YJkjis9pTUbJbWGK6AJLDvBB2kbVCYlAoFAoFAoFAoFAoFAoFAoFBigzQYoFAoM0CgxQZoFAoFAoFAoFAoFBigzQKBQKBQKBQKD5w7njOLG8atkZlkeHH8UG9lSIKZXitctz5FjDsiGRljIUM6KWI1ZfTQWceWt4Y+Ds98nx/6zoHlreGPg7PfJ8f+s6DtA67WM4y4a4xhxdpkYpLLh/IFxdxW6mQ3VjepGsIt7m5LNrE2oIX0rpu1OgQz6onaw32Fgix2bglythEojguY3UZG2iVTtiPNIjvY1O1UWWSCSJS3rsirHEoSv4m7ZjhiO25lta5W5uWTVLZoIYAsm0kJPO1w6Iu7RWeBbnTXUK9BWNFb5Tj3ip2CAXeWuw8pRd0NjaIEjaVySnrFjaIoLMwaTlqurPIoYOf6eeKJuNOMeRY6vDPd2+HxIAaRY7C3cW8M5CorCJl5uQm1HrQll1bamtBfl0e8DQYyws8dartt7K2htYQfE8uGNY1LE+LM23czEksxJJOtB2Gg9DPYKG6gmtriNJre4ikgnikUMksMyGOWN1PgyujMpB8CCRQfPsy3PAHG/wC/k9Rsj4fUl7nGzp/oJzLnHXBGvgqSP/IoNidrZnobriiC5t5Fmt7jCY2eCVDuSWGYzyRSIw8GR0ZWUjUEEGgkr0Jdrtw/i8LiMbNj8w82PxljZSvFFZGJ5bW1igdoy18jGNmQlSyK20jUD0UHs8bdt3YKn/w7B3c0h1Gt9cw2qKNDo2kC3bSeOnm7ovDXzvDQhG3AddvjzijN2jWEb3Xd5Q/qNYwbMbJA4MU0WQ5jOHt54meF5b2crFvLRtC20gOP67fZ93/DzjKY+2mfDzgTPHGzXUuFlK73tbmZNWktYm3JDkD5pACSsshje4DYXVl7X2/xsMVnnbRsrCgCi/hkWPI7FUheesg5N84CpHzHe3lKjc8k7DzglG3bN8J8nmC2zRk107v3S15g8dNS3fuTp7fhKTp7WvhQQ465PaiXHEdrLirHHQ2eOl8JZLtYru9mUbSuwMhgsiDr50XOmBCsk0RBBDXHQX2bvEmfxs2TtoY7aERrJYpeMYHyep1Pdtw0SPZ4pcT8uGVmQK5UySRhyPRZ1uuMeA7r1Mukn5EJ87EZeOQxrHv2b7KQkSxRsI3EUltK9o5LScubwNBeD0QcdHKYnGZMx8k5HH2d8Yd/MERu7eOcxCTam8R8zaG2Ju012jXSg7fQKBQKBQKBQKBQKBQKBQKBQKBQKBQKBQKBQKBQKBQKBQKBQKBQKBQKBQKBQKBQQY4r7Hvhi8urm7lvc4JLq4muZFS6sQivPI0rhA2NZggZiFDMx0A1LHxIcV5FjhX39nvldh+q6B5FjhX39nvldh+q6De/VX6kGJ4Qe9kxk+QmN+tukwvpbeUKLcylOVyLW2KkmZt28vroum3x1DqHTv2YvC2dla5NvNjLuRy8s+LeOBZmO4sZreSKa2JdmLvJHFFK7AFpD4ghpa07EnCB9XzGVaPX6lEtEfT+eYZF1+3y/wAFBKHo56kmCw+LvsXjIp7L1RtntbvIxTBspIskXKZ1upkkWJgpLJHFEkEchLrErEsQ6X1d+zU4e4ayaZaylyNzdRRSxQi+mtZYojMoR5o1hsrd1m5W+INzCuyWQbSSCoSwoFAoIx9Zzs9sFxXew5DISZC3uYbcWu6xmgiEsSyPJHzVntbkF4zJIFdNhKttbeEj2B1bM9lbwzdR2iXkuWuzZWqWUEst5GsgtYpJXhibkW0KMIRKY0OzcI1RSW26kOMXsguDf+yyJ/8AHN/wjoOcwnZS8EwsrNjZ7gqQdJ7+9Kkg6jcsU0QYfySNCPAg0EmuBujywxkAtsdZ21lbqdRDawRwR6nxLFY1UMxPiWbVifSTQc/LEGBBAIIIII1BB8CCD4EEeBFBFHph7MLhHMM8vcnxlw+habFSLagkHX9ysk1kN3juK2yuwP1WuhAaaHYmYHd9lsvs/g/9C3f1u7af+Sg3d0LdmfwlhHjmSxbI3UepS5ykguip3b1ZbcJFZK6ELskFrzECjR9SxYJTImngPR7Q9yg6x0g9FuNy0Pd8nY2t/CDuWO6gjmCNoRvj3gmN9CQHjKsAT4+NByXCPCkFha21lax8q2s7eG1t4tzvy4LeNYoY98jPI+yNFXdI7OdNSxOpoOXoFAoFAoFAoFAoFAoFAoFAoFAoFAoFAoFAoFAoFAoFAoFAoFAoFAoFAoFAoFAoFAoFAoFAoFAoFAoFAoFAoFAoFAoFAoFAoFAoFB//2Q==">
+              </div>
               <h3>USP/ESALQ • MBA em Data Science &amp; Analytics</h3>
             </div>
             <span class="cert-status">Concluído em 2025</span>
-
-
-            <ul>
-              <ul>
-                <li>Fundamentos avançados de estatística, inferência, modelagem matemática, séries temporais, análise
-                  espacial e otimização para leitura analítica de cenários complexos</li>
-                <li>Mineração de dados e modelagem com machine learning supervisionado e não supervisionado, incluindo
-                  árvores, ensembles, clustering, deep learning, redes, NLP e text mining</li>
-                <li>Construção de pipelines e ativos analíticos com Python, data wrangling, engenharia de dados, BI,
-                  visualização, cloud e big data, com visão de deployment e aplicação em contexto real de negócio</li>
-              </ul>
-            </ul>
           </article>
 
           <article class="cert-card reveal">
-            <div class="cert-top">
+            <div class="cert-top" style="display:flex; flex-direction:column; gap:1rem;">
+              <div style="display:flex; align-items:center; justify-content:center; min-height:110px; background: #0b0f14;
+    border-radius: 5%;">
+                <img alt="Logo Conquer Business School" class="edu-logo"
+                  src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAABhsAAAIqCAYAAAA92Ps3AAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAle5JREFUeNrs3f112zi+MGDqnvv/9VawSgXrVDBKBeNUsHIFsSuIXIGTCqytwN4KrKnA3gqsrSB5K/BL2FBGk9gJKH6B5POco+O5dxWJAgEQwA8fRQEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAdmvX55Y+Pj3fln2O3AQAG63Q2m60lAwAAAExb38GGRfnn1m0AgEG6n81mbyUDAAAA8D99fvlsNtuUf27cBgAYpHNJAAAAAASzvi/g8fFxXv4J2ykduR0AMBg3s9nsvWQAAAAAgv/p+wJms9m2/PPZrQCAwfhaWNUAAAAA7PmfTK7jU/nauh0AMAif42QBAAAAgCdZBBtms1mYIXnhdgBA9rbF8yQBAAAAgG9yWdkQAg7r8s/GLQGArF3ESQIAAAAA38xyupjHx8dF+efWbQGALG1ms9k7yQAAAABk7/Hx8eqxOQ/laylVoXI5nJev68c8fClfZ+4KVC7HRw0/Ux/jpAAAAACA/MXBkS8ND47cGiCB5PK3aqEMNuFOOYbkstxGOb6SsgAAAMCgxEGSNoQZnnMpDC+Wu2VcDZS7a+UYXi3HJy2V4xC4OJLCAAAAwOC0OOgZBkxWUhi+lbVFXP3TxAqih8RgQRMzrlcGP+FbOZ43VI5fLW9SGQAAABikODuzTWFQ9ERKM+Ey1tR+7t/ORkkc7Fw0+N1fnMuCcvx42fbzUkoDAAAAg9byLM392djHUpuJla1VG6sLUoMNe+8/bnBVxcKdZWLl+Kyj81UE5gEAAIBhiwORXbmyJQsTKFNN7ef+4rkJVYMNe/+uqfMinMvCFMrxosPzVW6lOAAAADAKHWwP8f2WLGdSnRGWo6b2c7/72QqCQ4MN8d8eNbTi4ovzHBhxOb7u+ED2uZQHAAAARiEOQH6psKVLEwOqD7ZkYUTl57KhQNwy4fsODjbsfca8wbMkbP/CWMrxqqFyXOU5eSn1AQAAgFGJ+1KnDqQcNbjFxK1ZnQy83DSxn/tl6iqBJoINe5+1iCspnMvClMvxsqFyfBWfj8sqz1N3AAAAABidCsGD1d6/6XywFTIoK70F25oMNux9ZqODrXIIAyrHt00G2yquFLSlIAAAADBOceCl8h7TXW8jAz2Wkab2cz94G7E2gg175bixbWTkFjIvx61sI1ahDD24EwAAAMCoVRhIvX7h3x53cUAu9FAushmIbyvYsPf5vQdUoOVy3MoB6bHspFI2AAAAgHFrYrAkzPRsaIuZa+c5kEGZyGqLobaDDXvf41wWxlSOm3ouXb2Wn+sE6wEAAABGqcIM7ruEz2llBil0UA6yPDy5q2DD3vc5l4Uhl+NOVtwdug0hAAAAwKg1ecBl/Kym9sZeujt0kP9b28+9oeu77XqLFueyMNDn2FVXebZCYHLl7gAAAACTEreOSR2IOUr4vEVDs0tv7XVNS3n+aAircfoINux999y5LAygLK8aWo2zSny+nTX5vAQAAAAYnQozNS8rfOaywX2zDdrQVF5vMl/OW77W3oINe9fgXBZyLMeLrvNlxZWAS3cJAAAAmKS29qDem0HexPYWK3eKGnn8eGgrbnIINuxdS6czyOGVfNjUipuHqmWnwvZid+4UAAAAMGkV9ry+PeCz53EGaZZ74zPqfN3pfu4NX3s2wYaG09K5LByS95o6S+TswGdYqoU7BgAAAExaHEz50uZgSlxBcdfQ7PJjd41f5LdBz8bPLdjwXTl2Lgtd5bdlQ+X48tByXCG/X7ljAAAAAMW3wdmkmck1v6f3wSNGnY8738+9pd9xm/Ms6iGdf8Fgy3FTwel5jes4qbBqQj4GAAAACOJWFamDh6sGvqu3bTEYZf5taj/3uxxm3OcebNgrx02sIHEuC/vlOJtt97p6JgIAAACMTpytnDo4eNTA9/V24CejybOjDFwNIdjwXTl2Lgt1y/GqoXK8auiaVhXyrVV2AAAAAN/rY3/qBre+ubWVxaTy6tlYt+QaUrDhu3LsXBaq5psmt+Q6auiajirULUt3EQAAAOAFYZCvwuDOccPf3dTg8cpM01Hn0Sz2c2/5Nw4u2LB37c5lIbUc3+YYnIqBi6TvdicBAAAAfqLPgZY4o/Sqoe00lu7mqPLlZLbrGXKwYa8cN7UtjnNZxleOrxoqx8sWrq+3gDsAAADA6OSwhUQc8BnNgb/Uzo9Z7efewW8edLBh73c4l4X9/NDYgeJtrXrpYytBAAAAgFHL5XDMMAO9wf285+7s4PJhU1vyXD0OaEuesQQb9n6Pc1mmXY6bqsev27z/sb5JDXjY4gsAAAAgVYXBoVUH15L9jFgavd/Z7ufe0e8fVbBh73c5l2Va5XgwK9TiCqpsnnkAAAAAoxJno6YO4s87uJ6s9/rGPW4wHUYZbIi/zbks4y/Hg7vHVVbzucMAAAAAB8hx/+qpz3ofaT47snqlcrlbDPw3OpdlnGV5cKtXYpAz9ZrlNQAAAIBDxEGYxxwHYaa6n/8I85hzOX5Mk9upDHoOZT9/fnkfB3suR4VVGLfuNAAAAEANj4+Pl6kzjHu4tqMK21/8cka8u93pvTOz/fW0uZ3aDGsrWwZ73+YNleOHPvJ0DJKkmrvjAAAAADXEAf3UQcBlT9c4jzObmxjwOnHXW89P9uz/eRrdTnE7F2d2DK4cNxXoPevxd9wlXueluw4AAADQgLgPd+rA0VGP17moMHiU1VYeE8pHg9rPvad0mmSw4bty3NS5LAslr/H709QWdpc9Py+WQ3iuAQAAAIxOhUH8VQbXejaGwbAR5Z2m9nOfxL78Uw827KXDssHzPJTjZspxU8Hc455/S5UVe2fuPgAAAECDhra3dRxMuhz6Nh8DzzOD3s+9x3QTbPhrOXYuS//leFTb1FXIU3dyAAAAAEALKgw4XWd0zU0NeN/ZkiU5zQV66qWfYMPL5di5LN2X48YO7s4sL6VS5wMAAAC0YciDNLby6SydR7Gfe89pKNjw83LsXJZuynFTW1jNM/ttgwuaAwAAAIxShe0nHjK+focUN5+uo9nPPYO0FGz4dRoJarVXjkd7OPfQtgMEAAAAGLUxHKwZf8NVQ9v8LCeeH2xv03yaCjakl2PbdeVVJz7kXCdWWK2xUhMBAAAAdCDOKk4dxDvK+Hccj3kWb8tp5+De9tJWsKFaejmIvF76TWK1VwgojeG5BQAAADA6FQb3LgfwW07Guj95S+nV5H7uBvUOK1sLKfVDujmXpZ96L/v0qrgib6k0AQAAAHRobHtf783U/9LETP0xDqKPfT/3jNJZsKFe+jmX5efp09SKrruh5MMK223dKkEAAABAn2ZT/eFhZnr5Z5nw1s1sNns3kN80L/98TPxdP7MtX+fl774ZwX0OA66XDaXJRZkma9XGT9M7DHgufvG2d2U6bqRW63n2ayzH65GkSajbzqaUJvHA+bvEtytX7eW9cB92f4Pf9t6y////aVviu+fJf/f+/1/Le3cvtQedP+bx9X/f5Ydd3qmaN0JddS9vUKM/MN9rj+3XWYsK+fGPvf/ftsyLW6k7qHppV//8PeaHlGfWNr7266P7eP/VRUCOz7qX6rrUNth9bHPt+on/2f//61vB4aYcbAgV0V1CBRS8H9LAe5yxe1mkDYD8qsNxPtTGZTxP4UPiPX5NeOh8Ll+fynT4qsr4ZZoLNjSXlsexHC9qftR9LMebgaZDCDB8rFmOg0/Fc8Dw68jKU7Auf9epUtNIu2A3QPNbYielSdtYXv8Tn7/3njvZ1cnh9Y/4d9Hh19/v5Y17z1BeaPcvYr3Vdr4MeS8EITbyYRb3/ije866eW5tYF/0xhklpwKCec/ttsOMOv34bX3/E+m+jfQ78qtJKPST4YaC/b9nQliyDOp9gSvu5Z5j2tlHKNz8P6lyWBs+xuB1iOY73PXX7O/XUYWk8j8/Jq4byWhvu4lZaJ+5YL/njLLYFvmSYN25jO/bY3Zpk/lxmkjev47U4x6y7e38cy/5dBvWQ+w+01Q9cNbR9rvY59GA25R8fG0ZhdUPKQE2YEbsa6G/czQyu42mGf85pYCZ4FvfAyoZ2y/HoV+rEgfNQjus23rbl63TAKzoexvxs6jl/hbz1z6LbWVFNCGU25Od/l68bs6paa0f8M+aR+cDyRphl/O+pzzaOZXzZ4yW0NuM//rYP8fflOLh7E/sK2njt5et/Zlw3rcvXv9q8/3ureHrRZXsrBHH6vNdTa1uO+dkxoHsQ2l6/xzbY0AKYN1Nun8cdRfqyzWmL5O8m1lZ+XunXj6xSqzB79GjAv3MeZ5/U9ZDbzPR4QPZlA7/tS2zYcfi9sLKh/XJ81VA5XmZYjlcNleOzgd/nVYX7aDZhWt5aZjILtClfYl1gVnsz9epZxqtb5I2Knbye03/VUh69GlAefNCebrSfejuwOui2rbZ+Q+3Eg2XYpxrFb/XsaOfZMZB0P47Pty+P43E1tfGOvp85PebdszgOedtUHtbymeYA6WM8VHoMD9LRbE0SC3gTBfvSoJ1gw8DK8W1D5fg4g98zyS3ffjIwnpoWlu6mDdCNqQPz2lJuA3uH1aNX8oYBo1wHjBqcTCPoMLx8vBxBALTxoINgg2CDZ8eo6rgxTQKa9DNwCsGGvclrrW5hOaZ88T+ac0/OE9+3HPpAaVieV77exN9cZ4lXSIeHvgbpd0GT4nm7lTrfvylfb8o0ObclBQMrx+/K/zxtoBzf9TVIH8tx2MruqoFy/DYckjyCcpxap20czvjTfBUanuEZsSyGtxS7qhAwvDKwV6mDG/LHbdHvlgld5o0vcZDOpIrh5NOTWIcNeaXePOa/LCY2DOW+x/7NVTGsrdxea2PexoEZdQ+o33ar2L/EOm7sz4W5Ntho+g3X5X/u8u0Qt/nqhWBD8TRwF/boXye+/eNIfvOn8k8IOnyq+VGhE9TZAEecqbobJKjTCN8Wz2cHhNdWKWCg5Xgdy/FFzY9axnK86rAcX8VyfFyzHL+P5fh+BI2ZRZE++HmuBPyYfnvPh8UEk2DXqXmw6uXF/LE/iDe1/HEU268POryDyKsh6Hw9os5sKG93U90mJPGeH8fn13Ux/CDD905i3XPmTsMk67ejWP8/xLbI1Nog+22wpRwxnDy712/QrzqAYMOfUmf6L8ZSSYQZwGFGf/E8WLmpWYFexaVwizYLfHxI1fmOcI/DKoY3DrBjROV4FcvxTc1y/PGxxXNZ9spxWM2wrFmOQ4Dl7chm96cGs9djCK40mK/2g1cLKfI0UHWdy3aHGeSPxYgH8XR4x9e5Dc/HsQ7Kfox9Basc/nrfd+2iMT+/Qt1zaZUDTK5+W8b6bYpBhpfqwavHDM9A5Ydn8i4wNpcihxNsiOLWG58rNJaPRvTbt3FLlvfF80zhQ4XOw2657LzBAr/cK/B1rIvnLZM+yfGMsA4L5TiU4VCW6wxEz2M5vm2hHDfR2AzlOAQZVmPa+iymT0rD8ylgKsf/pUFYN3g1ViE/3U11NmkcuBWE+nmH906HN5v8ehzrsrEPxO/6Ckv3/Gk1w10xklXziU7ic0nACcZfv4X21xi2hGvarq99bVJQVnl2t027wFhDBBv2xNnB28QK4myEv/8mnucQZgzXGcTbLZettVTffu5wUDkOe/m/LTI5l6XBxmYox+9iOd6O6Z7F9E0dbLhQj/0wSKNB+LrdbNJJrXKIAZbdmR28bjfwe2m2cb/1WVF/e9Ch1UtXU95WaW8CxhQH3eeFgBOMtW47ilsBjn21VhN2wVdbzPWfby8n1g7rhGDDj04T3/dhrB33vS1Z1jU/6mOsQJcVC/s8HsJiP3c4vBw3fS7LWcVyvJtVXLexGQbWT2M53oz0dp0lNm62Vmb9ZTWDmZHpFvF5fDLyvHEUg5upB63zZx1klUM/eXYXaJhifv0Y2wlTu+fhN19NPOvvAk5LtQCM7nlm8LxaXbibFKTd2k+/4U6ebYdgw3fiYNYmtWIYcTqEfeBD4OVdUe88h3lsTN7+qhP73X7udQZEnvZzj+cy3MjVTLg+a/JclsvULTf29jqs24kMq6zexIOwx9rICXXkh8S3n045P8dA9NS2nGi6Q3M91tnEMZBS91ynKQt10W2c3UU3eXbKgYad5VQCDnuDGku5/xsBBxhH/fY0aaEwEehQoe3qLIfu22AP8mx7BBteljqgczL2CiFuyfIupsm2ZgUaOrFXL60IaWM/d9kYvpXjTs5lCYN9De11GIKEb8Z2LsMrUmdgb6Z8qH181urENONjfBYfjSh/hHJ0XVjN0ISzGFiWlu13cm/l2SejDzjE8lR3xfZYCTjAgOu2uCOFiQr1HcV+tln22mCjINjwgrgfeOpWFZcTSZN1+SfsA1/3PIfQmLzbzay0nzt0Wo5bOZclzjgP5fi6Zjm+j+X4/RTKcRxAT13FNdlVDXEQQoOwWcvYoTkaeN7YbZukY9as41jHGxhtKd8WgmM/1EljXVUzocO/67gyoxcGWbfdFvV2pOBHl1PcYrCHfKsN1jLBhtelDsYdT2U2RtySZVU8Bx3qbE/0dBhqnAFddz/3bTH+/dyh6bIcynFT57I8FPW3Lgl17Xk42Hpi5Th1YOXTVIOo9rZu1W6l0tFA88Y8dhYWbmUrdjPslpKicQ4hfNnZ2PLbXj3lfv/atQAnDKZu2w3YKrPtWFpl2mq+la4dEGx4Rdy64zzx7ZdTqgjilixhO5awLUudg5frNrxDQOjtmPdzhzbruHguSwgebmp8VN267+kg66kdfBwHVFIa6F9jXTfFBmEIMiyV1lYNcga7mcKdcYhr83n3Ur79qauxDDhbwXJwfSO9IP8+zJ26rZM2uoOjm+07CDR0SLDhJ+IgdspgesiwZxNMn7CHeBioDAOWXe6rPqX93KHtcnzf0LksVW1iOT6fWjmOjcbUVQ3nU6znBBo6dTSkzozOQi8EHJrJuyeFLb9SXI9hi7fCrN9DhPT6KBkg27ottAWsOO62ThRwqJ9v5/oO3RNs+LXU1Q0fXzowdQpiUGa3D3ybJrWfO/RQjps4l+VXtrEcv5twOT5LbOzcT3HllkBDLwYRcBBo6JWAQ728+zRrW0okmY8grcL1CzQc2EaKgTkgr+fY0nOsFwIO9dtfVhn2QLDhF+L+4annE1xNOJ2+7u0Dv2n446e6nzv0VY5D0GHdQjm+CAdUT7kcx6B06qy98wmmj0CDzsxreUOgoX8CDjXSTt6t5GSoA87ldYd2lMHyei4NrEFW9dqyEGjQRh/o86QQ/O+FYEOa1AGfRVkBLKacUPE8h7AlS3htG/jISe7nDhmU49Oi/rksO+tYjldSN7mhfjO1oEwcoFnKIr13Zq4yzBsCDRnVYQIOlfNvGHg2+HxYXjsa4L22DVB988KWY5BLvbYoBBpyaaNfS4bKz2Rt1p4INiSIW32kbhGkIi6+necQVjmEQM0hW7Jsionu5w6ZleM657KEchxWJJ0qx98a64vEt59PLG1CQ9AATR5OYuAnl7yx235GoCEfV7Y5qZR/L6XEQY6G9FyIKxf1A5sz2S2KIaN6zQB3XhZxFTjp/Qd6ItiQLsys3ya8b15mbDMxorgi4U1MvxQhjae+nzvkVo7XRbVzWULZPY3l+F4KfpPa4LmYUv0XOzIag3n5mNFgskNWM63PYtnl50KfYC4ZDk+/AQ04C4q28CySBNBb+3x30L16LS9LK0w9k4dAsCFRnJWbOtD20X5qf027sEKhSDvL4dS5DJBtOV4l1oOnUzzY+BcN9tQBp22RHpwdS0fGjKlMG+l9D/LF2VsGtPP0VHa1d39Zv32QEo0MGAzhGb9wqxq3tLoBeiPQkHcbXfv49WdyeB5bgdszwYYK4uDZJrEDZiYGALsBp9RnwsXEtpwKg0hzuSRLvS4/jrO2lm5D1uaFVUk/c1YYqGlC1mfixcFw/b72SFvovl4b06G6oV+12XuNZdW9CR+vs31lBgQbqktd3XAm2ghAbPCkNAY3U1oREmeCmnWSt0UfW0PG9pOOwjCc2D70xTxsVUOzch5wtlVDu6xugG6fX6FtPrTn+rZ83RTPY3XviuczA3f+Frf23b2+/W/l+/4W3x/OJwwry4cUiJgXJny8lH+XhVXRWfhfSVBN2OKnzMDrIm223WWsvACYZoPnuEifnX0xsXQZ+mzFr3udktDJ+e93//v/7TV2jwbc8A1bQ950fI7IGAbv7mMeCf544X//x95vPB74770s88jGGT1/YVVDs0Lgc57beUZxUG7h9rQutKNWkgFar9OGdKhuaHP8q3wd3EaNq8k3L6RBqNd/L/JfYRsmfJyUv+NG7v2z3yIJ8iDYcJgwIHSS0IlYKPwAk5Y6O3s9sfNqUld75NShCffnP+G/Dx1UjbMz57ET81sxjEGqXcezk8kTZRqtimEFZr7u5Y3wd3topzduFRN++z9i3pgPKB1CHnmryv/mnx3ku11A6z+/eO9vu37JCAYQTgf6jB+KXTvkj4T37vJVF8HSUJ5WqhVo3XXm7fPwzPsc+03bNr4gBiDC+N1N2S4L546exOdPrm2yqzjh4+vUM29sR88V4zwINhxWAW3LjPy5SIuaXcbKCoBpNXhSZzyGxuH5hNJlKAdpbornGVObpjo08XO2xd4sqphPcp891cnkiQGteNnGtt2/mwwSxs/azxvz2MkNA225B2COQ6Co/A2riVf9/yzT4feGO7u7gFYYAA4BhvtDBxViGQuv34q0iVM5CTM4z3MZUImB0fmA8+r9fr6q+5xrOVg6Lz//tjCIBG3WacuM2+ehfrroervZ+LwJ37mO6ZNj0GE3Kei9XGz7SsZTIT88pllJraf0uk1Iq4WUco/J+h6v3GPPiBppclS+vjzmK1zbZR/7Q8e0OauQb7r20EEa3D3m7TYGh/ooO2Ew/yrz8vPY93ll4fnzOA4PsS46bjm9wgD+9YDSZelZVkuoYzs5AyHWWWcDqNeTZdinGsVvzaRM9/3sWKnTXm2Xn2WUT44S+8J9WPSYLr22zffujedMRhwQXU/qTNQPDrYCmFZQpkib+bKd2EzgXLdPCjOXwhaJb8r7cd7HvuBh9lT5+lS+3sT2RW7Loedtdvgy3z5pU752Bwv2slo1bN1VvsIWMm9iXv2acRnn8HpoXTwfbLmri+5bzldhr+v3MV+tB5BGucxaHNqZHOv4fAt5a93FMy7WWeGZ9jbmr08Z11swdTm2z29ivfUplwuKbfXQXg31Wm7nVE39sOgTxTgvgg01G+jFdwfKvCJU3A4qAZiAGFxOHRCZ0vZJiyLPrYLCszwMwKxy2Z4jdqzeFPltw/gxHpzXdN44KvJc+rwt/gwybDLJG/sd3Ry36VzkMvt8QPaDnad9HLQdBp9jMOtdzPe5Ou57AlfG9dVLwrPkbzFf9XZfY/46L/IPlsIU+y25tc9D/fA+BMJzPYcgPqffZdYOm+e0CqQHvyvNeRFsqC91oGhpaxGASQjB5ZQB2U1fs6R7TJechA7MaezMbDPsyHyNM47fF/kMzIR83UZHJscZdRdxdvkm047uNsP88e1+thGUGql18RxkyCLYGfP72yLvVQ59z14cwqqGTfHnSr1s6oe9YOku6ABon+8Lg/hvh9A/2mun5/S8/DjB9tdx3ErJyobMCDbUr2TuK1QwVjcAjFjF2UFTW9WwyOiStsXzjPV17mkXO1w5zTb+Z8N5Y17kN6Pu3VC2N4v5IwzcbTK6rLaCUmNyH/PZaW4zN+MAymnGz6i+Zy/+M+N8FfLSeVyNtc31Ir8LOmxUB9Bb+/wko/b5Jj4Xt0NKw/i8zKU/McX211GR78HmkybY0IzUvZUtLQcYt9Sg8qc+tsoYQLp0YTdrajDpH681l/1h5w23Za4yyxvZrmb4Sf4IA3fvirxm132wuuFV4T69yz2fxe3cTjO8tEVfeSvWffNMb9kugPVpKAUhrtB6V0xo8gVkJpdzltYxSDrILdYyCzhof7VnE18X8bXbfnL3Cv3LWsaUWIINDXXyivSloB8VfoDxiYMQi4S3VnlmjCFdFkU+M052gzGD68zEa35X5BFw+CBvZNvZzWVw2OqGl53muJrhJ3lqXeQ5ENxXvZHrqoZd/TXISQwxQPK2cJYDdN1vmWdwKTex/TJo8TfksP2T9ld9X+O9vIh9rzcxFrA7x20VXyFIttl73Uu6Pwk2NNtI2ia8da7wA4yuwR4adqmz9y+GPKB5gFxWNYxhMDmXgMNxQ+dQZZM3yrR9O4ZyGQeHc+m0m133V6dD2LrtlT5Obtf9Ww/P+eMiz60a1mOovzJbwQfa5921zU9HlKanxYgmBU1MCC6EyRXhefq3eKbfKgYRtpKnOsGG5iuXpIo97lEMwDiEIHJKvb4d0hYHdWU0OLM7DHoMg8lfY3ujz9+yrvv9sR2UQ954CkKNqdzFAe0cVk+ZXbfXRxhioGFP6IDn1Nnuo+7IcVXDegwzgvfqrm2Rzwo+GHP7fFH0v6phd0bWaCZgZdJGf2p/2b49uQ8Q7tcuuPDJ6oTmCDY0W7lsivRDri6lGMAoGuyhsZ46O+h0YsmTy8ya0zE1HuNved/DV6+L56XETaRnDjPqtmPr6O7lkVWRx2x0s+uez+hZDzw/fc3s+XXcw3cuM7st92MKNHyX194VeQW3YGxyaIO9H2n7K7SPL9zjrK1j+/9t3ArJFn4tEGxoXmqj76ShLQgA6Fdq8HgztINn64jbpyxzaFCW6X4ztvSNeamLVTK7M0Z2QYbtiPLG+5F3MMJs9L6DbFOfXRfq/VEcfhvrnHVGz5hFh991Ujyv1MnF6FZkfZfXQr38vnCGA7RRn82L/leWXoy5TxRXsffd/pobb/yxTbbXn9lIjnYJNjRfsWyL9Eim1Q0Aw26wh0bcSeLbp7aqYZnBNYRn8vlYEzgOYm5b+vj9IMOq4f1Kc9ha52LsS6Uzmo0+1dUNua0GaKTcZHQtXa5u+D23fDX2mZgZzQ6Gsel7xvt9XH05djn0P/4pu397br6PhztvJUc3BBva8alIm4lxbC81gEFLDRpfTLBxk8MA4/kElsY2PZgZ8ulpPBxt1VL69d35mUpHN5cBu+OJzq77PLZ6P/6edSaX848Ov+sko9twPpU9pePs4I2mJjQjriztuz47n0JaZ7IacBnv+ZSF1e1vxrjKPXeCDe1ULF8rVKKXKgCAQTbYw+zslJmV4ZnwaWJpE9Jl3vNlbKbQsIydmSZ+59MhaeXnvWlzf/m4HUnfeeN8SuUxBla2PV/G1GbXjbnez2W2eSf1SGZbKN0M/fwP9TX0qu/67GZi29dcZHLPp+pTPPjZlnw9EGxor2O3LtL2aQuVvcNbAAYkBolT6+7zCTZychhYnNL2C3UGY0Kn79shaRPIGzcT3ae17/JwMrHJNZ/HWu/H1Q05lKFFR9/zWyZJX2Uy25jyW+hPrwtgDG2wqU322GZQf/0+0bx+OpYzs4ZKsCGPyvQsHtQDwDCEQEPKwNn9BGchBn3PopnUYdwHdmbC+9/F/Us7SSvL93vNI+F+b3u8hBzufZfGvprtXzlcREcBrFzy7ecJ7zX9rwKoW1/Oi34Phl5PtA7ru/46meBOKp8m2v/OimBDux270HlP3drgSooBDKaxnnrA7fkE0yeHLZSmeKhkamcmNL7DVkmnPQRkcghCTbGjm0u5mMrsupsJrGbLZYu6Vg+Jjs/7eQa/M9Rbk9qO8YU+9ZTrbhhDG+yz+muy977rtr4VDRkQbGhfyOgpHY7FRA/PAxia1ODwVLdryeHw38mle/zNr23fGNohYaB5F2Toq9PT92DzJDu6e3lkndgmba2zO5HZdf+eQF4K+SiHerbt/JRL3+zCntOFwz1huO3zzVQOts+0/TmVyR7hOfleUc+DYEP7jfFthcrF6gaAjMWg8CKxsTPVWRVmTvXnXy/kw12QYdXnrP4MtlDaTuHA8ATridcPXZjKgEoOQZXjlj8/h/MaQj2u7ppAEA9aboMd93gJU98Kre86fDGRdD4XmM+HYEM3wrLXlA7+vHwQnEkugGylBoUnubdyJltOTHlQZvfbQ94LKxj+FoMMOTS8T+SLLPTd4R/97LoJzd6cwu9cZHANa4Mn31bvAcNrg00+YBr7hH0+M48msIvK1jkNeRFs6KZy2c0sTPFxgge4AGSvrJtXRdpAemhQTnVv5d4HlKc8KBM7M+HA5zcZNrj7niHsgNHi20D4dsJ1RNs2E8pLOfzWv7f4zJ8XeZzXMOnt315oXwHV9RnovxEwzaJ9sBh5+l7IYnkRbOiuQb5OrGBCoOFSigHkIwaBP6Q2dibcqO57QHny2yxkPPuz11l1E98rOKsOrzPK5KUGzVv87OMM0vd+4ofaf09awGH6fO7+Ifmz6KP8NvL0tYI5M4IN3UqNti3Ljtix5ALIRggCp6w620x8Ceei5+/fyKr5iW2aPldt6oDk1eEd81ZKUxtU2Y74t+XQF7MiC9AGG4e+J70sRpy2Vs9kSLChQ3G24Trx7VY3AOTTSF8mvv184unUZ2dmawZotvru4JhV91cbHV4a8t8R/7bflNXsWKEGw3rm3hsEfhbTodc6bMQrS7XzMyTY0L0wEJVS4S7KyuBEcgH0LjX4u574Vi19N2A3smq2+p7JboDqxw7vtsdLOHY+2Wj0Xe/O28ynPf+2re3ffvD/JAFU1mfgVNv8u3p94n017fwJEWzop4OXetDXpc4YQH9i0DelYRbq9vOJJ1ffs0D/I8dmq9dBOwN2WXbMbBdKE+YtPfvD5/bdB9u4vUADFj1+t7Z5XunxD21auiLY0E+nd1WkRTVDQ/dMigF0LwZ7U1c1fLZMuPfBQw3NPMtR39trbdyFLDu8C7dABz9jc2UUGEEbbN5zG2zrLmT1zBzlRA998DwJNvQndQbsh/iQAKBbIdibUv9uYxB5yp2Zo6L/wRnBhjz1vhWJW/CiTc/f/5tboIOfsUUG1+CZBgy6DRbPLOVPfT8z5yNMU+38TAk29Ffx3iR29MIAzkcpBtCdGOT9kPj2cynW/0wZs1qy1feS7f+6BeoMqOj/MrgGwQZgyM9a7fIfbTPo4y6kKV0QbOhX6gDVcsQnxwPkKAR5U5Ydb2LwWGemXxu3QN7QCUmXwWzDI+eSjcYYB8X7rre+CqADDehzFaGA6Y9trxzapHN3gi4INvRb2YQK+FPi261uAOhADO4uE99+KsWe/F0S8IpFz9+/dQuyZXXDOIxxUHze8/cbpAPGUJchTzBRgg39u0hspC8eHx+XkgugdanB3U+ZzFDJgcOh+YEzp7LXd7lZuAVkSt0FqMu0zcfoH5KALgg29Cwukb1IfPulJecA7YlB3UXCW6vU3VPQd7Dh/7kFOrk6u5X1PSP9/9wCMmwHqLeAMdRli54vQdv8Zduev994Ip0QbMjAbDb7lFjphIrhTIoBtNIoD3XsZeLbL+ynrOHKLzk4nKzzB7xgnsE1GKQDtM3Hadvz9y/cArog2JCP1H2/P9qWAKAVZ4kN820MElM8BWkMGKKjyyG0ZwGgHdrnQG8EGzIxm8025Z+bxLdfSjGA5sQgbupZDQ6F/isDyrzmN0nAT8wlARlaSAJgBGxVyGv9XoEoWifYkJfzxPedZLAHH8CYpAZxb2JwmD9psAKHdnjnUgEAtM/pjIlitE6wISOz2WxbVDgsWooB1BeDtyeJbz+XYhqs6OjSmLkkAIDRCdt/853C6jkmQrAhP2Ef8JTDDI/Lusph0QD1XSW+7yIGhYE0AlHA0Nj+DRiDhSTgFXNJQNsEGzIzm81CoCF15myIFuvIAxwoBm1TGlyhbnYo9MsMzACHWkgCAIDOzCUBbRNsyNBsNluXf+4T3hoCDR+lGEB1MVibWoeex2AwkFa+FlIBAABgWgQb8pW6uuHM4XoABwmBhpTVYfcxCAwAAJCtx8dHZ2YBvRJsyNRsNtuUf9aJb7+SYgCVGuHz8k/quTcOhf452/kBh/q7JCAzBukAbXOAGgQb8nZRpB0WvbBdAUAlqUHadQz+8joDM8Ch5pKAzBikAwCoQbAhY7PZbFv++Zz4dqsbABI8Pj6eFGmHkoZg74UUg4MsJAEAAMC0CDbk71P52ia8b/74+LiSXAC/dJn4vs8x6AsAAADALwg2ZG42m1WZWfvh8fHR0l+AV8Sg7DzhrdviOdgLAAAAQALBhgGYzWbr8s8m4a0h0HApxQB+FIOxHxLffh6DvQAAAEOxkARAnwQbhuM88X3Lx8dHh3UC/CgEY1NWf21ms9mN5AIAAABIJ9gwELPZ7L78s058u9UNAHtiEHaZ+PZzKQYAAABQjWDDsIQBsJRtPRaPj49LyQXwTWoQdh2DuwAAAABUINgwIHH/8M+Jb//osGiAp1UNyyJt79JQx1rVAAAAAHAAwYaBmc1mq/LPNuGt8/J1JsWAKYtB14+Jb//sUGgAAGDAtpIA6JNgwzCdJr7vw+Pj41xyARMWgq4p9eA2BnMBAACGaisJgD4JNgzQbDbblH82CW+tMqMXYFRisPVD4ttPpRgAAADA4QQbhit1YGz5+Pi4kFzABIVga8rZNZsYxAWas5UEAAAA0yLYMFCz2Sx04j8lvv1SigFTEoOsy8S3W9VQj3MueMlWEgAAAEyLYMOwXRRpgzzHj4+PS8kFTEhqkPVTDN5yuHtJABzoD0lAZjaSAADgcP8rCYZrNpt9fXx8DAGHlEG1y/K9N+HfSDladNTQe+BgMbh6nPDWUB9eSDEAAGAkcpgIdDGbzVZuBUyTlQ0DV1bgnxIfJmGA90yK0YawZU35uivSBnivy/eG4JegA23kxZCvUlc1XAjAQmu2kgAAoFv6N0DfBBvG4TzxfR8fHx/nkoumhPxUvq7L/7wt0gINOyHw9VD+WwEwmhbyVEog6z4Ga6lvKwl4oaMrX6D+AACAiRFsGEeHflP+uUl8u8OiqS3MHi9fq/I/H8rXyYEf8zQDvfych3iYL9TNl/Pyz8fEt59Lscb8VxIAB9pKAuRJgMY5Uw3ojWDDeKQOnJ0Y2KWOuB9+2DLpY0MfOS9ft2GFhJU31HSV+L6bGKQFdHQB9gmgA2NgKyWgN4INIxG3K0g96PRKilFVPJfhNuafeQtfEVZIhFUOK+c5cEj+LP8sEt9uVUOzNpIAHV0ObL+qPwBAGwwYEcGGcfmU+FCZ2yufVHHLpBBgCIGGRQdfGVZMPMQVFJAqNYh6YS956IyyBqi3ALr3H0kA9EWwYURms1kINFQ5LNrscX5q71yGZcdfHfLmVfn9d7b9IiGfhuDpPOGtoY50KHTzbJXDa2xHws9sJAEZ2koCYASsbAB6I9gwMrPZbJ3YeQuDuR+lGC95fHwMZ3s8xDxSJyh1U7PTdlw8n+dw5TwHXsmrVeqy8xiUpdnnjjTlNQJR/Iy6A/kSYJxtsL+7BTBdgg3jlHp2w5kBXPaV+eE4nstwXdQ7lyE0bt7NZrP35d+3MU/W6bwty9ed8xx4QWpAbBODsbRjIwl4wTaD59rCbciWLR7ITtlWyCFI+g93Ahh4G2zuFsB0CTaMs5G8Kf+sE9/usGh25zJclv95V9Q7lyEEFE7LPPh2d+hjmPVcvlbFc9BhXeOzdzPYQ9DhxF0jBMfKP6nnz1xIsVb1PRPUwEye7RErG/K26Pn75Q94vc0LUKcNtpUKQF8EG8YrdSb5wsDttMX97sOWSXUPDQ974b95bfZ4aPCUr9PyP98V9WZBz8vXdViBEQebma7LxPetd8EvWtP3DGUDM/m6lzd4xVYSkKm+2wxzt4Ce+4fyoLqsroXkh+kSbBipGMn+nPj2Syk2yUbkIp7LEO5/ncGY0IgJQYak/fDDoG/5CgGHEHioMxs6NGDu4nkOBpOml39PEhuxIY9Z1dC+vgeUdYrzte35+wWlX65Dey8zVr6Qsb5X63mmUciDDL0Npo8O0yXYMG6fEh8w87AXvuSahjDAEM9luK3ZkAx5K5zL8O6QZZpxBcSbov5A8LJ8PcjDk5MaJP1sGXEnBBt4Td+rXv7PLciyzGzcAtRbP22vC5QCQ6/L1GMwUYINIxZnmZ8nvv2DyPO4xXMZVsXzlkmLGh/1lK/K/PWm7tY0e+c5hKDDTY2PejrPIazUcBjoJPJyyDPzhLduY/6i/efNtuh5JqiBmWxtev5++SLPdLGqgZzlkD/nbgMw8LpMGwwmSrBh5Gaz2U1iRz8M1tpOaaQeHx+XxXOQ4WPNj1oXz1smfWo4n4ZB4ffF83kO25ods9t4noNO2jjzcqirPiS+/VyKTapDo8zLFzq66f7e8/f/xy0gY9sMruE3t4EeLSTB8GVwZp16DCZKsGEaUgfclmaFj0s8l+Gu/M+rov65DG/DAc8p5zLUaRCFFRMxz9Y9zyGscri0Ymd0Us8Y2cRgK935o+fvN6icZ0c31OV9BhyOPAeyLC8bt4CM660cVjbok02b1V+MIS+px2CiBBum02BeJ779oxQbvnguQwgwhHMZ6gwobMvX+3guw32HeTasnAhBh7orKM6K56DDmVwxinwdGqzLxLdb1TC9jrHZU/na9Pz9Ort5pclXZ+ngmfZLxwKlk/b/ev7+f7gF2mANOLLNKUyTYMN0pM4UX8QtdxigvXMZwmqGOvcx5JWLeC5DL7PD43kOId++qdlIetoiLKzwsHJn8FKDoetMZiXqzHRL+c5X36teBKL+2lbou+Nv1RlDYHVDftTl3ZlLAm0w9RhwKMGGiYjbGFwkvv2jmTTDE4NEIcgQBmTr3L918bxl0iqTvBvOcwhnOYQzHbY1PioMroSzHK6d5zDY/J3SWH06wFyK9facue85n5y4E39JjxBkXWXwTN/o6Gal7/T4wy1gAHI4V+R3t4GeTG02+pjHPvpug/1TcYLpEWyYkLg1zTbhrfPiefsZBiDMUAwHIhfP5zLMazZE3sVzGbYZ5t+beJ5DCJrVOc8hDEY+ZDIAR1oeD/cpdVXDRZvnipB9h8asxz/LzUkcLPhY9LydXAaBKNuR/NXvE68nIEUOKxtO1F2T1XtbdmLb34z2t2bSBpsr0jAtgg3Tc5r4vg8eCnmLWyaFAENYzbCo8VHbkC/iuQzZDwDEFRch6LCu+VG7Abil3JS9MEiaUh9tY1CV/vQ9Y9nKhr3n+N5/77aT67PO+7e8kUfboeh3ZcO98xoYgkzaxEfqrr9YTOi35hDsmlKw4f9G/vv6boN9UH1Vaqup9xk8wYZpNpxTGs9PAxNSLNsH0Kr881DUO5chCKsEwpZJ64Hl43CeQwicvS3qn+dwFVaGOM8h27w+r9BAPZVivZfNvvdinyvL3w5Tfykd5rHOe+ihI9N33rCM/1nfHdiNW8CA5JBf1V3F5GbZ52JKq0XHnr/6boMtrdKq1Ia/jpNKYbAEG6YpdUDuxKBNdg+fcE9CkKHuuQyhwREOf14NecuZcAhwPM8h5OltjY8K+TwEHK6s6MnOZWJe3wxhZc5EGFTOo9z8zDx2ZDoLtMZD27c9pslC/f6k79mF/3ILGJAczhdZ6I99a6tPyVaa+60jaoNZpZUgBmR2QYalgANDJtgwQXH5eupWI1Y35PHgmcdzGa6LeucyhIZG2C7p/Zi2MYgrM8Iqh7rnOSzL111cOUL/+X5RoWFqVUM++l6qPenZU3GbpNQZeqGM3XYYdOh9Zt3E69Tjot/Zm9s44AFDscnkOj66FdM6kymTftp8CitKJrRlTd9tMPXYr31/BqeAA4Ml2DBdqYOyx/a077XxE85lCAGfsJphUeOjwr0+Lxuub8c6+zturbQqnoMO6xof9XQYcU/bjPBXqcHOT/YA15n5ztkUEz4GWQ6ZJBCeL12s7up7VvuHiS/j/6BugEpty1zazJNe3RDr7Sm2yXNo205htejvE8lPfbfBQvBqku3zxHru7JV6TsCBQRJsmG7j+WnwOfHtl/bY6+2BE4IMdR/KYRXLm6kcnBsGneN5DmF7pTozKOfFn9uM2Ce2+/y/LNJm4Ia67EKKZfd86XtQcaqDynW32Avl7qGtoEMmy/inGoiaF/2v7PishmSAcgmSTXm1+VQHKLcZXMOogzxTCmRl0AZ7aqcaV3oxHx7/oo4XcGBwBBsmLG49kzIYO9nOeU8Pm0U8lyF1r/rXbIrnIMP5kM9lqJG/wx7+YZVDCDzU+f2L4nlrpSuNo04b/qmd6knm7wHoeyulyT234qzXpn7zsngOOqxaqPf6HnCeciCqT/dWoOF5VsvxFGcFx/r6w0TzXg515nzkq2rOava3h6bv4OmhK3DHXMfNyz+3KW1zAQeGRLCB1NUNHx2s2P6Dpnxdx4dNnbQODdNwLsM7HftvQbU3Rf3Z78viefBN4K19qbOz7+P9Jc/OTN9BoA9TeW59d6Bc02Wx6aBD32X2qJjYvsFxoGjZ82VY1cBQbXJqH02wPza1weB9/82oXT7WttPUAlk5PIuXDr3/Sx68rlDHCTgwGIINExf3Ik2NcKvYWnrIxAOJw2qGOss4n7aTKe/pm7Gey1Ajn+/Oc3hTs9P4NBsjnuegkdROeZgX6bOzz6VYvmWuMHuqS+F3zltMx13QYdlQ3lj3nF5nE9ser+9ykEN9AIfWWdui3racTdfH1xNrE075UNlc+nOLkT4zJxfIivVZDvnqeuo7BsTfHyaZVi1bIeBwZ8cFcifYQJA6YLcwwNr4Q2ZZPAcZ6jak18XzlkkrqfrzBlZY8VE8n+ewrfFRofNzG89zmEvZRqUGNW8E1bKXw+ypk7Ef9B6fI8sOvupp9UQMttb9vn9lkHST2Bqv/I2XB3Rkm3ZjuzsG7l8ZXctxLNdTcD3xfHef0bWMKs/F4MlUA1k51GdHyndRp30W/t2tgAM5E2xgF+FO3WLG6oZmGjghcHMb07PuuQxvw4HIOvKV8nw4zyGscgiBtrrnOYSBN4eoN1QuYpr+SpUD7umvnN1n0lEe7aBy7Cx3/VyeF38GHY4PzBvh2bXtOfl+dRjfGPJHCLTlsPXfRQHDltvKnLMmVpplXn9dFf0HSvtuR30t8ji34anPM5ZJh3tb10w1X62L/rc63eWpyY0txV0twu+uW4cLOJA1wQZ2PiU2Zub2rK/1cJnHh0sINNRpsIV79T6ey3AvZQ9ubIV8/ybm/1qdvqKhLUYmLrXB+dl5JIORw+qGUXYq40D/bY+XMC/qDQTlMAC9HGubpqdA1Etu1NeMoL0Y8nBuAYersbY74/ay2tTP7jPLc2MY2Lwq2tt6Uvu8ejtsMmV9b+ukpn6zgAPZEmxg14j+WqHj/1GFVv3BEhvOdzUfLrv7FFYz2P+4obxfvsIs+bdF/fMcruIeigspW7mMnCU2/EOH/5MUG0z5WhdmT7XVWam7Mq6ur3UOaI//dptBcl6OraMbt/e7LfLYi9rB0IzFvzO8pqsR1l+hPfhRdvvmj4yuZV4MfJeD2BY8ka2e+lK57IpwNYWAQ40zGn5FwIEsCTbwfcd/k/DWI43ASg+W0KC5i2lW5yEQ7k8IMqxsmdRK/r+P5zm8L+oNgO0e+NfOc6jU+EqtUy7k/8HJafbU2UjKSxudlT7uay7b64ymoxtXNNwVeQQaNs7WYWT9pBzbH2Oqv8JA8KXc9td6NLPrORlqW6qhrWvGUp99LfKaDDDqgENsmz202HYXcCA7gg0c2vE/O3Sv5qkI6RPPZQjbd8xrNjLfxXMZtlK29cbXTTzP4aJmp/IpyBRWtHjw/1LoWKak0abOTGp6k9PsqUHPYt+bsX6cyX2tW9+G8pzLc23wHd29rbVyeeY4q4GxybUNchVXUA+17jqKfaalLPbDc/K+yC/INai2VIN75Guft1+PjS7YGINzXUwCEXAgK4INfN+g2VRoSJt58vMGTXioLGp8VHj4n8ZzGTZStvOyEDptb2p2LHcz9u+c5/BqeTmu0Pg3cDXMspTj7KnLgZaVuyKPQMO6wRVGF5nljUFuERGfMTkFGqxqYIxy3hbsY1xVO6iBprgC/KFmn2nsctw6dxAB+r0gvH5Y/u3zIExoHcWAeRwTCpNOu+xzCDiQDcEGXuv4pwwiLGIDkT8fKqvYYF42cA/emMXdfyMsrCgp/zNsr7Sp8VHz2Ci/dZ7DD1IbYGsDV4OW2+ypsyENymQ4kNxYgCCz1Q3BMp69Mx9QZzbUo1cZ5Y/gXLXHCNuFoa7KuW3+NHA/hP5ZqGPjQNx1ZnVXjv7I9Lqynryxd16i3RiG0z4PFrEeG2yfeS+I2kddLOBAFgQbeK0hnRrltrrh+YESAi/hgVL3XIYwc+WNcxmyKxObeJ5DCDxsazaewsP/SgPgW0MspSEZyoKBq2GXoRxnT+22OltkXEZ2K+VyGkhet7Cl32lmSX8c80bW+1LHvBsGUnK7znXc+gPG6F+ZX194VlzHCS7zTJ9rq6K/gbghusn42s5yC9CH/sVev5zhtc939djgzkCMQdTdNtp9ttsFHOidYAOvPXhCIzBlMGE+5D1CG3yghFedB2FI67Bd0nvnMmRdLtbln7dF/fMclsXzjI3VxJM0NVj5WfBtUs+VLs1z7czE1Qx3RV5L/1sJ/MVVS5sMO7qXcRBlkWHb46qBtsdg8ghk9CzLsb56ySK2Na9yeL7t1VsGgavnuVCv5hxwON71a/oc3AztpvDMLuqfl6h9no9BnIH4Xf22yKhcCjjQG8EGfia1s/hhSBHnhh4ou20L6j5Qnjrl4UBiW8QMp8EfG2Vvazb8n85zCDNvprgdWQy0pNQb25jeTOu50kdnJotBmdhZDs+Wqww7y20G/k4zzRu7ztpt33X1d53ZZabpdSE4zAQM6QypZXy+3Xa9x37sLy3jxKxdvWXg6zD/HsA1fiz+DDrMO8pjx6FPvtdusmXSuNpg3/rMRUbB0738t8i9XaZNRl8EG/hZxRQGUjcVHgCTEBvq4YFSd9uCsEdiCDJ8ktsGWT7CIPj74vk8hzrbRYQG0265+/FEylD4zR8S326G7PieKznPzlvGzsx1lwPLcRB5lXGQIdjG51ZrdWqR9wDeItbVXQ+kvDRYl6t7bRom8izbFMNY3fB9HRYG6r7EAbtlG/VYHHw7i3XWl/hMW8g1tfPcushvb/2fjQvs2lKN5rP4TDzZCzDsthKcyyW167SbAeStXTv9LtYznd/3GOA6i/kv98PHT+VueqtXJAG/qkzjQzzFu5/Nzo+NzkWdz+g5LcK1h9UMdQeEw+87tV3S6MrKMuaPujO2wkBNtjND44qEjzXrgqvEhtnurAzGVVbm8bkyhNmNX2Od/e+YH7cNpsMiPhN/L4YxE+99DBa1nT+GdJjj/V7+uG+q3o5tr5A3fiuGtaf5277Paojl6rbHS7iY2mq8xPZ9e53ZUo/PsocR3MJtrMv+E/97G9N184s66ii+wn//vXge7G0zH/yteB5U/ji1vHZA+zn3fHYf21fb19pVe3lsHl//iHlt3sK1hbbN56k/O+J2Ow/F8FYf7dpif8S22LbhdJnvtckWxXACW53lqTKNHnv8ncYLMvW/koBfNKruy7rjU5E2i/9jMbxZPqkPmMsGOvzhwXfexWANvZSVdZlXbmI5qLPqJfzbMAvoYowzRONAUGpHyaqGcZaVbcjfRfqZHX06inX/Scy/X2OnJrz+316H+Vd2neZ/xE7K0FYx3XT47AqzsO4Gki7H8XUW88d9fNb/J+aLlIH3eXx1MVjXdqfWodBM7VmW2kfK2a4OOvmuvZbTNYZD579mdk291LPFcIMNOeezfxUUsYyFNtj1wC79+7bY9231bZF+JsWuvT70Ntm9bYjpm2ADVRo2v4pyh2Wzy7jMc/BidL+JGTThgfdZhT+NRlr557zMO2F2TJ1l47uDScNWQ6cjO88jtTx9MnA16rLyqczfvw+wEX8Ur3kxodsV6rXTDvNGmOQQAo2XA0yrXYd3aufwbLRx0EeiRQaDi28Brk1hW6omhdUVN3EylDz2nBbrYrhBram21Xtrt8NrnNlAykPna5G+j/LHMZx4H7fECTMr6wYawsP6jU749DoDcTlfeG1rfNS8+PNg0vlIylVKw69KncNwvS+Gsf/w1J12va1bXNVlFaBOLQyhj2QVZrs2I5t0U5f2cbM+S4IfhDrNhK8B3z8T9siBYANVOv7bhLfOiwEvJ46HmoX9Guse0BkaxWHv4tNc996nk3ITOkhvYqOtTj5YFM+HYa2GGsyL150avLtQbiZRPgxS5m/d49Z/p0W9YC3deO8MKib+LFsXI9xGNiNWNXzXt5DfGhPaoWvJ8Gr7XF9seD6NZZcRhk+wgaod/xQfhzYLO1xvPHSr7iF3ocMdAgzvRJTZa7SFYN2bBhq0YbD+Ia4QGJoQhEypF7ZjPKuCV8tGGMg2Sy9P4Rl23mPeCJ1cq1/ydm7GMXzrI6mrWngOGTh7kXZTMz6b3PRqG6zXNiAHCeeruWdkQ7CBKg+d0KFM7VQOZq/lMFu8eN4yaVnjY3bbvrzVKOaV8vM1rHQJeaSoNyMprBC4KvPt3VD2F43Bx9RVDWa6T69shDrYljl5eZrV1ncnPHZ21Ql5WgsMw7e6aquuaoWBs9f75NpN9ds5nmE/z2frQmBrKLSXyY5gA1WlVmInuQ+EltcXrvGheB4ErbM1TWjshSDDyuwIEhpu9/E8hzBjd1vjo8IhpOEsh6sBrCRKDT7al3fazxarwTK6H7mszourX3SgMuvUxuA58Ne6ai0lGqNN+HN1t2idOqsa0uq1lXot/zZZ+XonP5MbwQaqPnC2RXqEO8vVDY+Pj8fxXIbrot65DLuK3X7FHNQpjec5XNTsLCzL112u5znEoONJ4tsNXk23PIQy8E7HOQunPZ7T8Fr+WOvs5tWplQzwIgerNvgskgS/7JM73Pgw2ziITlpeC2XRSpqM22QCDeRIsIFDhCWHKRXacU57y4eB2HguQ9gyaVHjo3bbS7w144YGGnChsRu2VlrX+Jjd4ct3GZ7nkBp0vBC0m3xZEHDo3zrXrQBjZ3ftFunUQubPMWfN1KdNmN6HENyqzvZc1VmBrE0GlQg2cGhDOvUhfZnDbOvyGsLhtGHLpGXdxm/5euNcBhouU9s4kBYGWjc1PmpePJ/nELZXOs6k3KVch31T2ZWF3axpDefurXPfGkfAQacWhtCmK6z+qVXXmHVeieBWNTe5rd4cSL22mxAk4KBNBkkEGzj0gbNOfNjsZlz3ImzhEs9luCzqncuwKZ6DDM5loM1ytYnnOYQBtW2Nj1oUz6scrvoK9sXvTS3758oVe+VAwKF766HswS/goFMLA3mO2Qaout3KENLzWugvmKmfnr+Uy8Pz2i7gIFjTrxttMoZAsIE6Uhs2Z10fYBu+L57LEF51vnsbK/N3lvPSYWNuXTxvrXRR86OW5eshnOfQw89IPXj93kohXigDu4CDerd966Ed9huv1+BKNzY6tXBwW87AZjWn+lsH5zUrhNPyl2dZvbz2NZxXWZj00ZdP8bxQ+ZjsCTZQ52ETOqCpke2rLq4pnsuwKp63TFrU+KinraLCAb7OZaDHxlzIy2+KejNInlYYhBU+5euko8ufl6+zxPcaMOS1MhACDiHoZsl2u52W04HmjzCwclpYAdOmdZxsIY3hsHpqXQg4pDq3vU2tvBba0/qsP2/vyF/N5bdQr11Iic7szgzVb2YwBBuo3TBM7OgvirS92w8WD8YNQYa62zaFAYw3cSAD+m7MbeMMkrr7ZM7L13U8z2He8mWnHgq9FszjF/l/t2R7LTUaN/hOSxzIswKmpfbdUANRkGE9pSz9uj2o31Xf+8IEjZfcG6RtpW5bFSZ9dJJ/i+cVpvpCDIpgA3UfMqGD/znx7a3sHR/PZbgrnldP1D2X4W1ojJjFR4ZlLZznEGZ5pwb4XrMonrdWavPw9pTPDb/BjBhS8v5X2+Y06mt81q1Hkj92K2A2bm0jtjF/GPiD5uqpUN8KOLxsLbDZXHupcIjv93bbctJe3SbPtSesyHkb27owKIINNFIJFj3MKoznMlwXz+cy1Fk1Ea79fdwqQEVO7o26p5U3Rf29WcM2RyHocNbTT/lsX14OyPtmsdezKZ5X7t2PLG+EgFTIGwJS9YQtJnRqoZ16al08B0ZNaPqTQEMLz8PC4O/Obka4MtduntsFdNZSozHbmHe1axkswQaaatR0NkN571yGsJqhzh70T9cdz2WwhyODKnOx8RGCDpsaHxVWIIQVDndhhVDHDSizZjkk74f8HgZr1NnVXYx9//0YkHLOx2HtoVOHDkLrdZSziP70SaCh1b751AMOAg3d901DeX5fCKjWbq8XzxM/NpKCIRNsoKkHzLroYAuDeC5DCDKEcxnqbAETrvdN3GsQhlrutnE2b93Z3mFlUDjL4bqD8xyeGlEa/9Ts0LwvrHKo0uF+O5XnXRjMi1vOXejwJrmJ7aG1pIBu2m7x+TXlSRcOOu2mrfS2mOZsc4GG/vLdU5uisMrhEJvYHlvJu4yBYANNam11QzyXIWyXFM5lmNesxEPj41QlzogaduE8hzdF/cG1sFIobK20avE8h41BLZrK98XzDFFnf7xst3pvktvixODKVAdaUuwGY6xmgO7rp90K1anNAt4WIzozaCB5Lcw2n9IhvuvY7vFc67d+C3nOdl7V2mPvbDHMmAg20OSDZdN0pz5umRQCDCHQsKjZuD2NlfjG3WKkZXBVNDObJKwceogriZpmJhtNd2iayvej6mwXE1rN8JP8sd3r8Hr2/7U9ZIk+9F9H7WYBT2GVgzNh+stn62L8A7+77QBtzZVPvtvE1TWnhZXI2mNMjmADTTsvGpo5Ec9leChfy5oftdv3bu32MIGG3W42SWjc1Wm4hJUNV2FFUYPnOax1Mmkp3+8GlacedNjE592p2VE/dHh3W85NtUO369TaMgnya7edN9Buy1XoF763iqr3fDbmLQY3+vpZ5711XIEv6PBnftUeY/QEG2i8wVz++VznMx4fH0/KVwgy1D2XYbcPsX3vmGqnIgysva/ZsFsUz+c5XNU8zyGUQasaaDvfTzXosI4d7XcCej/NH/tBh6nkj3udWhhUu21MQdFPsS924w5nk89WxXi2GAz9m/e2nxlM3tsPOkyxrRrK3G67JO0xRk+wgbYaMYc+8MOWSddFvXMZ9vch1vBg6uXxpvhzX/s6Qbdl8Xw4++8H/vvPgn50mO93QYe/Fc9BrjE+C7axXL+JKxkEGdLzx2YvKHUx0vyx69Sa7QnDq5+GHnRYx2fTubZf1m2kkMeGGAgKz+xdEF0ga3j5bx1X2Uxh4sd97If8LbbVN3IAUyHYQFsOncE8r/Gdu70a7XsHf23UfW1oJlNYaXR8SKdg6nvH02ve/xRnUoX8/6kY9sDy11iG38dO9kpQvVb+2MY0DPnjfUzbIQ+MhUGXU51aGEX9tAs67M50yL1u2j2f3tjKb1B57H3x52rQ3POYlXrjy3+7iUGnxTADX6/l0/NYF76N/RBBV6ZXxiUBbQl7vRf1DnWuIjTCL1TkkFQ2Q7n82GH5fG/mEZmVgRA0+2csA8eZX+62eJ7d+m/lqLP8cVL++a18hb/zjC/1a+yc/xH+agPBJOqm32PddJTJZYXn07+6qIPieX4f+/qh5e+bjTx/HcW8tctjOT3nPlvBOYk6bj8PLjKq536VR5/a6eGvQCvEZ6YkoMWHReigP3TQwDV7Bg4ro8vyz2XLDbndzDzIuWMTOjRhcPm46C4I95r7+PpPLD861/23ZUKe+EfRf3BqG/PGH/IGTL5uCnXRyd6zq6tBud4G1gQbemkb7QZ95x23g57ymBV66rnv2ujzDC5rE9tjoS12ry0GrzwzJQEtPyDCQOZZSx1uWwRAM52JsxY7b28EAxlo52YeOzZhkHm3hViTgzm751forHyNHRbPtGHkj0XMH/O9/LFo8Cvud3mifP03/r23cgH4xXNr9+z6rTh868t9u3poVxf1GuQUbOg1f+3aRMcNP/c2MZ/9J/63Zx2/6rce77XJm6rrXmuHbffaYVuBBajwzJQEdPBAeCiaG6AJlX7YLumT1IXGOxEhONjksumwR+W51GWE5eX7Dva8eHm21ea7/3sr+DaJuvT7vLD4SUf2W/tGJxZoqV76Plj+UvB8k3t9JNgwmPy1+FV7yOQKem6D7QKp2ugAA670zx6bcRWDF0B75XVRvh4aKK9flFcAABpqo64ee+QOAECa/5EEtC2uQtjW+IhN+Xpbfs6pZZXQenkNS+TflP8ZViTUKW8ObAcAAACYEMEGunJ64L8Lg5X/srUAdG5d/LgFTKqtrc4AAAAApkWwgU7EfRlvDvinYRuWsH3S7Qt7ZAMtiHvihrNWDj2/4VQqAgAAAACtCAf2NHRuw1xqQitltInzGq6lJAAADbdTndkAAANgZQOdmc1m2/LPRc2PWZavuzjzGmim8xYCgbflf4bXvObHnUtRAAAAgOkRbKBrYR/3uofGhq2VPsYZ2CeSFA5Tlp+j8nVZPG+ZtGjgIy9iUBEAAACAiRFsoFOz2SwEGpqa+TwvX9fxPIdjqQvpyjJzVjwHGc4a+shQth0KDQAAADBRgg10bjabrcs/9w1+5KJ43lrpMszUlsLwunguw135n2FFQ5Pl5TwGEwEAAACYIMEG+tLGvu5PM7XjjG1gTzyXIRzeHM5laHol0CYGEQEAAACYKMEGejGbzTbln3ULHx1mal/G8xwWUpqpi+cyrIrnLZPaOuPkQkoDAAAATJtgA30KA5RtbbsyL1+38TyHuaRmisq8vyyegwwfW/yadQweAgAAADBhgg30Zjabbcs/n1v+mkXxvLXSynkOTEU8lyFsl3RVNHsuw/dCsNCqBgAAAAAEG+jdp/K17eB7wszuhzjTG0YpnssQAgwh0LDo4Cs/x6AhAAAAABMn2ECvZrNZ1ZnR9zW+Lszwvnp8fLxzngNjE89luCtfyxofE8rjNvG94X2fpDwAAAAAgWADvZvNZuvyzybx7SHY8L6otxriuHg+z+HaeQ4MXZmHT8KB6MXz6p06WyaFcviuwmecx2AhAAAAAEAeHh8fjx/THcd/E85h+PJYzxfnOTDgMnP7WN+3lT5hC6bEf3PrDgAA0GHbd/XYI3cAAGB4DcjKA527PeobaD86z4GhlJOjhvL8l/08f0jADwAAOmoDCzYAAFCpAXlUYaXC8rt/u2holvetgVQyLiNnDazmeXxpNU+F8nPlTgAA0HE7WLABAIDWGpEPL219FIIQ8X+r68rWSmRULhYN5evbl84pieUmdTWEcgEAQK79RMEGAAD+0pBMHVRdvfLvjxpqjH557Tugo7Iwb2jFzsPuXIZXykutMgcAAC23iwUbAAA4qCG5qBAMmP/kc8JA7XVDA7Un7gwdloEQALhsKGB21lDH7cGdAQCgp/axYAMAAAc3JhvbPz4GL+7a2oIGGs77y4bOZbj81ZZHMSCX+l0LdwcAgJ7ayIINAAAc3JicV2j7LRI/86yrQVw4IM83GRQ7TvzO1JU/t+4QAAA9tpUFGwAAqNWgTN1G5q7CZ3a2PQ0k5sletvuqsF3ZoxU9AAD03GYWbAAAoFaD8qjCSoRlxc9u/eBdSMjfvR1kXmEVxaW7BQBAz21nwQYAAGo3Ks8qDLgeHfD5ixgwqOva7G8q5LtlQ/nu6sB8v2yzXAEAQMPtZ8EGAAAaaVimzsBe1Wy8NnGew8rgLD/JZ4uGVtTcHrqipuKKIVuFAQCQQztasAEAgEYalp3sLR8HYa8a2tZm6c7RQt56qJu3KnTU7tw5AAAyaU8LNgAA0FjjMvUA3dsGvuu4odnnd85zoKFVM1+aWDUTzypJJe8CAJBTm1qwAQCARhqXnQ+Slp9z0uC++nN3cXJ5tqn809h5IBWCaNfuIAAAGbWtBRsAAOilgfnQ4Hce5TQznUHk0yxXxnS1HRkAAPTYFxRsAAAgqYHZ28G2cWVFU3vun7ibo82fl7me+VFhlcXK3QQAILO2tmADAACNNzKXFQZsj1r4/kVDs9bDZxy7o6PJl2cNrH55jMGKo5auLzUYZvUNAAC5tbcFGwAAaKWhmTrYf9niNSwbGly+Mrg76Ly4aOhchtu2ti6quCJo6a4CAJBhu1uwAQCAVhqaVfaeP27xOo4aavR+sXXN4PLgvKEVLg9NnsvwyrWmbu10684CAJBp+1uwAQCA1hqbV7kMoMaB5+shDDxT+143GWA66+B6jytck7wHAECu7XDBBgAAWmtszitsDXPS0TVlv6UOte7v4LbOqrD64sodBgAg47a4YAMAAFk0OB86vq6sDwum8v0MQaS7oR0KHoJsFVZZzN1pAABG0PcTbAAA4KAG51GFlQSrHq7tcijb7fDiPZxX2K7rV9tjnfRw/VmWDQAAOKBtK9gAAEDrjc4qs7ePeri+pg4SvrOnfmf3bHcuw5cGAkWrzDtjD+44AAADaKMLNgAA0EnDM/t96WNQpInzHK5tedPqfVo2dJ+u+rpPMViS1XkmAABQs40r2AAAQCcNz+MK7cRFBo3kJs5zWDnPofE81MQKlNsM8ljq1k+37jwAAANprws2AADQWeNzMAOsceZ5E2cBhKDF0t13L/Z+z6LCNR/LAQAADKTdLtgAAEBnjc8qW8csM7nm0cymH3CHZVSrTIawpRgAABzYdhdsAACgswboWeqhuDltQTSGcwIGlk9GeX5GzEfZHpYOAAA12rqCDQAAdN4ITR1EXmV23UcNzbT/kttvyyiN5w2tJLnLbSVJzD+pef9MbgAAYGBtecEGAAA6b4QuKgzKzzO8/nlDZwiEgecTOeLbQPxlQ+cynGX6G1M7Xw9yBAAAA2zTCzYAANBLQzR19vp1xr9hEWfQN3Gew/GE88JZQ+cyXOa69VAMUKVaqCEAABhgu16wAQCAXhqioxl8jfvwNzFYfjWlffpjsOahoWDNPPPfep36W9QOAAAMtH0v2AAAQG+N0dRtc+4G8FuOGmpcZ7sNUINpNa8w+P6rbagWA/i9iwq/aa5mAABgoO18wQYAAHprjB5VWBGwHMhvauqA44exbafTcEBmNaDfnbrV1kqtAADAgNv7gg0AAPTaIF1WGGA+GtDvmswWQRXu8+S2mhpr/gYAgBfavoINADAAM0nAyBulYZuklAOSP81ms/OB/bawJdLH8lV3IPlT+boof//Xgf3+Rfz9i5oftSlf5+Xvvx/Qbw/3/CHx3p+Wv22tNgAAYMD9umX55599fX/Znn7nLgAAaJSOek/7uH3QZUPbBy0H8pvncRVCE9tJnQw0X4/mTBIAAAAAgEGocGDw7YB/43FD5znc5Xqew965DF+aOJdhqFsLxWBLqoUaAAAAAACgAVManA0z9Rs6z+E6p5UeDf6uq6GfU1EhqHSt9AMAAAAANKjCgWIPI/q9g18BMIUVGxXTY1Hh3s2VfAAAAACABsUteFJnxp+N6Dc3dbbBcqDXPpizKBLTJTUPr5R6AAAAAIAWhEHnCgPURyP63YuGVgfcdrE6oKFVGY9DPpfhlXQ5qxAcOlLiAQAAAABaUmHQ/WqEv33Z4LkHRy1c32KM5000lDZHFQIwSyUdAAAAAKBFFfa8D45H+PuPmjzPoaFrmje08uJhDOcyvJJGqVtK3SrlAAAAAAAdMHD7bYD/uqEB/pMDryEEPi4bOpfhbMT36rhCWiyUcAAAAACADsSB9tSZ/ScjT4uw0uOuofMcjit871lD5zJcjv18gilv/QUAAAAAkLW4lVDSzP2JpMeyi8H/hoMb8wncl5MpHmoOAAAAADAYFQ4jXk0kPVrb1iiHbZvkUQAAAAAAGldx1vh8QunS5IHNJxVWkXRyIPWA7oPVNwAAAAAAQ2A//J+mzaLCzPo2XU1tiyDnigAAAAAADEg41LjCoPdiomnU1GHOrR46PbI0v0pNI6UYAAAAACADFc4puJ1wGh1VGABvYvul5YTTelEhrY6VYAAAAACADMSB9NSZ+8uJp9VxQ+c5vHouw9S2THohjVPT91LpBQAAAADISNwqKHVA/Eh6PR383OR5DtdTOoT7J+m6lA8BAAAAAAaswuD5Smp9S7NVzfMc7qZ6FsYLaVllhc2ZFAMAAAAAyFDFvfLnUuxbus0POM/hy9S3pHohHVepZ1pILQAAAACAjFXYL/9aav2QdovE1SGXtgD6Ie3mFQI1CykGAAAAQG5mkgD+FFcspM4cfzebzTZS7S/pd1v+WUi3yukWglcnCW+9KdPuvRQDoKXn0XH556UJAdvy+bOVQgAAAFCto526nc2d1Poh7W7NzK+cZrbvAqCvZ9BxXHF4l/gcCs/5MysUAQAAIK3j7aDew9NOsKF6mt05mByAjp898wpbR7529pLnEgB09+yuRIqBcgjkVYEsK3S2ze77M90EG6ql15l8BkDHz57jCpMqfrnK0/MJADp5fhvkBOVwEP5HVoEfzWazdfnnPuGtoYP9UYpxwEOqSt45L/PkV6kGQM1nTziT4bZ4+VyGQ+w+DwAAQLABfuI88X1n9tLnACHQkDLYcx+DXwBQ11XRXKBh59iWSgAAQDCTBPC6svN8Xf45SXjrZjabvZNej2F24+IXb3tXptVm4uk0L/88JL598ukFQCPPnmXxHGxoy5vyebWV0gC91PFhpVkIJs/j61fCKv6wcvprWXffS8FB3ONKW7KU99V4HyiHvfhfWQV+KqxuWBS/ngW4CGcRGBQmUepgz1qeAqAhH1r+/DA545NkBmhXPAMvvH4r0oMLP/u88CcEHLbl64/ieWW1PggABxHphF83vlZF2t7627JR9mbiaWVlQ1rnIGV/6zDT6K1Zogyk3I/RH/HvJna6nZvCkMtpmDTxpeWvscoToJ06fF48B3R/T+hrNeVrbAP9u3zdaAdlkQ/MqAblEBhLB718PSQeNr+aeFrdJqTRYuJpJC8xugbXRISye1W+Ttx1BlhOF10UEikN0GjdfRK29c2gDfQltoGO3ZXhtLmlGCiHfXFANPxCnMVxkfj2D3H2ILz0YFoVacuct4WtKCA3oewuy9d17HRfxpmGMAQGiACG02dYhkkOoc1RpJ0f2Laj2Aa6i5PLFu4SAK8RbIAEs9lsXTwvI01piF1KMV7oNIS8kbpf9oWlypC1UJ7PytdutcNckjCAPAtA3v2FRQwyhPPdcm1bLMrXbQw6aP8A8APBBkiXurphaYkpLwhBqJTBnk0MbgHDsCyeZ/qdSQoAoKq4bW9YxRDOwZoP5LIXxfOki5U7CMA+wQZIFA81Xie+3eoG9jsQIfi0THz7uRSDwXla1RZn+ZlBDgBU6SfcFXlsl3SIj+VvuDPZDoAdwQaoJgwEp2xvs3CIKHtSg0/r2Wx2L7lgsBbF89YCc0kBAPxMOJuhGNZqhtccx/bP0l0FQLABKoj76H9OfPulGa7ERvci4a0hb1nVAMP3NEPRDD8A4Bd9hHA2w1j6i+F3hHOsrPAHmDjBBqhoNputyj/bhLfOi+cDRJluJyI0uj8mvv2zQ6FhNHYdbgFncrGRBADZ9BGWxXOgYYzOyt935S4DTNf/SgI4SJiBfp3wvg9lYytsjbOVZJMUgk3zhPdtYxALGI/j+Jx4JynIQBfBbG0dgF+IKx/bmv0f6vrdlqzh7//77n//R/HnSopFiz9zWf7OMEnv1B0HmB7BBjhA2XC6KRtQm4RG2m5mu4bW9DoS8/LPh8S32z4Jximc37MSTCSDdst9mRe3Rbv7gm+kNMBP+wehb3hdNLd1Uggo/DvWv/dVV0nH/koIfvwW+7VNbgEp4AAAULVx9phuMZE0uZUW39LiKjFv3CpNDDyv82vObyCHsrpqOZ8vpDLAT+vhywbq2ofydRYDBW30b8/idzTFlko9tbmlGCiHwLgbjHcTSQ/Bhud0WFR4/syVJKbU4JooQUVyKKtH5euLPA7QSx18XLOe/RLPeujqepcNBh2WckD3bW4pBsphXxwQDfVcFGn7IB9rZE1K6j6sn5znAZOwMOubvsXtNdrYti98rm0yAJrpH7zk5v+zd6/XbeNaA4aZb83/o6lgmApGqSB0BaNUMHIFkSuwXIGdCqRUIKcCKRVYqUCaCuypgB93vJkwGl9AkAAB8H3W0vK5OJa0CeK2QaB6va3q8bXHNkPOHXyr7UbXc39WPOUJAONBsgHoPnC/Mu1g6j6dSJgmlUw6023KDoD4XRICBNBvWVc/bnr8k9KWnZE4B4AXxwdFZn8g80VVx35oex5Dj+2GtBnvsu7n8mwYCwPAOJBsAPrpgJkMsqVztSBiSQ8k5Bqbrlq6GmrQAGAQBdumIZB+i6xSlScRurZBcjCpJBr2RBUAXvTR8t+d61hz6HbjWL3Osm4LpWScVFAUAAAADLBH/484jPrMhhaHb95x1yChcg9z15QYBHTvTrTdarsn9x1bQwJAq7o2mYOV9SyHe4t2I6c0+O1zEzGA+3AobygqQG+Vzqb6MTP41Vt5FDbRGMgBkcUrvyarIHcJfnfpQB8Mfz3JGGC8HS6iYGxf3fvvCAMCbcOm2c9tAP+n//lr49d2WoZ5Kg8AzOvXefWjbeLgWL3ehVrf6vkLMu4z2RbpRp+og+c+dxV35vsA7kMAsQ/UWyQ4i0RjsB3xd98YXvsNdwtS63ChlZxSAwDAaPpJG4u+wjyC7zV95QkH+f9mlIDh+txEDOA+HMpvFBWgH7KXZVWXyD6WJoeAyuqWt0QtmQanyMyeahGs7AHMrKvXZ4d/P69e77PHp7Fyj99LVgMeubwAAIxC0fL35XyEdQRj3301BpKn9bdP/N+76vWBJ+EAAAA60j05TfewXCT4/Uf5ZEOL/a6X3CVIsPy7svT4HWz2Hw7+ewEAgEH7SNPUz3fSPhT9nAD73EQM4D4cyv9RVID+6OoN05Xrl5KcIGrRNzaSNMoNflXKxg0RA4Ksu9fZ49Nmew9v956IAwAwCrnFv/kaYR9KXsfs8ZyJJZcdAMaNZAPgpsNlMmEliYZLIhYvTRaZXsMLHiUGgq675f48y9jiCAAA9GNq8W92EX5PWWwniYY9lxwAwJkNgLsO19bg9xZlWX6S8x4IWZQk0WDydMouhr1XgbGThENVJ0v97fIg94JIp+eJLQKPtO3JXNs8+7k6+WHMk2m6yKI5efrA5OKTcRH7sS0yOblX6nZ1Ry3SykOM5YYFVQCAJpINgJsO167qcK+r/zg3+HU5LPqMqEU5oDI9d+OKiAHR1N+31f19zPweGo3w63yZSJTXn/ozf62MnGzTKhMx9aSsbJEhZWzPRG1w17jIHrc6y7NnViQ3rmt9Tb/qz13sE26NSXOJwx+NOEwMy/le45JcGdeEYl0H5BZ1wFFfEp9vGqtjTPE5KR9/arkoWsSgWUbk57/Z4yr+lBMzbbdOpE0AAMQ/piYEgLMOuQxA7jKzle8fZIIrge+8zV5ftXuWwionw+8q1tX3PeeOQMJ1nauDr66G2vdXDzd0ts1d9b3etPgsRebmaYid67rY1SGRPsqFTqrNqtdfGn+XZyzJdZDJ2VvXE49ykGfmJpG2bvskRwjlQ/tqH/Va9xEX6ct9jqlPp0mWuqxPHbzFg5bxL1rGHyKJS7MOmDl8q3ri/YvWy/sAy8ffWg9OHb7V8aQuTCL50GK80GybWYTmp1zXCwf+MKj/pXz+oz+PQ41l2/a52/Q3X4nRa0mz0SyiaDzBJff1/wzqxWZidVRPvWqs6nJkEquvjX5xsElon/chADw7kDY8pP6QSofa4LsWCXzPmeF1vddGFki5nnNlOeB3Khx+r7LlZ1nGGt8Q4mczuK5eK62/h3CoXteu2g7DdtpGEVP5kIlkjbPL6zgLuN6W77/Qz+nbKuS+oNb/m3I4B63384HLx7x63Q0Yh40mR8cwNmraZnDVti96bgO3eq9OPX4Pp/0lHeNuOvaB7uv7V5O2sZeduj7sq2940L+VRHyeidWm51jNAvuewYxbAIy3YzNpMZBbJvB9x5JsGM01BYaaMCTZ8OOzkGzw0GnXa74tw7Ltu80k2fDjWt97vIaTgOrridYp9ymW746xmQ+UfHktMZOPtHw0Jy6XsU7KkWwYvL7zlVQ9+CinrvpLDuu/e9/1WI+xnnlKPAedgG9RfjYe2oIgYkWyAUBIla9pBTqJ/Lsmn2xo87RKaqsVAJ8ThiQbWtc5JBvsPmM+8Cpm00nZaU/fd9TJhhZ9sr4HyNOB6+kQJ5Gb5TsfMDbTABON3pMOem/cBxyD+xgX8ViUrSSedh845nk53BOKTpNjDpLvU49J1iiShgMmnu/KgJ+IDCxWgy5WINlg5v9ojgC33rx5s84e9517jTS+10Qs6AZVrtFHw1+/SPiwOwBIoU6fZ49nK4U+uJMBlQxCr0lid7re0sdaDfDWE71+84G+d6Hl/DJze/ZIl/J9GGIiWd/zLnNzLk6f5lqGlg5iMNHV9KtAy0fzPrrUia3Qr1dT2/3rc2rrTmW5vqfnA5Xnida1h9Anjht9IF9l7lLrsWmg8Sg02bca6D6UuGz6XGDiMFazgWMlbcA2hliNGckGwI8L08EEFWbQrg07rrsUDvwG4MSREAQxUFpl4U+unVqEPFAP/HovNH5D8r7vsCZYtlkcE5iXurIz9xCXeoL9MqJiPOk7RlqXyIRREVEc5LtvtWzH4F+L6xLT9QiljpeYhZRUlc+w0ScsJgHGq+4DDXH/DpZ8f6E92ATUVhZZoAtMGrHaBBarJbVgeEg2AB68efNGVrWsDX+dpxvC7cSadowuiBiAZxwJweADpW2L+jw09UB9wdU0vubzgPpWKx/JokY5j62cTDPHCTWdvJHYFJEW6TpGsx7uC5mcjfVpqYWv5NQAbf5f1NytynLISVW5z7YhlVNNNAzdB1qFkDDU8b0kXEN8CmWhZWcaSLmZBRyry0jag1Eh2QD4IxPQJtvqFCFl+/GzETP8vbUmlwDgKdQPww2UYp9kbLrWCQO8fM1lkB7SIg4pg05XuiZQzp1tO9WITexPB9WrppeWcZDYplB/OE9O9eBo8W8YBxrez5EkVYMpp1pnhFK+FgOfzzbX9mASeNnZDr0lly5w2UQQqzueDAsHyQbAE92//5Phr1+yL3NQndm54aBdrjFPNQB4yT+EYDCrLP5Jxqa5ruSiv/DyNQ8tPlIGnWzfo6v6DomU81WfCYeEEg2n44VVyzhMszQSDbVBz0QxGP/tbL4TT68Z389FROV00FXqOmEd2tZxl0PcuwNuI2VbdjYDnvskcbqO7D6bZxgcyQbAb4dzmZmtcJHBIp3McDqzph2zTxwKDeAVO0IwSF0u7e8swa9Wr3rLucr/ueaLLNyJ5UXf10z7K6GvPGyrz3MuUks21oyTjo0J2hStAp6gt3mikYVnr5fj2O7nyVDttcZsFfC9O/UYixC2kbKN09xzuSFWsEayAfDv3PD3PjJ5EMaEQGa2B+hRk0kA4ueq7n1gmzX/9JHqy4S/Ygxbifi+5pMIrvllz983tVX7zUmDacf4SF9ulngdsDWYnE4tGXUq1O3lPlv8m5QTQyHXdbJobJe5WxhSr1L3fR92ecrvqPE4Ov58PsqPjNXnDt/CZdmp28O5p1i5TDQ8pBQrPO03QgD4JY/TVhWfVKyFQWdEHln7QNQG69Dm1Y+Phr9+TsSAZLg6nPGW0A6Csw3GZ5GFP6kqK9Kvqn7hsYe/Jf3FVJNN9eTcO5unRyNJPPno086zNM6ridFtZrcNybS6bpIgOufJ6d7rOql3ZTz+NXtcMLZ7pQ6Z6v3zvof7qN7K7IOne18+r0mydX8Sk/0rfzPXeMx6aG+lrC9dLtzTOrCPtuChESeJ0f65+7NRdqaNstM1VjKJfrTcoq1NrOY9xUrqv28aJ5P7rM9YSQJ6z0IvAGPq8OeluSKi77VN7PtsDK8RK48w5vrMleVA3yd3+J2mFp9nGWt8XQWx7YCpTN+9adkybKdtFCGVj+rHIZJrt+rhPpuV47CyjM9qBLF5dRuliO6JQe+ngcdIL13fKf3NctFHGek6FtWDqRc93FML1+2mQdk7aD8z7xiPeQ/xuHf1xIfcP/r3u9j0sa2fttnbHmKVO4xVH/dZH7Ga9xSrSc8xcjZuSQnbKAED0FVsN4a/fk3EBunQSkfUtJHkqQYgHa7q3B0rawaR+opmWTV2Rtn6dUIqc7cVWt9mXQbBge/D3bd528kLnYyZj6AOeHHlu65SzROPw7qKQcj98c8d/m29Vd5yrOc4aLKlS3suq6vfShnpuiJc7rXqdVO93lb/9ULvQav+ievrqePZ4oV6Q2Ky7PKEncZjrfG46vBxJRYLBzGo20nbWO+07HyoXp2fUJa/Ub3OpO+W2W8jVJ/R5CJWm57usz5itQ41VngdyQZgOFeGnZMp+80NwnTC8aanLRAADD+YlbrW1b7eV0R4kOuZJ/wVSTR0a79DMOlY53SZQIny2racnPuYeDxM64DUk66hJxq+T5pldgdFn17Hu5GOC68t67r6HvngYrwmSYfqxzvLazvx0F49lYyWsvhWy2Tf8VhmjxPDtgmYjw4SMHLfTC3LjpSbM0dlZ6cT6R8s4zV18JTypWW/2fV9VsfKNrlX2DxJhG5INgDDdTqlojSdfLoe60qWIWgn3qRT0uYaAgj7vr/O3K0QvnW5tyqeH7Qm/N1INKTD6oyYlk9gdrXX/o5MisiAX1aw/q7/+Uz/Px91XJ61W/k6H3sdoE+D5AnHIfhEQ8NFT/fASrcGWbraSiXAcVlhWW+9dd3/0slVqQfXFv987niLrNPyca6rzh8cxmOX2SccuibgT8vONLN7WkLKzrs+VucbxEvewzZhddlXHaB9ikWo95nG6kbLlm2smE8DMB66D2ew+5e3/C7Rn9mg+06a7uk4pwSDOizeMxv0fIY+9t11tlcoZzbY7X3q+OyN5v69Un6KpwZ7uu9toddw0/N7zyyvSfJnNrR00Jg0X97P3AjsWp7uu5y3rFNdn5FgVKd6OMviXr/rXO/zyTN1wEzrgG3P7216TsvKwz10rd+zeKZfXWicrntub+8i7DNdO7gGW41vnmAfc2JZZu7KASYWLe+3rad2c+45FrZ18KbHz7CNqOxMWswLWZWfnuakBj8np0OsVj29P2c2AIiiE1W0qKvywL9LCsmGZaoDHCCyZMNTk4B9vnwpPNVJJBt+fW+XB0OvbAeiOvjeDDVhQLKhrPc9L175bFP9vXtPn2vaMnaFhzhNO5SzqePYLQ0+w7XL97epAxoHqd51eO/7NtfGYTL93rZ906TUsuNnG2RCcMBJsl7ruIjitYypbHS4vrnjdnM5UDxs+zuTHt57Flu90qH8dB1r2PSZN5HWpdMe3ptkA4BoOlKmDfE28O8RdbKh5UrYgpILBLM6OVTzHuJLssEu2bAK9Zo22puV7/cfcbJha/kZJx5WhotFINext8kWxwmHe4P3vwu8DigsrmPbREMechlpTHIdhnr/ASfJfCUy78qfT57kEcbq4PIecTiebHN9jRcw2C7eibCszwYoO4cQ6hXLmG09x+oukFjlvmNFsgFAbB2pJCa5E0g2mA76NpRagGTDK4PdviakSDbYJRtcTDRuHMRo2qLtmffwfmNMNix6iJvrhMOqxWdxuUVYrxMIWr4HSebGUm9q0uFg2K60fQLG1VZSUwdxMH2SKOpEw8m9cV/6d9D6bDH0pLxBjOZD1Pce+26rtgkgy2s+GzgWNk+ZXfdQr3p9OsBBu+Dl81veZ9OAYmXTzuUd35NkA4CoOp2mE0qHgL9DtMmGMqHtrACSDYO667MTTrLBOtkQxIR6i1gtXpl4mntsp1NJNtz3fC+6fJqgzZ7d1w7jlTso29e+Y+YwITNxWAcs+y7LjtqPjcMY5K/cZ0kkGhrf1/WWSsb3Uhng1ksWde4hsM9/6CvJ0KHdPAQQh9xlm9hT2VkFWD9sfNTNFnXQdYCx8nq9STYAiLHDabrCZRHod4g52WD6+OCS0gp4nTCMxcFF3UyyIZxkg4d4TZ8Z9M0jmDAvAqw7Zj1fH6fnJDjorwSxIrh0u2VM7vFa3XmoA4onYmWdNHPUfvhoO5apJxpO7o9VQH2Ze53knJfD7l1vM0E9D+zazvtKMnRoN68DicWdrz6XZdnJA6wbnH+Psv3Th/ch1sOWbf7E13041jmC/2OaBAjDmzdvHqofF4a/fplih3vABkoG2CaN87F63RAxAErq7dvqdV7V4W+rF/VDGHX6NMbPXZWfffXjrHrtGv+zlK01V7W1myputz1fH7ku+wDKtotJkaOr+kv7t67KsM/tQR481AFSxt41ypm855nWDTb+jLQuXErd14j5XuPwkCVGvlP1ku/6wUcZMzDR+0pW/g6ZeGh7bx8DbCtvG/1E6SNKe370/Bm+BhKLLxbtnW1b97Hl768HuC4mdcNRy47L+8YmVg8Bxmp30ncOrf8wSiQbgLAqyrVhRSkdvksi1svAvU0sr1Ic6AAwUndkr7LHxPC7qj74vXp9YDI4ONEm43XiSRIOUqZINNh50PvUhS+uPrTh0yF/O3r7K8fX5LOjv/s+tXpFJ5ikDqgn2Pehf2aHY6I6+XqWev9bk6NvM3eJOVt14uHQx8r8FtrWdZ9CbM+1r/hhwMnsUO6bncW/yTuU2RDapyHazr8dx+pTQrH6mMEpkg1AeEwHfItYV28G5tJwMLZj0gcYta/ZzxVi+4AGcPDE5zaAugKSNseOy5V3u4G/m6syeOu4PEudeYwoHk+Z+lrdrUnHdx0TDa54S/DI95fk61gW+jSecjgLoK45JWV/nj0mHTaOzzDK5X4LqQ7rcE2PA3+EfSBx2FmWubZlp+3Tf0fLz+YrbrctxxtT04SgbjXZJsb7EJ8A6VAHTEvO4XSKZAMQXqMiDZ7pBMM1EevUmZUOiekexVdEDBi1y8ZrqwPueqUfj+KOw9+EIArOto0YclJCJ7pdLDLZeZrMdRG7ieeFN9T1WVYwQeN+LKhPuIWYdKjvg60mHVyUhaLl7x8DnwQdsiyFlKhre42mlmVz6Hapb662UnqfUqy0rLeNVUEt4Q7JBiBMMrFt0jkomOTqxDRZsw551QOAwcgge169Nnpo2jWTMEEMOFzV13OeKIyC65WcR0d/97Wy5WpQ7GtP72+O/q7PyYLryM5Mc3VtWezkqS3TpIOc47HOwnuiUsagBweHhic1CQrnbWeXsvM1gri1/Yx/OWo7v0QQq2+OYgULJBuAMDuX0hib7olHh9+CJmlMGlmXez8DSIdMQC104B3bhBTMbUnyR9GHcsnV33+tzphG9n1OuUoC+TwEWa7Rnc8t1QI101XttHN+6rS9bq8kZzrIz11gH/GyKgt3PSbj2/6dr5SSKPhoa9rWzbsI4rbvOwaWT0ruI4jVznF5QQskG4BwO5ZLw0Y5d7CiZAxMkzSfeDQXQEt10oFJ6fQGtTJA2+jEypwnWUZpqNXF7yO7V3yZPtGH3jl8P7nnJem41Tog5Al3l9e2XtW+IvnibWwoZzqs9WmHOvFwG9B9+P2ecHFPJ16HjcU/Lv+4TT0Uwxjf5uweg8Rf21gdIzk7p22sJvTj3SHZAITtwvD3PrK6qFUDvMzMDo86atIHANqqJ6V5+iyOAUdbMpBbZT/P7pBrvaxeCxnwMnhJ2reB3jf2MnV0eC/6fL9aoXXAvSYf6zpgrnVACP1y1/VgfWiwTDKXmoC51jjMSEK4I5Okmnj4UL3eZI/nO8iT2LuB+z2rLgkHyzKzp0QgS/OpBtv27LVYJJnQs0yIsD2qI78RAiDoCvO26nTtDBoM6dzJhNY5UXu1EyuD9Y+Gv35BxAB0JJPPE90CAf7IhLCvJ0tyfc1O2hv5IZMgD/rzXx3cPtisVMPo5Y7+rpdJBJkc1XvCSd/uiRWqcq/NPV2bqb5eqgO+NuoCLwfaSj3jKubPKE7HLPr+D404fNMyJ699JKtlYxgz7rLG5KlO2svrT/3pM/klCQf5TGsf9RxlCOqPhL/bseW98Vos3lu8fyx2WbvEk7Tdt9w+/SPZAIRPJrzvDH5PVlJ95iDjV10adrjlUDYaHgB9mOvAm4SDP7da3w+tXjFVNNqgegJO2muZgPumbc6Ry4anuDyYPJFyl2f/nQyRyf15gHVAdlIHfNV6YOdo0lTqwqG39Js0vv9pQuZ4Ug8yjunnvt5lvyYfcr0G77OfyTGXbBMOOVcPHdqBNlLuc017jtU/CcfqT24dN9hGCQi/sygdcNOO2iURe3GwXrQYePJUA4A+ScJhRRi8tp2hDySlTZLzPertmO50CxIe6cYpZ6uSS488xyeGBSOF9t032c/tmBY9b8P2JfAYyHedaRxkG6Z73ZJqzhaxvbaJ9bZL59XrXfU//V69PugY01VbadOetZ3423F10ahP24hpAr3tIeh5x/+f/hU6I9kAxEEmvk1WOxU9HcyVKtNkzA1bXABwYE4d7dXnyD6vTMpI8uGucQA1gyAwMWB27/xCnxK4jfB7yLaoh/oA6h7+5m023KHmNqTOk+RDnYRdkYDtnx42favJBzlsWhIQN1m/iYeJXse2/waAoz7DCM4Ua9veFRQXN0g2AJF0CLPHQ79MXDI58WTDOjdsTNrEGgDauubwYG/WEX/25gHUS9p1Jg4IgZVPEX926bOu9AD6eccxRKzbgtYHUN9p8qWgSDsba8r5GReaeDjrscxMpQ0jwnA8zich+d+YTEban/jG1Q8DZzYA8XQCb6pG42Nm9licrIykY/drY2v6VMMVB40BQThmfrfBkYGKjwndeqXfGZfYebspB9LeaJsYq7r9+lh9lwvLAzeBsdYBu+q+2WVxr1yUfr0kHaQeOLc800AW0cyyuFeNyzWUJ7hlEvyCM27c3jfVj50ujJByN+/4J6X9ujEcXxVcAVj2lfDfcc2OMLxO5oqY/+kfyQYgLnK46Nbg9+TphjUd8R8WmVkWX/YzvSFcQBDkwPul585mroPqj44HLjJhUnAQphdXek1jH4h+T1JV5ebv6ucHBkWAMdmK9C6B7yHt01YTqK0WxmjiVZ7ySOFst5m2oZJ4uaV4u6PjyPMq1rIl4SqzXxFdJ805Dw8Ioz+JX5GYcYBtlIC4On27FhXhNRH7MXloOrg6J2LAuAfWmuCQbQRcT2JcEnEv1/Qhsbq9yB63VmLLAOCnP1+oA+QMrpS2x5QFNNu2W6tp25bKeWTy3eUQ6RVF39v4U850WHf4M5xBBISB/iO8INkAxMd00mTG3qbfmSZddqwyBqADazk48UPmds//gjra2/WUxFFKT63JhM2WhAPwyz3xUh2wzOI9t+Apcu/bJB2lXUvpqag5CQev/SIZg150uEdnRBIAxoFkAxBfZ++YmU+ajPrpBp3IM+3Y8lQDgNP6VuqFo8O3+Jsoe7uWMkGyTugrkXAA2pH6fJ9YHbBps1pcxxByXhAJB9i2pTcd2tK/iCAcKQgBEBaSDUCcrgwHCtOqAz4fcZxMky1XnG8B4IX61hVW+XmkyaN1Ql+pTjiwNQXw+v0v/WaZaE8p4ZBnZme5NeOwz9JMOCwp5V7bUpv7iD4PAIwEyQYg3gGT6WOs12OciNAki8mKT4klh0IDeK6+XWfuJmUmbKXk/Xp22QYiRN8PjubKAmb95+r1LrF+37TtRLsmHCQOKSVeLnnSyyurdpQ+DxzZEQIgLCQbgHgHTGvDQYJMRIzqIFJNrpg+1XChyRsAGGIQw+SI//ZTJhpTmmiTM5pYMQqY1wEyUZrS+QUy0Z63jMFREy8pHZ5N4tXfPbSz7BsVRA8A0keyAYib6aqSRdtBSOyDruyVwwLVXpM2APCSbw7/9p+E1z9Z2duYaEthwvGaqwq0qgPkwOi3WTpPOaws47DMHpOvuwRiMPbtY337bPFv/iBswKD2hAA+kGwA4h4oycDg1uUgJDaaVFkY/voFpQjAwHJCMGg7usweJxxjTzrkTLIBre//B33KQeqAdeR1QGG7sEiTr3KOg7x2kV/WS0q2N7cW/4Y+DzAsdnT4LxIwDpBsAOJnOmFejGSfTNOkyq0mawBgSAy8B6YTjsvq9Xv1X+VMh9tIv8rfXM1k7RyW/xScdYzBUc9zeat1QKwTDx87xmGnsayf+DjG2KZydoO/ttPiXsmHquuQNCbQ/4sJ9HZ1GXpGsgGIv3KUgYDpfqtJP92gyZTCsEPCUw0AQpATgqDa1HX1kr3c68TDOotnwq3QM4uANn0nJmZ/3v8PWgfItkJ14uE2i2cia9ZTHCT5ImeaSQzq7eZ2EV1KEq/+9J1sAGzqLCbWn2jPnvm/jol/dbanDcRvhABIwo12rF/rwMlqn4Uejpki02TKJ03SAADw3CBtra96i76pvv7U9jbESdpZ/ZmRFJcTKSSonq4Djid1QH3/y73/Xn/mgX3s76v6+5x407/14+/pwh6Jwx+NOjG0MiT1IIuK/Pin57/H+AxweB9J21bV4yl/97bt0Y7i4gbJBiCNAdFD1WjIqiOTyfbL6nfXqT0uJkkUw0GfNL43lBoAQIt29qjtx+1J2yODmnqyTX7+7+S/+8aKrnT7eQRi2Gvwy6R7ow7Is5+JB3n9cfLffSsyh8kp3YJ090QcmvXeROui5n/3SZIuE7bGiNI/FuUdyLRealMeYjqs/H3L3z8a/P85ReY72glHSDYA6QyC1lXH+m+DRlY6/NfZ46PhSdDJHtMD4a4YfADA90lxdG97H7KfE2+3z7RPU22b/8rcJyDYEiddu8zNxFpOaDvVAcfshYmdxlNRMlk08xDvPwaKw75RTp+Kw/QkDq4TENOMFasxOhICeCo7Kbd9e4NYtfn+KS9k+cat4wZnNgBpMT27YZ7YHr3XhoMWOfhuTTEBACalfdA94Hd6ALXsfS6Hr+64rrBwdPR3eRrGbR0g5x/cNs5AOMvcTqhOA43DXs/DqA/iljHLw9jigP7rOc4qgmr7VExM5SbvORZfE45V0fL3Oe/DEZINQFoDml1mvlfzdQrfWZMmc8Nfv6KUALDg8ikAnrQaWTtdvc4yd+cqMOmSLler7wpC672vLonH/YhjIEnYZfaYeHHVBlIXxnt/tEViCWKXcLnJW/7+vuP/H2WsLBOPJBscIdkApOfCsONeVBXyLIHva5o0WVt2YAHAZSf7tU6uq4mYwnGHP5aBST7E++rqXgY4aMNVH2Y61H0QwP0/GWJVtG6/5mqivbCIw1D1oNSB59zaUWv7ZNS+p9/x1UdDJGzG+TH0VW0+o0Es2sZqEskTRG1j9aBbIcIBkg1Aeg2tDFw+Gf76dcyPnmqyxGRQJTG5oHQAsKhnJtmwK3/3Dr+by0FWDAO4VfXjbsDBJk/boU3/bp+5Sz7OA7knZZvPuaf3krp9K68BEw7rAGI+1XpwNVC5lrNujtzh0cpb/r5JHda238NWcLAtOzEkqtqOQXaG7c/R8edIIlawR7IBSHNAujRsQKSDuIjxO+rA0PSphk8cCg3Akus68uuA383lwOGvwNsQmVibZ49bbWwHSjgwyEEoZebvAO5J6dPJfblyfT82Eg31ocXbgRbffBk45lONg3z3+VAJh8rtmG5iTardJ3LWQNt71WQyuG2/qMgAuzr1fQTf6b2jGNwSq2Hb4NSRbADSZbqS/2Okj8/LBKDJ5z5q8gUA2k4IyCD6o+O3GWobJfG3w7jNAr6udaKhNkjCgSQ4LLgaGOdV+V8OfE82E7vOJv9PEg21IRMOfXswjEMz0VAbKuHw74j6FXVSrS6HMX8Xm3be5BDftpOgeejb4XCItTdty04MW0oXjmLwNaVYWT6JvuOWcYdkA5AofSzZpAKVivkyss5tnplPALJ9EgCbeuapiRgX9q/U5S739Xe1V/sq4Ot6mmhotoVbn2cZMfkACy5XgH/0PWGnZyZsnrgnnUzEPpNo+FEfVq9DLOfN2LYpBu2bJBw2nuunP0bQp6jL+uKkDV5F/LX+clE+NRHftu/zd8jXXuuWJU2YW9pnPrb4J5OQz7DUz9amLt6bnkGgc0VtFr2EntRrex33nNfgFskGIG2mE+0ysCgi+l6Xhg3vThtSAGjTuZ9nfhINR8OOrssV8Nc9x04mTqaBXtfnEg0/Bp3Va6MrT31w0e4ycEqYTsK56tdI+V/5mmRuTHg/N0HgYiL2tfpJvrucX+Bri1Hv280ZJtJnmd/zbFy8TzB1oSb1nyvrc49tTp/faZJZrHRucYjv55Z/eh5wAn+h99tl9RnvEkhohq5t2Ql528+Pjr/7rePP41PbhOMnbhW3SDYAaQ9KJbt/Y/jrUTzdoEmRueGvn1MKABjUKzKpVciAv3odsp9bHLhm2sl3+XTDrK8DWQ0m84e8xm0+28LThICLQduROzp5nx3+bS/bCelk/nNPGDTNe66fTCdHr3V1f+74WrpYUfv1pbYuM0+ky3e/c70aW/v1ySYb6gO4X/mOC18Ho/doYdFPunX0u5l+luDOIdQ65PKkjr3jKQen1i1/fx7iltL6mQqH95j4lEisipaxcrlwAwDGQR/blUPITMw7vtfW4D0KD+9RxrhKCIi0joG9wjDG144/x32Xx8g1UXPnK2gWn2/V4e2uXUy86gGhLix7akOdlGUfdYeHOm85xLU7+QwHx7fZwcUTrzJJYVkGpx3fd9Whblw6KkcrR9du9sz7TVuMB3yVh4mrtiOQ/tG8ZcznWQT0PrYpS/OW77O1uF8ngcXqpe/QelFDjPdBh7Zz6SjuT9kEeJ+1/Q6rkN8nhVilcB/6xJMNQOL0kfsrw1+/LgPeQ1o7qSaDnTbfGQCGcGyxncA3x5/lx/ZBbdoATTLIAM1khfJQ7UbXpy1kpeRBB8l5j22Zq8HajltrFD47/vtS1rc6IT7tocznei8eMrvtw7a291/HOqDe+kTqgEVffWRdEDP3VQf0cAZRXR56O9fmlfMzuhp8xapOlLZ9SnIVyRkOtk9/tr0un23u14D6H4tX6juecnCn7TzALKSzG/SzFI7vF9t/F9T22wb3WR/lAwDwQkV8CGQVQWH5t9s8obHgigPe6ha4X8Wce/5sG51YK/SVN/7zQicg74cKXIu4rRzFxuoxchk8Onyy4Puqzp7aaZ5seGUSMYA6YeL5HrzT7120+IyF/pu7Hj/DpOW1clEHrLQOaPtZJvrvXD6VsnnifacOyspBk9M2932u5cJl+V0M3C+67qGMTQLt89nWf7arrg8+2iMHcZq2rd9ctJuRl51lx/eL8skYyyeHtp7miZptwCSQ++zeR12Uyn3o029MkwCjIecXmDREsoJrbXhoqU+me4PKauEbLjeAgMnTV8b1lNTHVb0sdXLu6fPNMjd7ifscgLg6P+JHbPSayEvO1Pj3md//Q6+bj8mPNbfWOMhTq1X5k72Wfa3inerrUsfND9nzZ8lMMzdn3sjfvc4Mz+NyWAfM9bVq1AFfX/j9P7UO8PH015eTGHR9ouE5ufbLF1oedlomXnoK773+Ox/t2NB14des2/kBUr5kEu1cz98LpV2dd6hzbFddywrktpODsijg3VBj2cZ917ZfiH5dtex7fX/aqrp+Z7ozxBBl5/uTxhZ19lUPsWpzn+UjjhUA4IlKeWu7MqrHv19Y/N08ptUswMjqFThcwdyI84qwma0QKt2fcRGq3CA2PNnQvc5bBlQvHEZYzhfUl6+vynX0REMMVoH0jZY9XdNFIN+nyzlDvlddWz0J1VeiwfK+K1y0m4GNF7w+2dChzzNU2bE9w2bT0/uPIVarnt6fJxsMcGYDMC7nhr83C2zS3vSw59sWe6ADwBBaPdXQ8IXQmU2IZN1WlMYqxCcSEU6/LiUvbt/j8ImG0H2qV5jq5I/tvvqxC2LVanUtlln3JywmWt63ZQ9np1i2qRO9p1YDXpMLi3/z/emCsqezlgxjJU892jxJtGP8GlQbWZedqcey8/38jqz9E3APlvdHX/fpEPeZvOdh4FjBAMkGYER0IsL4sOgQPrMOKE2386ABARC6K5tHjqt/IwcrHiP6nh8GaC/mmbuDl4MvV9xao+zX7bJxbp+1eWpyo3R78HLIfiSxS7cHL4cutKSrjEv62AZJxkJ3+sRO7rFNlfHXXcd76qbrRLr2f2z+Rn0A88xxnCZa99hs6cL41W0becy6TaIvPNxnC62zbe7tq77qPL1Pb0K9zzRWS62TbO6z86G2fBorkg3A+NxkZvtCTgN5dNc06XHFqk4Agdt3PFPmcyTf80EnB7zHNxvnvse0f+PW14RmTOq9mk99G2kZ+DGJoj/3I4xBcKtW9Vqc9Xg95tVLthTauJzY0y2T7vQeyzv8KWmX+kqEn1u279/rCo1Z7iJW2ePkp+2Y+SqkczlSpE8Z7S3LTv1kUeGg7BR6n11ndpPnOwfnVF51iNXGcazkaQbbM2NuBxqXjBrJBmB8DW6bzvjlEPvwNRoW6biZrMyy3ZYEAHx5yLpveWKaLB7ap4HaNxkgnWXjSjjsdSCNcffrzrPxJdq+PBGLdTa+raX+M4lS/XeJwXpkcQhy1aqDhIOQRMNGzwZYaXIg7zDeyvVvyN+6zx6fEJyGdE00oX7RMWYH/Y6dEjUar4VOfkqsbGNP++3Phw5tZJE9PuWw1ftk0qHsTBrJvC5PoD1kDp4g7qE/8UusOt5ndawOmf2TH5nWvX33C/Ytv8u2xSuZpxJ/o94BRjkwXVcV2UeDBk4a08tsgJVC2pCbZq8veCwOQOAuuq5ek3quqhs/ZfYre3wYNPkrMa5idJbZ7ZscGyeDTUTZr5NyL4PpzUi+8vq5STrt48p/HMOWas9OokjCQeMwH0EcbkJetaptd90u9TmRNNHrO9exk/zYadvw7aScZCfv/Uf2OHk3ddRWnvd9DoHe2+87lunv8ar+zoPG6qvG5/jcE4I6+VfH6q+ermEfC1BgXnaOPbSRhb4kYVWXne/323P9+5Oy817/fR9l58zV3If2Jy46tqHfY6XnvdxqfbRrcZ/1GSsXiegHi3i0qdeTQLIBGK8L7fS+RlZufBpgi4ZLw8p2ryvZACBUVz3WUzKR/zHgzuinoZO/I0o4nLF9Ehrl/lYnU1KfZF/ryv2XYrHWycSUD0l+dRJlJAkHebLjIoL7s044SJl0ubd5oT9nA9+ja0dxPNenOIqOf2qiMfoRJ71XfDln+6So28hCX5cDlJ0L12VH29A862dxU32fDRGrM0ex+pr1kwxJGtsoAeNtcHfZY6bZhNeBqzZupntfcqgWgJCt+3xMvvGIc4iC2RJABxdvs3T3LmeiAk9OEGRpr5Y9fy3R0IiF9HFlcveYYBzqla17gzicJ1wm9jF9N2m/q5c8jZby1q9r03u0gw+Rt+3n7B9PG9mh7Kw9xUr68+vIY+WqnuD+NUCyARi3i8zsMbDCxWE/LzBNbqz7fkQXAHp05WLQrYPUEDu6QQ3gGntlrxMqU/Uk45rbC8+U+3WW3tklVuVeJxreZY/bN6TimLVcrZlomVhnDrcScXyPyvjrQ5beOSsXHhINrs7B8NZPov0Ooo08p+wYxUriFFty9PsWoy5jpe3vjrvpZSQbgHE3tjJgMT3I08vTDXpoV2HYkFxxFQEE2tE9d7zK/zywgXaQK+11JanEKoWJHWmzz0iyw6DcSxmJdTLulCRW39qWe60DzhLpM35PntjUtRq/t1kaKzLljIbzmM9r00UDqSTC6sm9G4/xi20xQd0vXGcI4f5bZ90OQvZddt4NVXY0OXoe0X125unJIeahXkGyAYB0DI8Gv5eXZbn08HmuDX/vE3tVAwjQPvOw8jywlX1XoQ+gGxM7sU603WaWk4wYJy0rZ1m8W7ZIH08mMD/0Mamsyd93WbwJGKln33WJRWMbn1gm2U7Vk9oXidyjR02EXWTxJsN32jbdDhC/ejFB6OXhmPFEYoj33zoLf6s96wSzg1i9CzxWUhe99RUrTeBzT7+AZANAQ9vmCYGPZVk6O2hPkxm5YafthqsHICDf61KdDPLV0Q0h4XAeyjkNBvE66kTbhyyefdzlc571NeGK8fXxdGI2pqcc6n5p7xOYUjdLHZ3FNbm701gse4zDOnt8ymEdUXGWfv/bFPe61ycCYrseR23/z4Ze/KXxCzWRyEKBsO+9equ9EOcV6jHFMbBYhVZPSVt+oXWR73b9Ikv3bLjOSDYAqAcdO4NflUTDtYvPoEmMjy0aXyZdAITSyZWJsbdDTLo3Eg63A3zvDzGu1JPJquolEzuyIvIYcLmSwdNbtk1CD2V+p5PsoZf5H3Wpy35eY3L3Kgs36SDXqZ7M3TuIQb0qPPRJ7p2WiYuU+/4RXY9mMnAdUPzqRGIo9/Qx6/HJLDi/9+qkfAj9rd1QY4oW9VQoCxjqZN7NUPEYaAwWBZINAGqmj6DOy7KcOnh/SWKYPDWx4zFUAAGQTvZ55mFizLDzX6/Y9/E56j3Uo+5cS1vSSDrsQypX1ef6fajBE9IVcpn3XZdqvbnMfiYdjoHEY6d1wFsf/V194qs5yR3CxOiDfpa3Iayc93yPNq/HTRZOMiyYPs8r8Wve00N8RimrV3r/MgEZ1723023Nhko6yHuexVDnnSxgGKIvcZv9fOr3OHAsmtsTHrmTAOAJZVmuSjPbZ/791uDfFk/8u2lpbsqVAoKqN8bgTuu3pRxi73I7uR6ux0Q/58FBHDZP1eG+y4bD2ElbdO0odi856PtOPZSPraPvUIRSd3iI4dLRR18OUF8MVealTl1Urzyw+nOmfeH7AeKxDCEe2obMtb73baPvHWwbO7Jy6a1tclyW7zzEStrWeWh97sCuxzL0NvHk8xYe7rt7fY9p5HWUr1hdh9ZveKa+vtY6wSYeRZaINzTfAJqdsurHITN7wuD8dMWVJiFeqyDPTreEMPx3Yq2rfQAABh3e6sdf1WtmWK8/RVYsfa5et2NaXaoDP2mX3lcv+c99Dm6OGtev2ePTeuz3ilDK/KxR5vua8H3Q8t4s8w/UAd9XsdbxOAYag8lJDIqe32IXW7kI6D79k7apVdxyLb9/6c9JT7H6EvI9jF770++17HRNDOzr+j/Fp18aY4+ih/qpjtUXthSND8kGAKcNxLL6cWnYyXrXHBjYJBt0FcjKcLD6loEIAFhPUOQ6SPrfC4Olr/pT6uk9de4vMazbt/rnHwYDqa+NNvNITBFRec8bdcbklXqj7qd9Oynvx1Qm4XTivY7F1LAOaMZEJk0eYp8waZSLvPHd3xuMGf5ptC0PJFl7b5tGXS47lOO6Pf8zez4BUZffOnF6JLnAPdeoA1+636S8/NtoD8d2n9X1Ut12EisAGHkDerB5vLHtNkr6eOshhkcpAQAAAAAAAABAC7rXnOneeXnj37VNNpju3XjgqgAAAAAAAAAAEJkWh0iuWv6bQn83b3FoTsEVAQAAAAAAAAAgMpoMKNskA1omG1aGf3vL1QAAAAAAAAAAIFJlWV4bJgTu9PeNkg36MpVzJQAAAAAAAAAAiJQe4Gy61dG8RbLhzvBvXnMVAAAAAAAAAACIXFmWixaHRZskEVYt/t6EKwAAAAAAAAAAQALKsjyU/i2IPAAAAAAAAAAAiWh5xkIf7og6AAAAAAAAAACJKcty4zHZUBBxAAAAAAAAAAASU5Zl7inRsCHaAAAAAAAAAAAkqizLpYdkQ06kAQAAAAAAAABIVFmWk+p17zDRsCTKAAAAAAAAAAAkrizLuaNEgyQxJkQYAAAAAAAAAIARKMvyzkGyYU5kAQAAAAAAAAAYibIsi54TDVuiCgAAAAAAAADAyJRlueox2VAQUQAAAAAAAAAARqYsy7ynw6JXRBMAAAAAAAAAgJEqy3LZw6HQOZEEAAAAAAAAAGCkyrKcVK9Dh2TDkigCAAAAAAAAADByZVnOLBMNkqSYEEEAAAAAAAAAACAJh61FsmFG5AAAAAAAAAAAwHdlWU5bJhq2RA0AAAAAAAAAAPyiLMtVi2TDlIgBAAAAAAAAAIBf6GHR9waJhhXRAgAAAAAAAAAATyrLcvlKouGeQ6EBAAAAAAAAAMCLyrI8vJBsWBAhAAAAAAAAAADworIsi2cSDQeiAwAAAAAAAAAAjJRluX0i2VAQGQAAAAAAAAAAYKQsy/wk0bAlKgAAAAAAAAAAoJWyLK8byYaciAAAAAAAAAAAgFbKspxUr3tJOhANAAAAAAAAAABgpSzLmSQdiAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACa/l+AAQBjU/ugL20GvwAAAABJRU5ErkJggg==" />
+              </div>
               <h3>Escola Conquer • Business Intelligence &amp; Analytics</h3>
             </div>
             <span class="cert-status">Concluído em 2023</span>
-
-            <ul>
-              <li>Modelagem dimensional e construção de dashboards com foco em gestão, acompanhamento e priorização</li>
-              <li>ETL, pipelines analíticos e organização de dados para consumo mais claro, consistente e orientado ao
-                negócio</li>
-              <li>Projetos práticos com ênfase em confiabilidade analítica, performance e utilidade gerencial da
-                informação</li>
-            </ul>
           </article>
 
           <article class="cert-card reveal">
-            <div class="cert-top">
+            <div class="cert-top" style="display:flex; flex-direction:column; gap:1rem;">
+              <div style="display:flex; align-items:center; justify-content:center; min-height:110px; background: white;
+    border-radius: 5%;">
+                <img alt="Logo UNIFACS Universidade Salvador" class="edu-logo"
+                  src="data:image/png;base64,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">
+              </div>
               <h3>Universidade Salvador • Análise e Desenvolvimento de Sistemas</h3>
             </div>
             <span class="cert-status">Concluído em 2022</span>
-            <ul>
-              <li>Desenvolvimento full-stack, arquitetura de software e construção de soluções orientadas a contexto de
-                negócio</li>
-              <li>Engenharia de requisitos, modelagem de sistemas e desenho técnico voltado à manutenção e à evolução do
-                software</li>
-              <li>Versionamento, integração contínua, qualidade de código e disciplina de entrega aplicadas a ambientes
-                de maior maturidade operacional</li>
-            </ul>
           </article>
-
         </div>
       </div>
     </section>
-
     <section class="section" id="certificacoes">
       <div class="container">
         <span class="eyebrow reveal">Certificações e trilhas estratégicas</span>
 
-        <div class="cert-grid" style="margin-top:2rem">
-          <article class="cert-card reveal">
-            <div class="cert-top">
+        <div class="cert-grid cert-grid-tech" style="margin-top:2rem">
+          <article class="cert-card cert-card-tech reveal">
+            <div class="cert-top cert-top-tech">
+              <div class="cert-logo-box cert-logo-box-light">
+                <img src="./images/pin_large.png" alt="Logo Airflow" class="cert-logo-img" />
+              </div>
               <h3>Airflow</h3>
-              <span class="cert-status">Concluído</span>
             </div>
-            <p>Frente de certificação e aprofundamento ligada à orquestração de pipelines, governança do fluxo e
-              confiabilidade operacional em ambientes de dados.</p>
-            <ul>
-              <li>Orquestração e scheduling</li>
-              <li>Observabilidade do pipeline</li>
-              <li>Dependências, DAGs e automação</li>
-            </ul>
+            <span class="cert-status">Concluído</span>
           </article>
 
-          <article class="cert-card reveal">
-            <div class="cert-top">
+          <article class="cert-card cert-card-tech reveal">
+            <div class="cert-top cert-top-tech">
+              <div class="cert-logo-box cert-logo-box-light">
+                <img src="./images/png-clipart-logo-brand-font-vtex-brastemp-logo-cdr-text-thumbnail.png"
+                  alt="Logo VTEX" class="cert-logo-img" />
+              </div>
+              <h3>VTEX</h3>
+            </div>
+            <span class="cert-status">Concluído</span>
+          </article>
+
+          <article class="cert-card cert-card-tech reveal">
+            <div class="cert-top cert-top-tech">
+              <div class="cert-logo-box cert-logo-box-light">
+                <img src="./images/Design-sem-nome-3.png" alt="Logo Databricks" class="cert-logo-img" />
+              </div>
               <h3>Databricks</h3>
-              <span class="cert-status">Andamento</span>
             </div>
-            <p>Frente direcionada a lakehouse, Spark, engenharia analítica e arquitetura medalhão, alinhada ao tipo de
-              projeto que compõe meu portfólio atual.</p>
-            <ul>
-              <li>Lakehouse e Delta Lake</li>
-              <li>PySpark e notebooks</li>
-              <li>Camadas bronze, silver e gold</li>
-            </ul>
+            <span class="cert-status">Andamento</span>
           </article>
 
-          <article class="cert-card reveal">
-            <div class="cert-top">
+          <article class="cert-card cert-card-tech reveal">
+            <div class="cert-top cert-top-tech">
+              <div class="cert-logo-box cert-logo-box-dark">
+                <img src="./images/unnamed.png" alt="Logo Azure" class="cert-logo-img" />
+              </div>
               <h3>Azure</h3>
-              <span class="cert-status">Andamento</span>
             </div>
-            <p>Direção formal de aprofundamento em cloud corporativa, infraestrutura de dados e integração de serviços
-              como apoio a uma atuação mais robusta em ambiente empresarial.</p>
-            <ul>
-              <li>Fundamentos de nuvem e dados</li>
-              <li>Arquitetura de serviços</li>
-              <li>Evolução de soluções analíticas</li>
-            </ul>
+            <span class="cert-status">Andamento</span>
           </article>
         </div>
       </div>
     </section>
-
     <section class="section" id="contato">
       <div class="container contact-grid">
         <article class="contact-card reveal">
           <span class="eyebrow">Contato</span>
           <h2 class="section-title" style="max-width:20ch; font-size:clamp(2rem, 4vw, 2.85rem)">Vamos conversar sobre
             arquitetura analítica, dados e valor de negócio.</h2>
-          <p>Se sua dor envolver e-commerce, confiabilidade analítica ou estrutura de decisão
-            orientada por dados, vale a pena trocarmos uma ideia.</p>
+          <p>Se sua dor envolver e-commerce, confiabilidade analítica ou estrutura de decisão orientada por dados, vale
+            a pena conversarmos.</p>
           <div class="hero-actions" style="margin-top:1.4rem">
             <a class="button" href="mailto:jesse.net19@gmail.com?subject=Contato%20pelo%20portf%C3%B3lio">Enviar
               e-mail</a>
-            <a class="button-secondary" href="https://www.linkedin.com/in/jesse-silva/" target="_blank"
-              rel="noreferrer">LinkedIn</a>
-            <a class="button-secondary" href="https://github.com/jesse-dsa" target="_blank" rel="noreferrer">GitHub</a>
+            <a class="button-secondary" href="https://www.linkedin.com/in/jesse-silva/" rel="noreferrer"
+              target="_blank">LinkedIn</a>
+            <a class="button-secondary" href="https://github.com/jesse-dsa" rel="noreferrer" target="_blank">GitHub</a>
           </div>
         </article>
-
         <aside class="contact-card reveal">
           <h3>Canais principais</h3>
           <p><a href="mailto:jesse.net19@gmail.com">jesse.net19@gmail.com</a></p>
-          <p style="margin-top:.72rem"><a href="https://www.linkedin.com/in/jesse-silva/" target="_blank"
-              rel="noreferrer">linkedin.com/in/jesse-silva</a></p>
-          <p style="margin-top:.72rem"><a href="https://github.com/jesse-dsa" target="_blank"
-              rel="noreferrer">github.com/jesse-dsa</a></p>
-
+          <p style="margin-top:.72rem"><a href="https://www.linkedin.com/in/jesse-silva/" rel="noreferrer"
+              target="_blank">linkedin.com/in/jesse-silva</a></p>
+          <p style="margin-top:.72rem"><a href="https://github.com/jesse-dsa" rel="noreferrer"
+              target="_blank">github.com/jesse-dsa</a></p>
           <div class="tag-group">
             <span class="tag">Arquitetura analítica</span>
             <span class="tag">Engenharia de dados</span>
@@ -2035,15 +1694,11 @@
       </div>
     </section>
   </main>
-
   <footer class="footer">
     <div class="container footer-inner">
       <span>Jessé Silva • arquitetura analítica, dados e inteligência para comércio digital</span>
-      <span>Portfólio em arquivo único, com posicionamento consultivo, hierarquia editorial e leitura orientada a
-        valor.</span>
     </div>
   </footer>
-
   <script>
     const header = document.getElementById('siteHeader');
     const menuToggle = document.getElementById('menuToggle');
